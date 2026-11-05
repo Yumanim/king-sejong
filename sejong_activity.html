@@ -758,10 +758,20 @@ function tone(a,type,f,start,dur,vol,endF){
   g.gain.exponentialRampToValueAtTime(.0001,start+dur);
   o.connect(g);g.connect(a.destination);o.start(start);o.stop(start+dur+.05);
 }
+/* 북채로 때리는 소리: 작은 스피커에서도 들리도록 짧은 잡음을 섞어요 */
+function noise(a,start,dur,vol,freq){
+  var n=Math.floor(a.sampleRate*dur),b=a.createBuffer(1,n,a.sampleRate),d=b.getChannelData(0);
+  for(var i=0;i<n;i++)d[i]=Math.random()*2-1;
+  var s=a.createBufferSource(),f=a.createBiquadFilter(),g=a.createGain();
+  s.buffer=b;f.type='lowpass';f.frequency.value=freq;
+  g.gain.setValueAtTime(vol,start);
+  g.gain.exponentialRampToValueAtTime(.0001,start+dur);
+  s.connect(f);f.connect(g);g.connect(a.destination);s.start(start);
+}
 var SOUNDS=[
   function(a,t){tone(a,'sine',520,t,1.9,.3);tone(a,'sine',1046,t,1.2,.13);tone(a,'sine',1570,t,.7,.06)},
   function(a,t){tone(a,'triangle',170,t,2.4,.3);tone(a,'sine',176,t,2.4,.2);tone(a,'sine',347,t,1.4,.09)},
-  function(a,t){tone(a,'sine',120,t,.55,.55,48);tone(a,'triangle',210,t,.09,.22,90)}
+  function(a,t){tone(a,'sine',230,t,.6,.42,110);tone(a,'triangle',340,t,.22,.32,150);noise(a,t,.14,.42,1800)}
 ];
 function ring(i){var a=ac();if(a)SOUNDS[i](a,a.currentTime+.01)}
 
