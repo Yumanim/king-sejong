@@ -1,0 +1,1372 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>백성을 사랑한 임금, 세종대왕</title>
+<meta name="description" content="초등 고학년이 읽고 직접 조작하며 세종대왕의 생애와 업적을 배우는 학습 자료">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#c0392b; --green:#2f8f6f; --gold:#f2c14e; --cream:#f8f3e6;
+  --night1:#0b1230; --night2:#14204a; --night3:#1d2c5e;
+  --card:rgba(248,243,230,.075); --line:rgba(248,243,230,.18);
+  --muted:#cfd3e2; --ok:#46c79b; --bad:#ef7666;
+  --serif:"Gowun Batang","Batang",serif;
+  --sans:"Gowun Dodum","Malgun Gothic","Apple SD Gothic Neo",sans-serif;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0;color:var(--cream);font-family:var(--sans);font-size:17px;line-height:1.7;
+  background:linear-gradient(180deg,var(--night1),var(--night2) 45%,var(--night3)) fixed;
+  background-color:var(--night1);overflow-x:clip;word-break:keep-all;overflow-wrap:break-word;
+}
+h1,h2,h3{font-family:var(--serif);line-height:1.35;margin:0}
+p{margin:.5em 0}
+a{color:var(--gold)}
+svg{display:block;max-width:100%;height:auto}
+button,input{font:inherit;color:inherit}
+button{cursor:pointer;touch-action:manipulation}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+
+/* 표지 */
+.hero{text-align:center;padding:44px 16px 0;overflow:hidden}
+.hero .kicker{color:var(--gold);letter-spacing:.08em;font-size:15px;margin:0 0 6px}
+.hero h1{font-size:clamp(30px,7vw,50px)}
+.hero .lead{color:var(--muted);margin:10px auto 0;max-width:32em}
+.cover-roof{display:block;width:calc(100% + 32px);max-width:none;height:clamp(100px,19vw,260px);margin:28px -16px 0}
+
+/* 묶음 메뉴 */
+.nav{position:sticky;top:0;z-index:20;background:rgba(11,18,48,.985);border-bottom:1px solid var(--line)}
+.tabs,.subnav{list-style:none;margin:0 auto;max-width:1040px;display:flex}
+.tabs{padding:6px 8px 0;gap:4px}
+.tabs li{flex:1 1 0;min-width:0}
+.tabs a{display:flex;align-items:center;justify-content:center;gap:6px;min-height:40px;padding:2px 4px;border-radius:10px 10px 0 0;
+  text-align:center;text-decoration:none;color:var(--cream);font-family:var(--serif);font-size:16px;line-height:1.2;transition:background .2s,color .2s}
+.tabs a b{color:var(--gold)}
+.tabs a:hover{background:rgba(242,193,78,.16)}
+.tabs a.on{background:var(--gold);color:#1a1f3d;font-weight:700}
+.tabs a.on b{color:#1a1f3d}
+.subnav{padding:6px 8px;gap:6px;overflow-x:auto;scrollbar-width:none;align-items:center;min-height:50px;position:relative}
+.subnav::-webkit-scrollbar{display:none}
+.subnav a{flex:none;display:flex;align-items:center;justify-content:center;min-width:38px;height:38px;padding:0 11px;border-radius:999px;
+  text-decoration:none;color:var(--cream);font-size:15px;line-height:1;white-space:nowrap;transition:background .2s,color .2s}
+.subnav a.circle{padding:0;width:38px;font-size:21px}
+.subnav a:hover{background:rgba(242,193,78,.2)}
+.subnav a.on{background:var(--gold);color:#1a1f3d;font-weight:700}
+
+/* 섹션 카드 */
+main{max-width:1040px;margin:0 auto;padding:22px 16px 40px}
+.sec{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px 22px;margin:0 auto 24px;scroll-margin-top:116px}
+.sec>h2{display:flex;align-items:center;gap:12px;font-size:25px;margin-bottom:10px}
+.num{flex:none;min-width:38px;height:38px;padding:0 8px;border-radius:999px;background:var(--gold);color:#1a1f3d;
+  display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:700;font-size:20px}
+.sec h3{font-size:19px;color:var(--gold);margin:22px 0 6px}
+.key{border-left:4px solid var(--gold);background:rgba(242,193,78,.1);border-radius:0 12px 12px 0;padding:11px 15px;margin:16px 0 0}
+.key p{margin:.25em 0}
+.note{color:var(--muted);font-size:15px;margin:10px 0 0}
+.stage{background:rgba(5,9,28,.5);border:1px solid var(--line);border-radius:16px;padding:12px;margin:12px 0}
+.row{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:12px 0}
+
+/* 버튼 */
+.btn{border:1px solid transparent;border-radius:999px;background:var(--gold);color:#1a1f3d;padding:9px 18px;min-height:44px;font-weight:700;transition:transform .12s,filter .15s}
+.btn:hover{filter:brightness(1.08)}
+.btn:active{transform:scale(.97)}
+.btn.sub{background:transparent;color:var(--cream);border-color:var(--line);font-weight:400}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.pill{display:inline-flex;background:rgba(5,9,28,.6);border:1px solid var(--line);border-radius:999px;padding:4px;max-width:100%}
+.pill button{border:0;background:transparent;border-radius:999px;padding:8px 16px;min-height:40px;color:var(--cream);transition:background .2s,color .2s}
+.pill button[aria-pressed="true"]{background:var(--gold);color:#1a1f3d;font-weight:700}
+.range{display:block;width:100%;accent-color:var(--gold);height:32px;margin:0}
+.rlabel{display:flex;justify-content:space-between;font-size:15px;color:var(--muted)}
+
+/* ① 생활 글 */
+.signs{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:14px}
+.sign{border-radius:14px;padding:13px 15px;min-height:128px;color:#2a2318;background:var(--cream);border:3px solid #8a6a3a;display:flex;flex-direction:column}
+.sign small{font-size:14px;color:#6a5a44}
+.sign b{font-family:var(--serif);font-size:21px;line-height:1.45;margin:auto 0;transition:opacity .2s}
+.sign.board{background:#2f8f6f;border-color:#1f6b52;color:#fff}
+.sign.board small{color:#dff3ea}
+.sign.bag{background:#fff;border-color:var(--red)}
+.alert{margin-top:12px;border-radius:12px;padding:11px 15px;background:rgba(192,57,43,.22);border:1px solid var(--red)}
+.alert strong{font-family:var(--serif);font-size:20px;color:var(--gold)}
+
+/* ② 맞히기 */
+.letters{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin:12px 0}
+.letter{width:56px;height:56px;border-radius:13px;border:2px solid var(--line);background:rgba(5,9,28,.6);font-family:var(--serif);font-size:27px;font-weight:700}
+.letter.sel{background:var(--gold);color:#1a1f3d;border-color:var(--gold)}
+.letter.done{background:var(--green);border-color:var(--green);opacity:.75}
+.organs{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:9px}
+.organ{border:2px solid var(--line);border-radius:13px;background:rgba(5,9,28,.5);padding:8px;text-align:center}
+.organ svg{margin:0 auto;width:100%;max-width:130px}
+.organ span{display:block;font-size:15px}
+.organ.done{border-color:var(--ok);background:rgba(47,143,111,.25)}
+.organ.shake{animation:shake .35s;border-color:var(--bad)}
+@keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.msg{min-height:1.7em;margin:10px 0 0;font-weight:700}
+.msg.ok{color:var(--ok)} .msg.bad{color:var(--bad)}
+.vowels{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.vowel{background:rgba(5,9,28,.5);border:1px solid var(--line);border-radius:13px;padding:10px 13px}
+.vowel b{font-family:var(--serif);font-size:30px;color:var(--gold);margin-right:7px}
+
+/* 글자 판 */
+.out{min-height:76px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:42px;font-weight:700;background:var(--cream);color:#2a2318;border-radius:13px;padding:4px 12px;text-align:center;line-height:1.2;word-break:break-all}
+.seq{text-align:center;color:var(--muted);font-size:15px;min-height:1.7em;margin:6px 0 0;word-break:break-all}
+.keys{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-top:8px}
+.key-b{min-height:44px;border-radius:9px;border:1px solid var(--line);background:rgba(5,9,28,.6);font-size:19px;padding:0}
+.key-b.v{background:rgba(47,143,111,.35)}
+.key-b:active{background:var(--gold);color:#1a1f3d}
+
+/* ③ 앙부일구 */
+.clock{display:flex;align-items:center;gap:14px;background:rgba(242,193,78,.12);border-radius:13px;padding:9px 14px;margin:10px 0}
+.clock .ani{font-size:46px;line-height:1}
+.clock b{font-family:var(--serif);font-size:21px;display:block;line-height:1.3}
+.clock span{color:var(--muted);font-size:15px}
+
+/* ④ 자격루 */
+.steps{list-style:none;padding:0;margin:8px 0 0;display:flex;flex-wrap:wrap;gap:6px}
+.steps li{font-size:14.5px;padding:3px 11px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.steps li.on{background:var(--gold);color:#1a1f3d;border-color:var(--gold);font-weight:700}
+.steps li.past{color:var(--ok);border-color:var(--ok)}
+
+/* ⑤ 측우기 */
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;align-items:start}
+.fields{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:8px 0}
+.fields input{width:70px;min-height:44px;border-radius:10px;border:1px solid var(--line);background:var(--cream);color:#2a2318;text-align:center;font-size:19px}
+.log{width:100%;border-collapse:collapse;font-size:15px;margin-top:10px}
+.log th,.log td{border-bottom:1px solid var(--line);padding:4px 3px;text-align:center}
+.log th{color:var(--muted);font-weight:400}
+
+/* ⑥ 뒤집는 카드 */
+.flips{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:10px}
+.flip{perspective:900px;height:208px;padding:0;border:0;background:none;text-align:left;width:100%}
+.inner{position:relative;display:block;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d}
+.flip[aria-pressed="true"] .inner{transform:rotateY(180deg)}
+@media (prefers-reduced-motion:reduce){.inner{transition:none}}
+.face{position:absolute;inset:0;display:flex;flex-direction:column;border-radius:15px;padding:13px 15px;backface-visibility:hidden;-webkit-backface-visibility:hidden;font-size:16px;line-height:1.55}
+.face.f{background:#2a3566;border:1px solid var(--line)}
+.face.b{background:var(--green);transform:rotateY(180deg);color:#fff}
+.face em{font-style:normal;font-size:14px;color:var(--gold)}
+.face.b em{color:#fff2c9}
+.face b{font-family:var(--serif);font-size:20px;margin:1px 0 3px}
+.face i{font-style:normal;margin-top:auto;font-size:13.5px;opacity:.85}
+
+/* ⑦ 여론조사 */
+.bar{margin:12px 0}
+.bar .lab{display:flex;justify-content:space-between;gap:8px;font-size:16px}
+.bar .track{height:30px;background:rgba(5,9,28,.6);border-radius:9px;overflow:hidden}
+.bar .fill{height:100%;width:0;border-radius:9px}
+.bar.y .fill{background:var(--green)} .bar.n .fill{background:var(--red)}
+
+/* ⑧ 퀴즈 */
+.score{display:flex;align-items:center;justify-content:space-between;gap:10px;background:rgba(242,193,78,.14);border-radius:13px;padding:9px 15px;font-family:var(--serif);font-size:20px;position:relative}
+.trophy{font-size:32px;line-height:1}
+.q{margin-top:16px}
+.q .qt{font-weight:700;margin:0 0 6px}
+.opts{display:grid;gap:7px}
+.opt{text-align:left;border:1px solid var(--line);background:rgba(5,9,28,.5);border-radius:11px;padding:9px 13px;min-height:44px}
+.opt:disabled{cursor:default;opacity:1}
+.opt.right{background:var(--green);border-color:var(--ok);color:#fff}
+.opt.wrong{background:var(--red);border-color:var(--bad);color:#fff}
+.exp{font-size:15.5px;margin:7px 0 0;color:var(--cream);background:rgba(5,9,28,.45);border-radius:10px;padding:7px 12px}
+
+/* 묶음 */
+.group{scroll-margin-top:116px;margin-top:34px}
+.group:first-child{margin-top:6px}
+.group-head{max-width:820px;margin:0 auto 16px}
+.group-head span{display:block;color:var(--gold);font-size:15px;letter-spacing:.06em}
+.group-head h2{font-size:clamp(27px,5vw,34px)}
+.group-head p{margin:6px 0 0;color:var(--muted)}
+.group .sec{max-width:820px}
+.group .sec.wide{max-width:none}
+.back{margin:-2px 0 10px;font-size:15.5px}
+.back a{text-decoration:none;border-bottom:1px solid currentColor}
+
+/* 핵심 정보와 연표 */
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.fact{background:rgba(5,9,28,.5);border:1px solid var(--line);border-radius:13px;padding:12px 14px}
+.fact span{display:block;font-size:14px;color:var(--gold)}
+.fact b{font-family:var(--serif);font-size:19px;line-height:1.4}
+.timeline{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;column-gap:26px}
+.timeline li{position:relative;padding:6px 0 6px 22px;border-left:2px solid var(--gold);margin-left:6px}
+.timeline li::before{content:"";position:absolute;left:-7px;top:15px;width:12px;height:12px;border-radius:50%;background:var(--red);border:2px solid var(--gold)}
+.timeline b{color:var(--gold);margin-right:8px;font-family:var(--serif)}
+
+/* 업적 카드 */
+.ach-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}
+.ach-card{background:rgba(5,9,28,.42);border:1px solid var(--line);border-radius:18px;padding:18px;min-width:0;scroll-margin-top:116px}
+.ach-card.ach-top{border:2px solid var(--gold)}
+.ach-card header{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+.ach-rank{flex:none;width:54px;height:54px;border-radius:50%;background:#2a3566;color:var(--cream);border:1px solid var(--line);display:flex;align-items:baseline;justify-content:center;padding-top:9px;font-family:var(--serif);font-size:25px;font-weight:700}
+.ach-rank small{font-size:13px;margin-left:1px}
+.ach-top .ach-rank{background:var(--gold);color:#1a1f3d;border-color:var(--gold)}
+.ach-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.ach-tag{color:#fff;font-size:14px;padding:1px 11px;border-radius:999px}
+.ach-t1{background:#4a5fa8}.ach-t2{background:#257a5e}.ach-t3{background:#8a6614}.ach-t4{background:#c0392b}.ach-t5{background:#1f7f8c}.ach-t6{background:#b4521e}
+.ach-year{color:var(--muted);font-size:15px}
+.ach-card h3{font-size:22px;color:var(--cream);margin:6px 0 8px}
+.ach-card p{margin:0 0 12px}
+.ach-more{background:rgba(248,243,230,.09);border-radius:9px;padding:9px 12px;font-size:15px}
+.ach-more a{font-weight:700;margin-right:4px}
+.ach-why{border-left:4px solid var(--gold);background:rgba(242,193,78,.1);border-radius:0 12px 12px 0;padding:10px 13px;margin-bottom:14px}
+.ach-why b{color:var(--gold);display:block}
+.ach-play{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+.btn.play{display:inline-flex;flex-direction:column;align-items:flex-start;justify-content:center;text-decoration:none;line-height:1.3;border-radius:14px;padding:7px 15px}
+.btn.play span{font-weight:400;font-size:14px}
+.ach-card figure{margin:0}
+.ach-card figure img{display:block;width:100%;max-width:640px;height:auto;max-height:360px;object-fit:contain;background:rgba(5,9,28,.5);border-radius:10px;margin:0 auto}
+.ach-card figcaption{font-size:15px;line-height:1.6;margin-top:8px}
+.ach-card figcaption small{display:block;font-size:13px;color:var(--muted);margin-top:3px}
+.ach-kind{display:inline-block;background:var(--green);color:#fff;font-size:13px;padding:0 8px;border-radius:5px}
+.ach-ph{background:rgba(248,243,230,.1);border:1px dashed var(--line);border-radius:10px;min-height:170px;padding:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;text-align:center;font-size:15px}
+.ach-ph strong{font-size:16px}
+.ach-ph .ach-video{font-weight:700}
+figure.ach-failed img,figure.ach-failed figcaption{display:none}
+figure.ach-failed .ach-ph[hidden]{display:flex!important}
+
+/* 마무리 */
+.summary-box{margin:0}
+.questions{margin:0;padding-left:24px}
+.questions li{margin-bottom:8px}
+.refs{padding-left:22px;margin:0}
+.refs li{margin-bottom:6px}
+.site-foot{text-align:center;color:var(--muted);padding:18px 16px 28px;font-size:14px;border-top:4px solid var(--gold)}
+
+@media (max-width:760px){
+  .ach-grid{grid-template-columns:minmax(0,1fr)}
+  .facts{grid-template-columns:repeat(2,1fr)}
+  .timeline{grid-template-columns:1fr}
+}
+@media print{
+  body{background:#fff;color:#111;font-size:11.5pt}
+  .nav,.cover-roof,.btn,.pill,.range,.rlabel,.back,.ach-play{display:none!important}
+  .sec,.ach-card,.fact,.stage,.key,.ach-why{background:#fff;border-color:#999;color:#111;break-inside:avoid}
+  .hero .lead,.note,.ach-year,.ach-card figcaption small,.group-head p{color:#333}
+  .ach-card h3,.sec h3,.fact span,.timeline b,.group-head span,.ach-why b{color:#111}
+  a{color:#111}
+  .ach-grid{display:block}
+  .ach-card{margin-bottom:6mm}
+  .ach-tag,.ach-rank,.num,.ach-kind{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+
+@media (max-width:560px){
+  body{font-size:16.5px}
+  .sec{padding:20px 15px;border-radius:18px}
+  .sec>h2{font-size:22px}
+  .stage{padding:8px}
+  .two{grid-template-columns:1fr}
+  .tabs{padding:5px 4px 0;gap:2px}
+  .tabs a{font-size:14px;min-height:38px;white-space:nowrap;padding:2px 1px}
+  .tabs .full,.tabs a b{display:none}
+  .subnav{padding:5px 4px;gap:3px;min-height:46px}
+  .subnav a{padding:0 9px;height:36px;min-width:36px}
+  .subnav a.circle{width:36px;font-size:20px}
+  .ach-card{padding:15px}
+  .fact b{font-size:17px}
+  .pill button{padding:8px 12px}
+}
+</style>
+<script>function imgFail(img){var f=img.closest('figure');if(f){f.classList.add('ach-failed');}}</script>
+</head>
+<body>
+
+<header class="hero">
+  <p class="kicker">초등 고학년 역사 학습 자료</p>
+  <h1>백성을 사랑한 임금, 세종대왕</h1>
+  <p class="lead">우리 글자를 만들고, 하늘과 땅을 연구해 백성의 삶을 돌본 임금을 만나 보아요.</p>
+  <svg class="cover-roof" viewBox="0 0 1200 240" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+<defs><clipPath id="roofBody"><path d="M3 109.1L23.6 110.6L43.7 111.2L63.3 111L82.3 110L100.8 108.2L118.8 105.5L136.3 102.1L153.2 97.8L169.7 92.7L185.6 86.8L201 80L215.8 72.4L230.1 64.1L244 54.9L257.2 44.8L270 34L270 34L300 37L330 39.4L360 41.4L390 42.9L420 44.1L450 44.9L480 45.4L510 45.8L540 45.9L570 46L600 46L630 46L660 45.9L690 45.8L720 45.4L750 44.9L780 44.1L810 42.9L840 41.4L870 39.4L900 37L930 34L930 34L942.8 44.8L956 54.9L969.9 64.1L984.2 72.4L999 80L1014.4 86.8L1030.3 92.7L1046.8 97.8L1063.7 102.1L1081.2 105.5L1099.2 108.2L1117.7 110L1136.7 111L1156.3 111.2L1176.4 110.6L1197 109.1L1200 114L1180 121.2L1160 127.8L1140 133.9L1120 139.4L1100 144.5L1080 149.1L1060 153.3L1040 157L1020 160.4L1000 163.4L980 166L960 168.4L940 170.4L920 172.2L900 173.7L880 175.1L860 176.2L840 177.1L820 177.8L800 178.4L780 178.9L760 179.3L740 179.5L720 179.7L700 179.9L680 179.9L660 180L640 180L620 180L600 180L580 180L560 180L540 180L520 179.9L500 179.9L480 179.7L460 179.5L440 179.3L420 178.9L400 178.4L380 177.8L360 177.1L340 176.2L320 175.1L300 173.7L280 172.2L260 170.4L240 168.4L220 166L200 163.4L180 160.4L160 157L140 153.3L120 149.1L100 144.5L80 139.4L60 133.9L40 127.8L20 121.2L0 114Z"/></clipPath>
+<pattern id="dancheong" width="60" height="30" patternUnits="userSpaceOnUse" y="205"><path d="M30 2 46 15 30 28 14 15Z" fill="#a32a2a"/><circle cx="30" cy="15" r="5" fill="#c9a227"/><path d="M0 2 8 15 0 28ZM60 2 52 15 60 28Z" fill="#12636f"/></pattern></defs>
+<path d="M0 114L0 114L20 121.2L40 127.8L60 133.9L80 139.4L100 144.5L120 149.1L140 153.3L160 157L180 160.4L200 163.4L220 166L240 168.4L260 170.4L280 172.2L300 173.7L320 175.1L340 176.2L360 177.1L380 177.8L400 178.4L420 178.9L440 179.3L460 179.5L480 179.7L500 179.9L520 179.9L540 180L560 180L580 180L600 180L620 180L640 180L660 180L680 179.9L700 179.9L720 179.7L740 179.5L760 179.3L780 178.9L800 178.4L820 177.8L840 177.1L860 176.2L880 175.1L900 173.7L920 172.2L940 170.4L960 168.4L980 166L1000 163.4L1020 160.4L1040 157L1060 153.3L1080 149.1L1100 144.5L1120 139.4L1140 133.9L1160 127.8L1180 121.2L1200 114V200H0Z" fill="#10141d"/>
+<path d="M6 121.7h8V198h-8ZM26 128.6h8V198h-8ZM46 134.9h8V198h-8ZM66 140.7h8V198h-8ZM86 146h8V198h-8ZM106 150.8h8V198h-8ZM126 155.2h8V198h-8ZM146 159.2h8V198h-8ZM166 162.7h8V198h-8ZM186 165.9h8V198h-8ZM206 168.7h8V198h-8ZM226 171.2h8V198h-8ZM246 173.4h8V198h-8ZM266 175.4h8V198h-8ZM286 177h8V198h-8ZM306 178.4h8V198h-8ZM326 179.6h8V198h-8ZM346 180.6h8V198h-8ZM366 181.5h8V198h-8ZM386 182.1h8V198h-8ZM406 182.7h8V198h-8ZM426 183.1h8V198h-8ZM446 183.4h8V198h-8ZM466 183.6h8V198h-8ZM486 183.8h8V198h-8ZM506 183.9h8V198h-8ZM526 184h8V198h-8ZM546 184h8V198h-8ZM566 184h8V198h-8ZM586 184h8V198h-8ZM606 184h8V198h-8ZM626 184h8V198h-8ZM646 184h8V198h-8ZM666 184h8V198h-8ZM686 183.9h8V198h-8ZM706 183.8h8V198h-8ZM726 183.6h8V198h-8ZM746 183.4h8V198h-8ZM766 183.1h8V198h-8ZM786 182.7h8V198h-8ZM806 182.1h8V198h-8ZM826 181.5h8V198h-8ZM846 180.6h8V198h-8ZM866 179.6h8V198h-8ZM886 178.4h8V198h-8ZM906 177h8V198h-8ZM926 175.4h8V198h-8ZM946 173.4h8V198h-8ZM966 171.2h8V198h-8ZM986 168.7h8V198h-8ZM1006 165.9h8V198h-8ZM1026 162.7h8V198h-8ZM1046 159.2h8V198h-8ZM1066 155.2h8V198h-8ZM1086 150.8h8V198h-8ZM1106 146h8V198h-8ZM1126 140.7h8V198h-8ZM1146 134.9h8V198h-8ZM1166 128.6h8V198h-8ZM1186 121.7h8V198h-8Z" fill="#1f6b52"/>
+<rect y="198" width="1200" height="42" fill="#1f6b52"/>
+<rect y="205" width="1200" height="30" fill="url(#dancheong)"/>
+<rect y="198" width="1200" height="4" fill="#c9a227"/>
+<rect y="234" width="1200" height="6" fill="#c9a227"/>
+<path d="M3 109.1L23.6 110.6L43.7 111.2L63.3 111L82.3 110L100.8 108.2L118.8 105.5L136.3 102.1L153.2 97.8L169.7 92.7L185.6 86.8L201 80L215.8 72.4L230.1 64.1L244 54.9L257.2 44.8L270 34L270 34L300 37L330 39.4L360 41.4L390 42.9L420 44.1L450 44.9L480 45.4L510 45.8L540 45.9L570 46L600 46L630 46L660 45.9L690 45.8L720 45.4L750 44.9L780 44.1L810 42.9L840 41.4L870 39.4L900 37L930 34L930 34L942.8 44.8L956 54.9L969.9 64.1L984.2 72.4L999 80L1014.4 86.8L1030.3 92.7L1046.8 97.8L1063.7 102.1L1081.2 105.5L1099.2 108.2L1117.7 110L1136.7 111L1156.3 111.2L1176.4 110.6L1197 109.1L1200 114L1180 121.2L1160 127.8L1140 133.9L1120 139.4L1100 144.5L1080 149.1L1060 153.3L1040 157L1020 160.4L1000 163.4L980 166L960 168.4L940 170.4L920 172.2L900 173.7L880 175.1L860 176.2L840 177.1L820 177.8L800 178.4L780 178.9L760 179.3L740 179.5L720 179.7L700 179.9L680 179.9L660 180L640 180L620 180L600 180L580 180L560 180L540 180L520 179.9L500 179.9L480 179.7L460 179.5L440 179.3L420 178.9L400 178.4L380 177.8L360 177.1L340 176.2L320 175.1L300 173.7L280 172.2L260 170.4L240 168.4L220 166L200 163.4L180 160.4L160 157L140 153.3L120 149.1L100 144.5L80 139.4L60 133.9L40 127.8L20 121.2L0 114Z" fill="#5b6678"/>
+<g clip-path="url(#roofBody)" fill="none"><path d="M69 20L10 117.7M87 20L30 124.6M105 20L50 130.9M123 20L70 136.7M141 20L90 142M159 20L110 146.8M177 20L130 151.2M195 20L150 155.2M213 20L170 158.7M231 20L190 161.9M249 20L210 164.7M267 20L230 167.2M285 20L250 169.4M303 20L270 171.4M321 20L290 173M339 20L310 174.4M357 20L330 175.6M375 20L350 176.6M393 20L370 177.5M411 20L390 178.1M429 20L410 178.7M447 20L430 179.1M465 20L450 179.4M483 20L470 179.6M501 20L490 179.8M519 20L510 179.9M537 20L530 180M555 20L550 180M573 20L570 180M591 20L590 180M609 20L610 180M627 20L630 180M645 20L650 180M663 20L670 180M681 20L690 179.9M699 20L710 179.8M717 20L730 179.6M735 20L750 179.4M753 20L770 179.1M771 20L790 178.7M789 20L810 178.1M807 20L830 177.5M825 20L850 176.6M843 20L870 175.6M861 20L890 174.4M879 20L910 173M897 20L930 171.4M915 20L950 169.4M933 20L970 167.2M951 20L990 164.7M969 20L1010 161.9M987 20L1030 158.7M1005 20L1050 155.2M1023 20L1070 151.2M1041 20L1090 146.8M1059 20L1110 142M1077 20L1130 136.7M1095 20L1150 130.9M1113 20L1170 124.6M1131 20L1190 117.7" stroke="#333c4c" stroke-width="5"/><path d="M0 98L40 111.8L80 123.4L120 133.1L160 141L200 147.4L240 152.4L280 156.2L320 159.1L360 161.1L400 162.4L440 163.3L480 163.7L520 163.9L560 164L600 164L640 164L680 163.9L720 163.7L760 163.3L800 162.4L840 161.1L880 159.1L920 156.2L960 152.4L1000 147.4L1040 141L1080 133.1L1120 123.4L1160 111.8L1200 98M0 80L40 93.8L80 105.4L120 115.1L160 123L200 129.4L240 134.4L280 138.2L320 141.1L360 143.1L400 144.4L440 145.3L480 145.7L520 145.9L560 146L600 146L640 146L680 145.9L720 145.7L760 145.3L800 144.4L840 143.1L880 141.1L920 138.2L960 134.4L1000 129.4L1040 123L1080 115.1L1120 105.4L1160 93.8L1200 80M0 60L40 73.8L80 85.4L120 95.1L160 103L200 109.4L240 114.4L280 118.2L320 121.1L360 123.1L400 124.4L440 125.3L480 125.7L520 125.9L560 126L600 126L640 126L680 125.9L720 125.7L760 125.3L800 124.4L840 123.1L880 121.1L920 118.2L960 114.4L1000 109.4L1040 103L1080 95.1L1120 85.4L1160 73.8L1200 60M0 38L40 51.8L80 63.4L120 73.1L160 81L200 87.4L240 92.4L280 96.2L320 99.1L360 101.1L400 102.4L440 103.3L480 103.7L520 103.9L560 104L600 104L640 104L680 103.9L720 103.7L760 103.3L800 102.4L840 101.1L880 99.1L920 96.2L960 92.4L1000 87.4L1040 81L1080 73.1L1120 63.4L1160 51.8L1200 38M0 14L40 27.8L80 39.4L120 49.1L160 57L200 63.4L240 68.4L280 72.2L320 75.1L360 77.1L400 78.4L440 79.3L480 79.7L520 79.9L560 80L600 80L640 80L680 79.9L720 79.7L760 79.3L800 78.4L840 77.1L880 75.1L920 72.2L960 68.4L1000 63.4L1040 57L1080 49.1L1120 39.4L1160 27.8L1200 14" stroke="#7b8698" stroke-width="1.5" opacity=".55"/></g>
+<g fill="#8f9aab" stroke="#2d3544" stroke-width="1.5"><circle cx="10" cy="118.7" r="6.5"/><circle cx="30" cy="125.6" r="6.5"/><circle cx="50" cy="131.9" r="6.5"/><circle cx="70" cy="137.7" r="6.5"/><circle cx="90" cy="143" r="6.5"/><circle cx="110" cy="147.8" r="6.5"/><circle cx="130" cy="152.2" r="6.5"/><circle cx="150" cy="156.2" r="6.5"/><circle cx="170" cy="159.7" r="6.5"/><circle cx="190" cy="162.9" r="6.5"/><circle cx="210" cy="165.7" r="6.5"/><circle cx="230" cy="168.2" r="6.5"/><circle cx="250" cy="170.4" r="6.5"/><circle cx="270" cy="172.4" r="6.5"/><circle cx="290" cy="174" r="6.5"/><circle cx="310" cy="175.4" r="6.5"/><circle cx="330" cy="176.6" r="6.5"/><circle cx="350" cy="177.6" r="6.5"/><circle cx="370" cy="178.5" r="6.5"/><circle cx="390" cy="179.1" r="6.5"/><circle cx="410" cy="179.7" r="6.5"/><circle cx="430" cy="180.1" r="6.5"/><circle cx="450" cy="180.4" r="6.5"/><circle cx="470" cy="180.6" r="6.5"/><circle cx="490" cy="180.8" r="6.5"/><circle cx="510" cy="180.9" r="6.5"/><circle cx="530" cy="181" r="6.5"/><circle cx="550" cy="181" r="6.5"/><circle cx="570" cy="181" r="6.5"/><circle cx="590" cy="181" r="6.5"/><circle cx="610" cy="181" r="6.5"/><circle cx="630" cy="181" r="6.5"/><circle cx="650" cy="181" r="6.5"/><circle cx="670" cy="181" r="6.5"/><circle cx="690" cy="180.9" r="6.5"/><circle cx="710" cy="180.8" r="6.5"/><circle cx="730" cy="180.6" r="6.5"/><circle cx="750" cy="180.4" r="6.5"/><circle cx="770" cy="180.1" r="6.5"/><circle cx="790" cy="179.7" r="6.5"/><circle cx="810" cy="179.1" r="6.5"/><circle cx="830" cy="178.5" r="6.5"/><circle cx="850" cy="177.6" r="6.5"/><circle cx="870" cy="176.6" r="6.5"/><circle cx="890" cy="175.4" r="6.5"/><circle cx="910" cy="174" r="6.5"/><circle cx="930" cy="172.4" r="6.5"/><circle cx="950" cy="170.4" r="6.5"/><circle cx="970" cy="168.2" r="6.5"/><circle cx="990" cy="165.7" r="6.5"/><circle cx="1010" cy="162.9" r="6.5"/><circle cx="1030" cy="159.7" r="6.5"/><circle cx="1050" cy="156.2" r="6.5"/><circle cx="1070" cy="152.2" r="6.5"/><circle cx="1090" cy="147.8" r="6.5"/><circle cx="1110" cy="143" r="6.5"/><circle cx="1130" cy="137.7" r="6.5"/><circle cx="1150" cy="131.9" r="6.5"/><circle cx="1170" cy="125.6" r="6.5"/><circle cx="1190" cy="118.7" r="6.5"/></g>
+<g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 109.1L23.6 110.6L43.7 111.2L63.3 111L82.3 110L100.8 108.2L118.8 105.5L136.3 102.1L153.2 97.8L169.7 92.7L185.6 86.8L201 80L215.8 72.4L230.1 64.1L244 54.9L257.2 44.8L270 34" stroke="#ece6d6" stroke-width="9"/><path d="M930 34L942.8 44.8L956 54.9L969.9 64.1L984.2 72.4L999 80L1014.4 86.8L1030.3 92.7L1046.8 97.8L1063.7 102.1L1081.2 105.5L1099.2 108.2L1117.7 110L1136.7 111L1156.3 111.2L1176.4 110.6L1197 109.1" stroke="#ece6d6" stroke-width="9"/><path d="M270 34L300 37L330 39.4L360 41.4L390 42.9L420 44.1L450 44.9L480 45.4L510 45.8L540 45.9L570 46L600 46L630 46L660 45.9L690 45.8L720 45.4L750 44.9L780 44.1L810 42.9L840 41.4L870 39.4L900 37L930 34" stroke="#ece6d6" stroke-width="17"/></g>
+<g fill="#39414f"><path d="M270 34 C248 34 240 22 246 8 C258 12 272 14 286 24V42H270Z"/><path d="M930 34 C952 34 960 22 954 8 C942 12 928 14 914 24V42H930Z"/><ellipse cx="1025.8" cy="82.1" rx="4" ry="6"/><circle cx="1025.8" cy="74.1" r="3"/><ellipse cx="1052.1" cy="90.2" rx="4" ry="6"/><circle cx="1052.1" cy="82.2" r="3"/><ellipse cx="1079.8" cy="96.3" rx="4" ry="6"/><circle cx="1079.8" cy="88.3" r="3"/><ellipse cx="1108.7" cy="100.2" rx="4" ry="6"/><circle cx="1108.7" cy="92.2" r="3"/><ellipse cx="174.2" cy="82.1" rx="4" ry="6"/><circle cx="174.2" cy="74.1" r="3"/><ellipse cx="147.9" cy="90.2" rx="4" ry="6"/><circle cx="147.9" cy="82.2" r="3"/><ellipse cx="120.2" cy="96.3" rx="4" ry="6"/><circle cx="120.2" cy="88.3" r="3"/><ellipse cx="91.3" cy="100.2" rx="4" ry="6"/><circle cx="91.3" cy="92.2" r="3"/></g>
+</svg>
+</header>
+
+<nav class="nav" aria-label="묶음 메뉴">
+  <ol class="tabs"><li><a href="#g1" data-group="g1"><b>1</b><span><span class="full">세종대왕은 </span>누구일까?</span></a></li><li><a href="#g2" data-group="g2"><b>2</b><span>업적 TOP 20</span></a></li><li><a href="#g3" data-group="g3"><b>3</b><span>직접 해 보기</span></a></li><li><a href="#g4" data-group="g4"><b>4</b><span>마무리</span></a></li></ol>
+  <ol class="subnav" data-group="g1"><li><a href="#life">1-1 생애</a></li><li><a href="#facts">1-2 핵심 정보</a></li><li><a href="#chron">1-3 연표</a></li></ol><ol class="subnav" data-group="g2"><li><a href="#rank-rule">2-1 순위 기준</a></li><li><a href="#ach-1">1~5위</a></li><li><a href="#ach-6">6~10위</a></li><li><a href="#ach-11">11~15위</a></li><li><a href="#ach-16">16~20위</a></li></ol><ol class="subnav" data-group="g3"><li><a class="circle" href="#s1" aria-label="1. 한글이 없었다면?">①</a></li><li><a class="circle" href="#s2" aria-label="2. 한글은 이렇게 생겼어요">②</a></li><li><a class="circle" href="#s3" aria-label="3. 앙부일구 해시계">③</a></li><li><a class="circle" href="#s4" aria-label="4. 자격루 작동시키기">④</a></li><li><a class="circle" href="#s5" aria-label="5. 측우기로 비 재기">⑤</a></li><li><a class="circle" href="#s6" aria-label="6. 세종 전과 후">⑥</a></li><li><a class="circle" href="#s7" aria-label="7. 내가 세종이라면?">⑦</a></li></ol><ol class="subnav" data-group="g4"><li><a href="#s8">⑧ 퀴즈</a></li><li><a href="#wrap">4-1 정리</a></li><li><a href="#think">4-2 질문</a></li><li><a href="#refs">4-3 참고 자료</a></li></ol>
+</nav>
+
+<main>
+<section class="group" id="g1">
+<div class="group-head"><span>첫째 묶음</span><h2>세종대왕은 누구일까?</h2></div>
+<section class="sec" id="life">
+  <h2><span class="num">1-1</span>생애 요약</h2>
+  <p>세종대왕은 조선의 네 번째 임금이에요. 이름은 이도이고, 태종의 셋째 아들로 1397년에 태어났어요. 1418년 6월에 왕세자가 되었고, 같은 해 8월에 22세(세는 나이)로 즉위(임금 자리에 오름)했어요. 세는 나이는 태어나자마자 한 살로 치는 옛 나이 셈법이에요. 세종대왕은 1450년에 승하(임금이 세상을 떠남)했어요. 무덤인 영릉은 처음에 아버지 태종의 헌릉 서쪽에 있었고, 1469년에 지금의 경기도 여주로 옮겼어요.</p>
+</section>
+<section class="sec" id="facts">
+  <h2><span class="num">1-2</span>핵심 정보</h2>
+  <div class="facts"><div class="fact"><span>이름</span><b>이도(李祹)</b></div><div class="fact"><span>태어나고 세상을 떠난 해</span><b>1397년 ~ 1450년</b></div><div class="fact"><span>임금 자리에 있던 기간</span><b>1418년 ~ 1450년</b></div><div class="fact"><span>능(임금의 무덤)</span><b>영릉 (경기도 여주)</b></div></div>
+</section>
+<section class="sec" id="chron">
+  <h2><span class="num">1-3</span>연표</h2>
+  <ol class="timeline"><li><b>1397년</b>한양에서 태어났어요.</li><li><b>1408년</b>충녕군이 되었어요.</li><li><b>1418년</b>6월에 왕세자가 되고, 8월에 임금이 되었어요.</li><li><b>1420년</b>궁궐 안에 집현전을 두었어요.</li><li><b>1429년</b>『농사직설』을 펴냈어요.</li><li><b>1434년</b>자격루, 앙부일구, 갑인자를 만들었어요.</li><li><b>1441년</b>세자의 연구로 측우기가 나왔고, 수표를 세웠어요.</li><li><b>1443년</b>훈민정음을 만들었어요.</li><li><b>1446년</b>『훈민정음』 해례본이 완성되었어요.</li><li><b>1450년</b>세상을 떠났어요.</li></ol>
+</section>
+</section>
+<section class="group" id="g2">
+<div class="group-head"><span>둘째 묶음</span><h2>대표 업적 TOP 20</h2></div>
+<section class="sec" id="rank-rule">
+  <h2><span class="num">2-1</span>순위 기준</h2>
+  <div class="key"><p><b>순위는 어떻게 정했을까요?</b> 백성의 삶에 준 영향과 후대까지 이어진 영향을 생각해서 이 자료에서 정한 순서예요. 공식 순위는 아니에요. 사진 설명의 표시를 보면 세종 때 물건인지, 후대에 만들었거나 복원한 것인지 알 수 있어요.</p></div>
+</section>
+<section class="sec wide" id="ach-cards">
+  <h2><span class="num">2-2</span>업적 카드</h2>
+<div class="ach-grid">
+<article class="ach-card ach-top" id="ach-1">
+<header><span class="ach-rank">1<small>위</small></span><div class="ach-meta"><span class="ach-tag ach-t1">문자·학문</span><span class="ach-year">1443년</span></div></header>
+<h3>훈민정음 창제·반포</h3>
+<p>세종은 1443년 겨울에 우리 글자 훈민정음을 만들었어요. 훈민정음은 &quot;백성을 가르치는 바른 소리&quot;라는 뜻이에요. 집현전에서 자란 젊은 학자들도 힘을 보탰어요. 1446년 9월에는 글자의 원리를 풀이한 책 『훈민정음』(해례본)이 완성되었어요. 이 책은 국보이고, 1997년에는 유네스코 세계기록유산이 되었어요.</p>
+
+<div class="ach-why"><b>왜 중요할까?</b> 어려운 한문을 몰라도 익혀서 쓸 수 있는 우리 글자가 생겼어요. 오늘날 우리가 쓰는 한글이 여기에서 시작되었어요.</div>
+<div class="ach-play"><a class="btn play" href="#s1">🎮 직접 해 보기<span>① 한글이 없었다면?</span></a><a class="btn play" href="#s2">🎮 직접 해 보기<span>② 한글은 이렇게 생겼어요</span></a></div>
+<figure><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Hunminjeongeum_Haerye_03.jpg/960px-Hunminjeongeum_Haerye_03.jpg" width="640" height="427" alt="한자와 옛 한글 자모가 인쇄된 훈민정음 해례본 복제본의 펼친 면" onerror="imgFail(this)"><div class="ach-ph" hidden><strong>사진을 준비하지 못했어요</strong><span>검색 키워드: 훈민정음 해례본 Hunminjeongeum Haerye</span><a href="https://commons.wikimedia.org/w/index.php?search=%ED%9B%88%EB%AF%BC%EC%A0%95%EC%9D%8C%20%ED%95%B4%EB%A1%80%EB%B3%B8%20Hunminjeongeum%20Haerye" target="_blank" rel="noopener">위키미디어 커먼즈에서 찾아보기</a></div><figcaption><span class="ach-kind">현대 복원</span> 『훈민정음』 해례본 복제본의 펼친 면이에요.<small>출처: 조선 정부(원저작) · Public domain · <a href="https://commons.wikimedia.org/wiki/File:Hunminjeongeum_Haerye_03.jpg" target="_blank" rel="noopener">위키미디어 커먼즈 원본</a></small></figcaption></figure>
+</article><article class="ach-card ach-top" id="ach-2">
+<header><span class="ach-rank">2<small>위</small></span><div class="ach-meta"><span class="ach-tag ach-t1">문자·학문</span><span class="ach-year">1420년</span></div></header>
+<h3>집현전 확대</h3>
+<p>집현전은 학문을 연구하는 기관이에요. 이름은 고려 때부터 있었고 조선 초에도 설치된 적이 있었지만, 제 역할을 하지 못했어요. 세종은 1420년에 궁궐 안에 집현전을 두고 젊은 학자들을 뽑았어요. 학사(집현전의 학자)는 처음에 10명이었고, 1436년에 20명으로 정해졌어요. 세종은 학자들에게 휴가를 주어 책을 읽게 하는 사가독서도 베풀었어요.</p>
+
+<div class="ach-why"><b>왜 중요할까?</b> 이곳에서 자란 인재들이 여러 책을 펴내고 나라의 제도를 연구했어요. 세종 시대 문화를 이끈 힘이 되었어요.</div>
+<figure><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Sujeongjeon_2018-09-05.jpg/960px-Sujeongjeon_2018-09-05.jpg" width="640" height="427" alt="경복궁 수정전 건물을 앞마당에서 찍은 사진" onerror="imgFail(this)"><div class="ach-ph" hidden><strong>사진을 준비하지 못했어요</strong><span>검색 키워드: 집현전 수정전 Jiphyeonjeon Sujeongjeon</span><a href="https://commons.wikimedia.org/w/index.php?search=%EC%A7%91%ED%98%84%EC%A0%84%20%EC%88%98%EC%A0%95%EC%A0%84%20Jiphyeonjeon%20Sujeongjeon" target="_blank" rel="noopener">위키미디어 커먼즈에서 찾아보기</a></div><figcaption><span class="ach-kind">후대 제작</span> 경복궁 수정전이에요. 세종 때 집현전으로 쓰인 건물이 임진왜란 때 불탄 뒤, 1867년에 다시 지었어요.<small>출처: De-Shao Liu · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Sujeongjeon_2018-09-05.jpg" target="_blank" rel="noopener">위키미디어 커먼즈 원본</a></small></figcaption></figure>
+</article><article class="ach-card ach-top" id="ach-3">
+<header><span class="ach-rank">3<small>위</small></span><div class="ach-meta"><span class="ach-tag ach-t2">과학</span><span class="ach-year">1441년</span></div></header>
+<h3>측우기와 수표</h3>
+<p>『세종실록』에 따르면 1441년 세자(훗날 문종)가 그릇에 빗물을 받아 양을 재는 방법을 연구했어요. 이 연구를 바탕으로 1442년 5월에 쇠로 만든 측우기로 전국의 비의 양을 재서 보고하는 제도가 정해졌어요. 1441년에는 청계천과 한강에 물 높이를 재는 수표도 세웠어요. 세종 때의 수표는 나무로 만들었고, 지금은 남아 있지 않아요.</p>
+
+<div class="ach-why"><b>왜 중요할까?</b> 비의 양을 숫자로 재서 나라 전체가 함께 기록했어요. 농사가 중요한 나라에서 큰 도움이 되었어요.</div>
+<div class="ach-play"><a class="btn play" href="#s5">🎮 직접 해 보기<span>⑤ 측우기로 비 재기</span></a></div>
+<figure><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/%EC%B8%A1%EC%9A%B0%EA%B8%B0_%281%29.JPG/960px-%EC%B8%A1%EC%9A%B0%EA%B8%B0_%281%29.JPG" width="640" height="359" alt="돌 받침 위에 놓인 짙은 색 원통형 측우기 복제품" onerror="imgFail(this)"><div class="ach-ph" hidden><strong>사진을 준비하지 못했어요</strong><span>검색 키워드: 측우기 수표 Cheugugi Supyo</span><a href="https://commons.wikimedia.org/w/index.php?search=%EC%B8%A1%EC%9A%B0%EA%B8%B0%20%EC%88%98%ED%91%9C%20Cheugugi%20Supyo" target="_blank" rel="noopener">위키미디어 커먼즈에서 찾아보기</a></div><figcaption><span class="ach-kind">현대 복원</span> 여주 영릉에 있는 측우기 복제품이에요. 지금 남아 있는 금영측우기를 본떠 만들었어요.<small>출처: Jocelyndurrey · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:%EC%B8%A1%EC%9A%B0%EA%B8%B0_(1).JPG" target="_blank" rel="noopener">위키미디어 커먼즈 원본</a></small></figcaption></figure>
+</article><article class="ach-card" id="ach-4">
+<header><span class="ach-rank">4<small>위</small></span><div class="ach-meta"><span class="ach-tag ach-t3">농업·경제</span><span class="ach-year">1429년</span></div></header>
+<h3>농사직설</h3>
+<p>『농사직설』은 세종의 명으로 정초와 변효문 등이 1429년에 펴낸 농사책이에요. 중국 농사책이 있었지만 땅과 날씨가 달라서 우리 형편에 맞는 책이 필요했어요. 그래서 각 도의 감사(도를 맡은 관리)가 농사 경험이 많은 농부들에게 방법을 물어 모았어요. 1430년에는 이 책을 각 도와 고을에 널리 나누어 주었어요.</p>
+
+<div class="ach-why"><b>왜 중요할까?</b> 우리 땅에 맞는 농사법을 처음으로 정리한 책이에요. 농부의 경험을 나라의 지식으로 삼았다는 점도 뜻깊어요.</div>
+<figure><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/%E8%BE%B2%E4%BA%8B%E7%9B%B4%E8%AA%AA_%EB%86%8D%EC%82%AC%EC%A7%81%EC%84%A4.jpg/960px-%E8%BE%B2%E4%BA%8B%E7%9B%B4%E8%AA%AA_%EB%86%8D%EC%82%AC%EC%A7%81%EC%84%A4.jpg" width="640" height="681" alt="낡은 종이 표지에 붓글씨로 농사직설이라고 쓰인 옛 책" onerror="imgFail(this)"><div class="ach-ph" hidden><strong>사진을 준비하지 못했어요</strong><span>검색 키워드: 농사직설 Nongsa jikseol</span><a href="https://commons.wikimedia.org/w/index.php?search=%EB%86%8D%EC%82%AC%EC%A7%81%EC%84%A4%20Nongsa%20jikseol" target="_blank" rel="noopener">위키미디어 커먼즈에서 찾아보기</a></div><figcaption><span class="ach-kind">시대 미상</span> 『농사직설』 옛 책의 표지예요. 언제 만든 책인지는 박물관 자료에도 적혀 있지 않아요.<small>출처: 한국도량형박물관 소장(e뮤지엄) · Public domain(커먼즈 표시) · <a href="https://commons.wikimedia.org/wiki/File:%E8%BE%B2%E4%BA%8B%E7%9B%B4%E8%AA%AA_%EB%86%8D%EC%82%AC%EC%A7%81%EC%84%A4.jpg" target="_blank" rel="noopener">위키미디어 커먼즈 원본</a></small></figcaption></figure>
+</article><article class="ach-card" id="ach-5">
+<header><span class="ach-rank">5<small>위</small></span><div class="ach-meta"><span class="ach-tag ach-t4">국방·외교</span><span class="ach-year">1449년</span></div></header>
+<h3>4군 6진 개척</h3>
+<p>세종 때 북쪽에서는 여진족의 침입이 이어졌어요. 압록강 상류에는 최윤덕, 이천 등의 활약으로 여연·자성·무창·우예의 4군을 두었어요. 두만강 하류에는 김종서가 앞장서 1434년부터 6진을 설치했고, 1449년에 마무리되었어요. 남쪽 백성들을 이곳으로 옮겨 살게 해서 땅을 일구게 했어요. 다만 옮겨 간 백성에게는 힘든 일이었고, 이곳에 살던 여진족의 입장에서는 다르게 볼 수도 있어요.</p>
+
+<div class="ach-why"><b>왜 중요할까?</b> 압록강과 두만강이 북쪽 국경이 되는 바탕이 되었어요. 4군은 지키기 어려워 1455년과 1459년에 폐지되었지만, 땅을 포기한 것은 아니었어요.</div>
+<figure><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/a/aa/%E5%85%AB%E9%81%93%E7%B7%8F%E5%9B%B3.jpg" width="640" height="454" alt="옛 방식으로 그린 조선 전체 지도" onerror="imgFail(this)"><div class="ach-ph" hidden><strong>사진을 준비하지 못했어요</strong><span>검색 키워드: 4군 6진 Four Commanderies Six Garrisons</span><a href="https://commons.wikimedia.org/w/index.php?search=4%EA%B5%B0%206%EC%A7%84%20Four%20Commanderies%20Six%20Garrisons" target="_blank" rel="noopener">위키미디어 커먼즈에서 찾아보기</a></div><figcaption><span class="ach-kind">후대 제작</span> 1530년에 펴낸 『신증동국여지승람』의 팔도총도예요. 세종 때가 아니라 약 80년 뒤의 지도예요.<small>출처: 이행 외 · Public domain · <a href="https://commons.wikimedia.org/wiki/File:%E5%85%AB%E9%81%93%E7%B7%8F%E5%9B%B3.jpg" target="_blank" rel="noopener">위키미디어 커먼즈 원본</a></small></figcaption></figure>
+</article><article class="ach-card" id="ach-6">
+<header><span class="ach-rank">6<small>위</small></span><div class="ach-meta"><span class="ach-tag ach-t2">과학</span><span class="ach-year">1434년</span></div></header>
+<h3>자격루</h3>
+<p>자격루는 스스로 소리를 내어 시각을 알려 주는 물시계예요. 세종의 명으로 장영실 등이 만들어 1434년에 완성했어요. 물의 힘으로 장치가 움직이면, 정해진 때에 인형이 나타나고 종·북·징이 울렸어요. 경복궁 보루각에 두고 나라의 표준 시계로 썼어요. 세종 때의 자격루는 남아 있지 않고, 1536년에 다시 만든 물통 일부만 전해요.</p>
+
+<div class="ach-why"><b>왜 중요할까?</b> 사람이 지켜보지 않아도 시각을 정확하게 알릴 수 있었어요. 조선의 뛰어난 기술을 보여 주는 발명품이에요.</div>
+<div class="ach-play"><a class="btn play" href="#s4">🎮 직접 해 보기<span>④ 자격루 작동시키기</span></a></div>
+<figure><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Model_of_the_Borugak_Clepsydra_%28Borugak_Jagyeongnu%29_IMG_2057.jpg/960px-Model_of_the_Borugak_Clepsydra_%28Borugak_Jagyeongnu%29_IMG_2057.jpg" width="640" height="480" alt="박물관에 전시된 나무 구조물과 인형 장치로 이루어진 자격루 복원 모형" onerror="imgFail(this)"><div class="ach-ph" hidden><strong>사진을 준비하지 못했어요</strong><span>검색 키워드: 자격루 Jagyeongnu</span><a href="https://commons.wikimedia.org/w/index.php?search=%EC%9E%90%EA%B2%A9%EB%A3%A8%20Jagyeongnu" target="_blank" rel="noopener">위키미디어 커먼즈에서 찾아보기</a></div><figcaption><span class="ach-kind">현대 복원</span> 국립고궁박물관에 있는 자격루 복원 모형이에요. 실물 크기로 만들었어요.<small>출처: G41rn8 · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Model_of_the_Borugak_Clepsydra_(Borugak_Jagyeongnu)_IMG_2057.jpg" target="_blank" rel="noopener">위키미디어 커먼즈 원본</a></small></figcaption></figure>
+</article><article class="ach-card" id="ach-7">
+<header><span class="ach-rank">7<small>위</small></span><div class="ach-meta"><span class="ach-tag ach-t2">과학</span><span class="ach-year">1434년</span></div></header>
+<h3>앙부일구</h3>
+<p>앙부일구는 오목한 그릇 모양의 해시계예요. 1434년에 만들었고, 그림자가 가리키는 눈금으로 시각과 절기를 읽었어요. 세종은 혜정교 옆과 종묘 남쪽 거리에 두어 오가는 백성이 보게 했어요. 세종 때에는 시각을 12지신 동물 그림으로 나타냈어요. 세종 때의 앙부일구는 남아 있지 않고, 지금 전하는 것은 모두 조선 후기에 만들었어요.</p>
+
+<div class="ach-why"><b>왜 중요할까?</b> 우리나라 최초의 공중시계(여러 사람이 함께 보는 시계)예요. 시간을 백성과 나누었다는 점이 중요해요.</div>
+<div class="ach-play"><a class="btn play" href="#s3">🎮 직접 해 보기<span>③ 앙부일구 해시계</span></a></div>
+<figure><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gyeongbokgung_Angbuilgu_%2850605001138%29.jpg/960px-Gyeongbokgung_Angbuilgu_%2850605001138%29.jpg" width="640" height="427" alt="오목한 면에 격자 눈금과 그림자가 보이는 금속 해시계" onerror="imgFail(this)"><div class="ach-ph" hidden><strong>사진을 준비하지 못했어요</strong><span>검색 키워드: 앙부일구 Angbuilgu</span><a href="https://commons.wikimedia.org/w/index.php?search=%EC%95%99%EB%B6%80%EC%9D%BC%EA%B5%AC%20Angbuilgu" target="_blank" rel="noopener">위키미디어 커먼즈에서 찾아보기</a></div><figcaption><span class="ach-kind">현대 복원</span> 경복궁에 전시된 앙부일구예요. 야외 전시품이라 현대에 만든 것으로 판단했어요.<small>출처: Nina R · <a href="https://creativecommons.org/licenses/by/2.0" target="_blank" rel="noopener">CC BY 2.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Gyeongbokgung_Angbuilgu_(50605001138).jpg" target="_blank" rel="noopener">위키미디어 커먼즈 원본</a></small></figcaption></figure>
+</article><article class="ach-card" id="ach-8">
+<header><span class="ach-rank">8<small>위</small></span><div class="ach-meta"><span class="ach-tag ach-t2">과학</span><span class="ach-year">1442년</span></div></header>
+<h3>칠정산</h3>
+<p>『칠정산』은 해와 달, 다섯 행성의 움직임을 계산하는 역법(달력을 만드는 방법)을 정리한 책이에요. 세종의 명으로 이순지와 김담 등이 연구했어요. 내편은 원나라의 수시력을 풀이했고, 1442년에 완성되었어요. 외편은 이슬람 역법인 회회력을 연구해 1444년에 펴냈어요. 내편에는 한양을 기준으로 한 해 뜨고 지는 시각과 낮밤의 길이 표도 실려 있어요.</p>
+
+<div class="ach-why"><b>왜 중요할까?</b> 다른 나라의 달력에만 기대지 않고 우리가 있는 곳을 기준으로 하늘을 계산했어요. 이 책으로 조선의 역법이 완전히 정비되었어요.</div>
+<figure class="noimg"><div class="ach-ph"><strong>사진을 준비하지 못해서 영상으로 만나보아요</strong><a class="ach-video" href="https://youtu.be/uiCYedCV0bk?si=GW2RMtuxutwCW23y" target="_blank" rel="noopener">칠정산 영상 보기 (KBS 역사추리, 유튜브)</a></div></figure>
+</article><article class="ach-card" id="ach-9">
+<header><span class="ach-rank">9<small>위</small></span><div class="ach-meta"><span class="ach-tag ach-t2">과학</span><span class="ach-year">1432년</span></div></header>
+<h3>혼천의·간의 등 천문기구(간의대)</h3>
+<p>1432년 세종은 이천과 장영실에게 나무로 간의(하늘을 관측하는 기구)를 만들게 했어요. 실험에 성공하자 구리로 다시 만들었어요. 혼천의(해와 달, 별의 움직임을 재는 기구)는 기록상 1433년에 우리나라에서 처음 만들어졌어요. 경복궁 경회루 북쪽에는 돌로 쌓은 천문대인 간의대를 세웠어요. 1438년 3월부터 서운관 관원들이 이곳에서 매일 밤 하늘을 관측했어요.</p>
+
+<div class="ach-why"><b>왜 중요할까?</b> 하늘을 직접 관측할 수 있게 되었어요. 정확한 달력과 시계를 만드는 바탕이 되었어요.</div>
+<figure><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/%ED%98%BC%EC%B2%9C%EC%9D%98_%281%29.JPG/960px-%ED%98%BC%EC%B2%9C%EC%9D%98_%281%29.JPG" width="640" height="359" alt="여러 개의 둥근 고리로 이루어진 혼천의가 야외 받침대에 놓인 모습" onerror="imgFail(this)"><div class="ach-ph" hidden><strong>사진을 준비하지 못했어요</strong><span>검색 키워드: 혼천의 간의 Honcheonui Ganui</span><a href="https://commons.wikimedia.org/w/index.php?search=%ED%98%BC%EC%B2%9C%EC%9D%98%20%EA%B0%84%EC%9D%98%20Honcheonui%20Ganui" target="_blank" rel="noopener">위키미디어 커먼즈에서 찾아보기</a></div><figcaption><span class="ach-kind">현대 복원</span> 여주 영릉에 전시된 혼천의예요. 야외 전시품이라 현대에 복원한 것으로 판단했어요.<small>출처: Jocelyndurrey · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:%ED%98%BC%EC%B2%9C%EC%9D%98_(1).JPG" target="_blank" rel="noopener">위키미디어 커먼즈 원본</a></small></figcaption></figure>
+</article><article class="ach-card" id="ach-10">
+<header><span class="ach-rank">10<small>위</small></span><div class="ach-meta"><span class="ach-tag ach-t3">농업·경제</span><span class="ach-year">1444년</span></div></header>
+<h3>공법</h3>
+<p>공법은 농사짓는 땅에 세금을 매기는 제도예요. 이전에는 관리가 해마다 농사 형편을 조사했는데, 이 과정에서 부정이 생길 수 있었어요. 1430년 세종은 관리부터 농민까지 약 17만 명의 의견을 물었어요. 찬성은 9만 8,657명, 반대는 7만 4,149명이었어요. 오랜 논의 끝에 1444년에 땅의 등급 6단계와 그해 농사 형편 9단계로 세금을 정하는 제도가 마련되었어요.</p>
+
+<div class="ach-why"><b>왜 중요할까?</b> 나라의 큰일을 정하기 전에 백성의 의견을 넓게 들었어요. 오늘날의 투표와 똑같지는 않고, 조사 결과로 바로 결정한 것도 아니었어요.</div>
+<div class="ach-play"><a class="btn play" href="#s7">🎮 직접 해 보기<span>⑦ 내가 세종이라면?</span></a></div>
+<figure><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Veritable_Records_of_Sejong_Cover.jpg/960px-Veritable_Records_of_Sejong_Cover.jpg" width="640" height="891" alt="세종실록이라고 적힌 푸른 표지의 옛 책" onerror="imgFail(this)"><div class="ach-ph" hidden><strong>사진을 준비하지 못했어요</strong><span>검색 키워드: 세종실록 공법 Gongbeop Sejong</span><a href="https://commons.wikimedia.org/w/index.php?search=%EC%84%B8%EC%A2%85%EC%8B%A4%EB%A1%9D%20%EA%B3%B5%EB%B2%95%20Gongbeop%20Sejong" target="_blank" rel="noopener">위키미디어 커먼즈에서 찾아보기</a></div><figcaption><span class="ach-kind">간접 자료</span> 『세종실록』 표지예요. 1430년 의견 조사 결과가 이 실록에 기록되어 있어요.<small>출처: 춘추관(원저작) · Public domain · <a href="https://commons.wikimedia.org/wiki/File:Veritable_Records_of_Sejong_Cover.jpg" target="_blank" rel="noopener">위키미디어 커먼즈 원본</a></small></figcaption></figure>
+</article><article class="ach-card" id="ach-11">
+<header><span class="ach-rank">11<small>위</small></span><div class="ach-meta"><span class="ach-tag ach-t1">문자·학문</span><span class="ach-year">1434년</span></div></header>
+<h3>갑인자</h3>
+<p>갑인자는 1434년에 만든 구리 활자예요. 이천의 감독 아래 크고 작은 활자 20여만 자를 만들었어요. 글자 모양이 아름답고 또렷했어요. 크고 작은 활자를 섞어서 판을 짤 수도 있었어요.</p>
+<p class="ach-more"><span aria-hidden="true">👉</span> <a href="https://www.museum.go.kr/MUSEUM/contents/M0502000000.do?schM=view&amp;searchId=search&amp;relicId=4503" target="_blank" rel="noopener">여기를 눌러보세요</a><span> 국립중앙박물관의 임진자 활자를 볼 수 있어요. 세종 때 갑인자가 아니라, 1772년에 갑인자를 본떠 만든 활자예요.</span></p>
+<div class="ach-why"><b>왜 중요할까?</b> 책을 더 아름답고 빠르게 찍어 낼 수 있었어요. 조선의 인쇄 기술을 한 단계 높였어요.</div>
+<figure><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/%EA%B0%91%EC%9D%B8%EC%9E%90_%283%29.JPG/960px-%EA%B0%91%EC%9D%B8%EC%9E%90_%283%29.JPG" width="640" height="359" alt="나무판 위에 금속 활자를 줄 맞춰 짜 놓은 갑인자 복원품" onerror="imgFail(this)"><div class="ach-ph" hidden><strong>사진을 준비하지 못했어요</strong><span>검색 키워드: 갑인자 Gabinja</span><a href="https://commons.wikimedia.org/w/index.php?search=%EA%B0%91%EC%9D%B8%EC%9E%90%20Gabinja" target="_blank" rel="noopener">위키미디어 커먼즈에서 찾아보기</a></div><figcaption><span class="ach-kind">현대 복원</span> 여주 영릉에 전시된 갑인자 복원품이에요. 전시 안내판에 복원품으로 적혀 있어요.<small>출처: Jocelyndurrey · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:%EA%B0%91%EC%9D%B8%EC%9E%90_(3).JPG" target="_blank" rel="noopener">위키미디어 커먼즈 원본</a></small></figcaption></figure>
+</article><article class="ach-card" id="ach-12">
+<header><span class="ach-rank">12<small>위</small></span><div class="ach-meta"><span class="ach-tag ach-t5">의학·복지</span><span class="ach-year">1433년</span></div></header>
+<h3>향약집성방</h3>
+<p>향약은 우리 땅에서 나는 약재를 말해요. 세종은 우리 풍토에 맞는 약이 우리 몸에 더 잘 듣는다고 생각했어요. 그래서 1431년 가을에 유효통, 노중례, 박윤덕에게 책을 만들게 해 1433년 6월에 완성했어요. 이 책은 모두 85권이고, 병 959가지와 처방 1만 706가지를 담았어요.</p>
+
+<div class="ach-why"><b>왜 중요할까?</b> 비싼 중국 약재가 없어도 우리 약재로 병을 고칠 길을 넓혔어요. 백성의 건강을 돌보려는 노력이 담겨 있어요.</div>
+<figure><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/%ED%96%A5%EC%95%BD%EC%A7%91%EC%84%B1%EB%B0%A9_%281%29.JPG/960px-%ED%96%A5%EC%95%BD%EC%A7%91%EC%84%B1%EB%B0%A9_%281%29.JPG" width="640" height="359" alt="유리 진열장 안에 펼쳐져 있는 옛 의학책" onerror="imgFail(this)"><div class="ach-ph" hidden><strong>사진을 준비하지 못했어요</strong><span>검색 키워드: 향약집성방 Hyangyak jipseongbang</span><a href="https://commons.wikimedia.org/w/index.php?search=%ED%96%A5%EC%95%BD%EC%A7%91%EC%84%B1%EB%B0%A9%20Hyangyak%20jipseongbang" target="_blank" rel="noopener">위키미디어 커먼즈에서 찾아보기</a></div><figcaption><span class="ach-kind">후대 제작</span> 여주 영릉에 전시된 『향약집성방』이에요. 전시 안내판에 1633년 판으로 적혀 있어요.<small>출처: Jocelyndurrey · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:%ED%96%A5%EC%95%BD%EC%A7%91%EC%84%B1%EB%B0%A9_(1).JPG" target="_blank" rel="noopener">위키미디어 커먼즈 원본</a></small></figcaption></figure>
+</article><article class="ach-card" id="ach-13">
+<header><span class="ach-rank">13<small>위</small></span><div class="ach-meta"><span class="ach-tag ach-t5">의학·복지</span><span class="ach-year">1426년</span></div></header>
+<h3>관노비 출산휴가</h3>
+<p>관노비는 나라의 관청에 속해 일하던 노비예요. 1426년 세종은 아이를 낳은 여자 노비에게 100일의 휴가를 주게 했어요. 1430년에는 출산 한 달 전부터 일을 쉬게 하는 방안도 마련하게 했어요. 1434년에는 남편에게도 30일의 휴가를 주게 했어요. 다만 노비 제도 자체는 그대로였다는 점도 함께 생각해 보아야 해요.</p>
+
+<div class="ach-why"><b>왜 중요할까?</b> 가장 낮은 신분의 사람도 돌봐야 할 백성으로 여긴 정책이에요. 어머니와 아기를 함께 보살핀 점이 돋보여요.</div>
+<figure><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/%E4%B8%96%E5%AE%97%E6%80%BB%E5%BA%8F.jpg/960px-%E4%B8%96%E5%AE%97%E6%80%BB%E5%BA%8F.jpg" width="640" height="1002" alt="한자가 빽빽하게 적힌 세종실록의 한 면" onerror="imgFail(this)"><div class="ach-ph" hidden><strong>사진을 준비하지 못했어요</strong><span>검색 키워드: 세종실록 관노비 출산휴가</span><a href="https://commons.wikimedia.org/w/index.php?search=%EC%84%B8%EC%A2%85%EC%8B%A4%EB%A1%9D%20%EA%B4%80%EB%85%B8%EB%B9%84%20%EC%B6%9C%EC%82%B0%ED%9C%B4%EA%B0%80" target="_blank" rel="noopener">위키미디어 커먼즈에서 찾아보기</a></div><figcaption><span class="ach-kind">간접 자료</span> 『세종실록』의 한 면이에요. 출산휴가에 관한 명령이 이 실록에 기록되어 있어요.<small>출처: 저작자 표시 없음 · <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en" target="_blank" rel="noopener">CC0</a> · <a href="https://commons.wikimedia.org/wiki/File:%E4%B8%96%E5%AE%97%E6%80%BB%E5%BA%8F.jpg" target="_blank" rel="noopener">위키미디어 커먼즈 원본</a></small></figcaption></figure>
+</article><article class="ach-card" id="ach-14">
+<header><span class="ach-rank">14<small>위</small></span><div class="ach-meta"><span class="ach-tag ach-t6">음악</span><span class="ach-year">1427년</span></div></header>
+<h3>아악 정비와 편경</h3>
+<p>아악은 나라의 의식에서 연주하던 음악이에요. 세종은 박연 등에게 옛 자료를 살펴 악기와 악보를 바로잡게 했어요. 편경은 ㄱ자 모양의 돌을 매달아 치는 악기로, 그전에는 중국에서 들여왔어요. 1425년에 경기도 남양에서 알맞은 돌을 찾아 우리 손으로 만들게 되었고, 1427년에 편경 한 틀이 완성되었어요.</p>
+
+<div class="ach-why"><b>왜 중요할까?</b> 나라의 음악을 스스로 바로 세우고 악기도 직접 만들게 되었어요. 편경은 지금도 종묘제례악 등에 쓰여요.</div>
+<figure><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/a/ac/Musical_instruments_on_display_at_the_MIM_%2814328676636%29.jpg" width="640" height="600" alt="화려한 틀에 ㄱ자 모양 돌 16개가 두 줄로 매달린 편경" onerror="imgFail(this)"><div class="ach-ph" hidden><strong>사진을 준비하지 못했어요</strong><span>검색 키워드: 편경 아악 Pyeongyeong</span><a href="https://commons.wikimedia.org/w/index.php?search=%ED%8E%B8%EA%B2%BD%20%EC%95%84%EC%95%85%20Pyeongyeong" target="_blank" rel="noopener">위키미디어 커먼즈에서 찾아보기</a></div><figcaption><span class="ach-kind">현대 복원</span> 2009년에 파주에서 김현곤이 만든 편경이에요. 미국 악기 박물관에 전시되어 있어요.<small>출처: Frank Kovalchek · <a href="https://creativecommons.org/licenses/by/2.0" target="_blank" rel="noopener">CC BY 2.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Musical_instruments_on_display_at_the_MIM_(14328676636).jpg" target="_blank" rel="noopener">위키미디어 커먼즈 원본</a></small></figcaption></figure>
+</article><article class="ach-card" id="ach-15">
+<header><span class="ach-rank">15<small>위</small></span><div class="ach-meta"><span class="ach-tag ach-t6">음악</span><span class="ach-year">1447년</span></div></header>
+<h3>정간보</h3>
+<p>정간보는 우물 정(井) 자 같은 네모 칸으로 음악을 적는 악보예요. 칸의 수로 소리의 길이를 나타내고, 칸 안에 음의 이름과 노랫말 등을 적었어요. 정확히 언제 만들었는지는 알 수 없지만, 늦어도 1447년에는 핵심 생각이 완성된 것으로 보아요. 세종 때의 악보 원본은 전하지 않고, 『세종실록』에 이 방식으로 적은 악곡이 많이 실려 있어요.</p>
+
+<div class="ach-why"><b>왜 중요할까?</b> 소리의 길이까지 적을 수 있는 악보를 만들었어요. 세조 때 고쳐진 뒤 20세기 초까지 널리 쓰였어요.</div>
+<figure><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Museum_of_Traditional_Korean_Music_041.JPG/960px-Museum_of_Traditional_Korean_Music_041.JPG" width="640" height="480" alt="네모 칸이 그려진 옛 악보책 대악후보의 펼친 면" onerror="imgFail(this)"><div class="ach-ph" hidden><strong>사진을 준비하지 못했어요</strong><span>검색 키워드: 정간보 Jeongganbo</span><a href="https://commons.wikimedia.org/w/index.php?search=%EC%A0%95%EA%B0%84%EB%B3%B4%20Jeongganbo" target="_blank" rel="noopener">위키미디어 커먼즈에서 찾아보기</a></div><figcaption><span class="ach-kind">후대 제작</span> 1759년에 펴낸 『대악후보』예요. 세조 때의 음악을 고친 정간보로 적었어요.<small>출처: Piotrus · <a href="https://creativecommons.org/licenses/by-sa/3.0" target="_blank" rel="noopener">CC BY-SA 3.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Museum_of_Traditional_Korean_Music_041.JPG" target="_blank" rel="noopener">위키미디어 커먼즈 원본</a></small></figcaption></figure>
+</article><article class="ach-card" id="ach-16">
+<header><span class="ach-rank">16<small>위</small></span><div class="ach-meta"><span class="ach-tag ach-t1">문자·학문</span><span class="ach-year">1445년</span></div></header>
+<h3>용비어천가</h3>
+<p>『용비어천가』는 조선을 세운 왕실 조상 여섯 대의 일을 기린 노래예요. 권제, 정인지, 안지가 1445년에 125장의 노래를 지어 올렸어요. 훈민정음으로 적힌 글 가운데 가장 먼저 만들어진 작품이에요. 설명을 덧붙여 1447년에 완성했고, 550질을 신하들에게 나누어 주었어요.</p>
+
+<div class="ach-why"><b>왜 중요할까?</b> 새로 만든 글자로 긴 작품을 쓸 수 있다는 것을 보여 주었어요. 왕실을 높이는 노래라는 점도 함께 알아 두어야 해요.</div>
+<figure><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Yongbieocheonga_display.jpg" width="640" height="473" alt="옛 한글과 한자가 적힌 용비어천가 복제본이 진열장에 펼쳐져 있는 모습" onerror="imgFail(this)"><div class="ach-ph" hidden><strong>사진을 준비하지 못했어요</strong><span>검색 키워드: 용비어천가 Yongbieocheonga</span><a href="https://commons.wikimedia.org/w/index.php?search=%EC%9A%A9%EB%B9%84%EC%96%B4%EC%B2%9C%EA%B0%80%20Yongbieocheonga" target="_blank" rel="noopener">위키미디어 커먼즈에서 찾아보기</a></div><figcaption><span class="ach-kind">현대 복원</span> 서울 광화문 세종이야기 전시관에 전시된 『용비어천가』 복제본이에요.<small>출처: Nuyos · Public domain · <a href="https://commons.wikimedia.org/wiki/File:Yongbieocheonga_display.jpg" target="_blank" rel="noopener">위키미디어 커먼즈 원본</a></small></figcaption></figure>
+</article><article class="ach-card" id="ach-17">
+<header><span class="ach-rank">17<small>위</small></span><div class="ach-meta"><span class="ach-tag ach-t1">문자·학문</span><span class="ach-year">1434년</span></div></header>
+<h3>삼강행실도</h3>
+<p>1428년 진주에서 아들이 아버지를 해친 사건이 일어났어요. 세종은 벌을 주기에 앞서 백성에게 바른 행실을 알려야 한다고 생각했어요. 그래서 설순 등에게 효자, 충신, 열녀의 이야기를 모은 책을 만들게 해 1434년에 펴냈어요. 내용을 한눈에 알 수 있도록 앞에 그림을 넣고 뒤에 글을 실었어요.</p>
+
+<div class="ach-why"><b>왜 중요할까?</b> 그림을 활용해 백성을 가르치려 한 책이에요. 오늘날의 눈으로 보면 여성에게 희생을 강조한 이야기처럼 받아들이기 어려운 내용도 있어요.</div>
+<figure><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Samganghaengsildo_in_museum.jpg/960px-Samganghaengsildo_in_museum.jpg" width="640" height="480" alt="펼쳐 전시된 삼강행실도. 왼쪽 면에는 사람들과 호랑이가 나오는 그림이, 오른쪽 면에는 한자 글이 있다" onerror="imgFail(this)"><div class="ach-ph" hidden><strong>사진을 준비하지 못했어요</strong><span>검색 키워드: 삼강행실도 Samgang haengsildo</span><a href="https://commons.wikimedia.org/w/index.php?search=%EC%82%BC%EA%B0%95%ED%96%89%EC%8B%A4%EB%8F%84%20Samgang%20haengsildo" target="_blank" rel="noopener">위키미디어 커먼즈에서 찾아보기</a></div><figcaption><span class="ach-kind">판본 미상</span> 서울대학교 규장각에 전시된 『삼강행실도』예요. 왼쪽 면에 그림이 보여요.<small>출처: <a href="https://commons.wikimedia.org/wiki/File:Samganghaengsildo_in_museum.jpg" target="_blank" rel="noopener">위키미디어 커먼즈</a> · Salamander724 · Public domain</small></figcaption></figure>
+</article><article class="ach-card" id="ach-18">
+<header><span class="ach-rank">18<small>위</small></span><div class="ach-meta"><span class="ach-tag ach-t5">의학·복지</span><span class="ach-year">1445년</span></div></header>
+<h3>의방유취</h3>
+<p>『의방유취』는 여러 의학책의 내용을 모아 병에 따라 나누어 정리한 의학 백과사전이에요. 세종의 명으로 학자와 의원들이 3년에 걸쳐 작업했어요. 1445년에 365권으로 완성되었어요. 양이 너무 많아서 성종 때인 1477년에야 266권으로 줄여 30질을 찍어 냈어요.</p>
+
+<div class="ach-why"><b>왜 중요할까?</b> 당시의 의학 지식을 한곳에 모은 큰 사업이었어요. 세종 때 시작한 일이 다음 임금들에게 이어졌어요.</div>
+<figure><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/a/a0/%EC%9D%98%EB%B0%A9%EC%9C%A0%EC%B7%A8_%28%E9%86%AB%E6%96%B9%E9%A1%9E%E8%81%9A%29.jpg" width="640" height="808" alt="의방유취라고 적힌 낡은 옛 책의 표지" onerror="imgFail(this)"><div class="ach-ph" hidden><strong>사진을 준비하지 못했어요</strong><span>검색 키워드: 의방유취 Uibang yuchwi</span><a href="https://commons.wikimedia.org/w/index.php?search=%EC%9D%98%EB%B0%A9%EC%9C%A0%EC%B7%A8%20Uibang%20yuchwi" target="_blank" rel="noopener">위키미디어 커먼즈에서 찾아보기</a></div><figcaption><span class="ach-kind">후대 제작</span> 1477년에 찍어 낸 『의방유취』 권201의 표지예요.<small>출처: 조선 정부(원저작) · Public domain · <a href="https://commons.wikimedia.org/wiki/File:%EC%9D%98%EB%B0%A9%EC%9C%A0%EC%B7%A8_(%E9%86%AB%E6%96%B9%E9%A1%9E%E8%81%9A).jpg" target="_blank" rel="noopener">위키미디어 커먼즈 원본</a></small></figcaption></figure>
+</article><article class="ach-card" id="ach-19">
+<header><span class="ach-rank">19<small>위</small></span><div class="ach-meta"><span class="ach-tag ach-t4">국방·외교</span><span class="ach-year">1419년</span></div></header>
+<h3>대마도 정벌과 계해약조</h3>
+<p>1419년 5월 왜구가 충청도 비인현을 침입했어요. 이때 임금은 세종이었지만, 군사에 관한 일은 상왕(물러난 임금) 태종이 직접 맡아 대마도 정벌을 주도했어요. 이종무가 병선 227척과 군사 1만 7,285명을 이끌고 6월에 출발해 7월 3일에 돌아왔어요. 이후 조선은 대마도와의 교류를 조금씩 열었어요. 1443년에는 계해약조를 맺어 대마도에서 해마다 보내는 무역선을 50척으로 정했어요.</p>
+
+<div class="ach-why"><b>왜 중요할까?</b> 정벌 뒤로 큰 규모의 왜구 침입은 사라졌어요. 힘으로 막는 일과 약속으로 다스리는 일을 함께 썼다는 점이 중요해요.</div>
+<figure><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/%E6%97%A5%E6%9C%AC%E5%9C%8B%E5%B0%8D%E9%A6%AC%E5%B3%B6%E4%B9%8B%E5%9C%96.jpg/960px-%E6%97%A5%E6%9C%AC%E5%9C%8B%E5%B0%8D%E9%A6%AC%E5%B3%B6%E4%B9%8B%E5%9C%96.jpg" width="640" height="491" alt="섬의 해안선과 지명이 그려진 옛 대마도 지도" onerror="imgFail(this)"><div class="ach-ph" hidden><strong>사진을 준비하지 못했어요</strong><span>검색 키워드: 대마도 정벌 계해약조 Tsushima 1419</span><a href="https://commons.wikimedia.org/w/index.php?search=%EB%8C%80%EB%A7%88%EB%8F%84%20%EC%A0%95%EB%B2%8C%20%EA%B3%84%ED%95%B4%EC%95%BD%EC%A1%B0%20Tsushima%201419" target="_blank" rel="noopener">위키미디어 커먼즈에서 찾아보기</a></div><figcaption><span class="ach-kind">후대 제작</span> 신숙주가 1471년에 엮은 『해동제국기』의 대마도 지도예요.<small>출처: 신숙주(원저작) · Public domain · <a href="https://commons.wikimedia.org/wiki/File:%E6%97%A5%E6%9C%AC%E5%9C%8B%E5%B0%8D%E9%A6%AC%E5%B3%B6%E4%B9%8B%E5%9C%96.jpg" target="_blank" rel="noopener">위키미디어 커먼즈 원본</a></small></figcaption></figure>
+</article><article class="ach-card" id="ach-20">
+<header><span class="ach-rank">20<small>위</small></span><div class="ach-meta"><span class="ach-tag ach-t4">국방·외교</span><span class="ach-year">1448년</span></div></header>
+<h3>화포 개량과 신기전(총통등록)</h3>
+<p>세종은 1444년에 화포를 만드는 곳을 짓고, 이듬해부터 화포를 새 규격으로 다시 만들기 시작했어요. 1448년 9월에는 화포 만드는 법과 화약 쓰는 법을 그림과 함께 담은 『총통등록』을 펴냈어요. 이 책은 나라의 비밀로 엄격히 다루어서인지 지금은 전하지 않아요. 같은 해에 고려 말의 주화를 고쳐 로켓처럼 날아가는 무기 신기전을 만들었어요.</p>
+
+<div class="ach-why"><b>왜 중요할까?</b> 화포 만드는 기술을 정확한 규격으로 정리해 나라의 방어력을 높였어요. 조선의 화포 제작은 이 책의 전통을 이어 발전했어요.</div>
+<figure><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Korean_rocket_arrows.jpg/960px-Korean_rocket_arrows.jpg" width="640" height="480" alt="벽에 가로로 전시된 긴 대나무 로켓 화살들" onerror="imgFail(this)"><div class="ach-ph" hidden><strong>사진을 준비하지 못했어요</strong><span>검색 키워드: 신기전 총통 Singijeon</span><a href="https://commons.wikimedia.org/w/index.php?search=%EC%8B%A0%EA%B8%B0%EC%A0%84%20%EC%B4%9D%ED%86%B5%20Singijeon" target="_blank" rel="noopener">위키미디어 커먼즈에서 찾아보기</a></div><figcaption><span class="ach-kind">현대 복원</span> 박물관에 전시된 조선의 로켓 화살이에요. 현대에 복원한 전시품으로 판단했어요.<small>출처: Kai Hendry · <a href="https://creativecommons.org/licenses/by/2.0" target="_blank" rel="noopener">CC BY 2.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Korean_rocket_arrows.jpg" target="_blank" rel="noopener">위키미디어 커먼즈 원본</a></small></figcaption></figure>
+</article>
+</div>
+</section>
+</section>
+<section class="group" id="g3">
+<div class="group-head"><span>셋째 묶음</span><h2>직접 해 보기</h2><p>읽기만 하지 말고 직접 움직여 봐요. 섹션마다 실험이 하나씩 기다리고 있어요.</p></div>
+<section class="sec" id="s1">
+  <h2><span class="num">1</span>한글이 없었다면?</h2>
+  <p class="back"><a href="#ach-1">📖 업적 카드 보기</a></p>
+  <p>우리 주변의 글이 모두 한자라면 어떨까요? 버튼을 눌러 세상을 바꿔 봐요.</p>
+  <div class="pill" role="group" aria-label="세상 바꾸기">
+    <button type="button" id="w-on" aria-pressed="true">한글 있는 세상</button>
+    <button type="button" id="w-off" aria-pressed="false">한글 없는 세상</button>
+  </div>
+  <div class="signs">
+    <div class="sign"><small>강가 안내문</small><b data-ko="이 강은 깊어요. 들어가지 마세요." data-hj="此江深 勿入">이 강은 깊어요. 들어가지 마세요.</b></div>
+    <div class="sign board"><small>가게 간판</small><b data-ko="떡집" data-hj="餠店">떡집</b></div>
+    <div class="sign bag"><small>약 봉투 설명</small><b data-ko="하루 세 번, 밥 먹고 드세요." data-hj="一日三回 食後服用">하루 세 번, 밥 먹고 드세요.</b></div>
+  </div>
+  <div class="alert" id="w-msg" role="status" hidden>
+    <strong>읽을 수 있나요?</strong>
+    <p>세종 때 백성의 모습이 바로 이랬어요. 그때 나라의 글은 한자였고, 백성 대부분은 글을 몰랐어요. 약 봉투도, 나라의 알림도 읽기 어려웠어요.</p>
+  </div>
+  <div class="key"><p>세종은 말은 있어도 글로 뜻을 펴지 못하는 백성을 안타깝게 여겼어요. 그래서 1443년에 훈민정음을 만들고, 1446년에 세상에 알렸어요.</p></div>
+  <p class="note">오늘날의 글을 한자로 바꿔 본 상상 실험이에요.</p>
+</section>
+<section class="sec" id="s2">
+  <h2><span class="num">2</span>한글은 이렇게 생겼어요</h2>
+  <p class="back"><a href="#ach-1">📖 업적 카드 보기</a></p>
+  <p>기본 자음은 소리 낼 때 움직이는 몸의 모양을 본떠 만들었어요.</p>
+  <h3>맞히기 게임: 글자와 그림을 짝지어요</h3>
+  <p>먼저 글자를 누르고, 어울리는 그림을 눌러요. <b id="m-score">0 / 5</b></p>
+  <div class="letters" id="m-letters"></div>
+  <div class="organs" id="m-organs"></div>
+  <p class="msg" id="m-msg" role="status"></p>
+  <button class="btn sub" type="button" id="m-reset">다시 하기</button>
+
+  <h3>모음은 세 가지에서 시작해요</h3>
+  <div class="vowels">
+    <div class="vowel"><b>·</b>둥근 <strong>하늘</strong>을 본떴어요.</div>
+    <div class="vowel"><b>ㅡ</b>평평한 <strong>땅</strong>을 본떴어요.</div>
+    <div class="vowel"><b>ㅣ</b>서 있는 <strong>사람</strong>을 본떴어요.</div>
+  </div>
+  <p class="note">세 가지를 합쳐 다른 모음을 만들어요. ㅣ 오른쪽에 ·가 붙으면 ㅏ가 돼요.</p>
+
+  <h3>글자 만들기 판</h3>
+  <p>자음과 모음을 차례로 눌러 봐요. ㅅ, ㅔ, ㅈ, ㅗ, ㅇ을 누르면 ‘세종’이 돼요.</p>
+  <div class="stage">
+    <div class="out" id="k-out" aria-live="polite">&nbsp;</div>
+    <p class="seq" id="k-seq"></p>
+    <div class="keys" id="k-cons" aria-label="자음"></div>
+    <div class="keys" id="k-vow" aria-label="모음"></div>
+    <div class="row">
+      <button class="btn sub" type="button" id="k-back">← 지우기</button>
+      <button class="btn sub" type="button" id="k-clear">모두 지우기</button>
+      <button class="btn" type="button" id="k-demo">세종 만들어 보기</button>
+    </div>
+    <p class="note" id="k-code">컴퓨터는 글자 번호를 공식으로 계산해요.</p>
+  </div>
+</section>
+<section class="sec" id="s3">
+  <h2><span class="num">3</span>앙부일구 해시계</h2>
+  <p class="back"><a href="#ach-7">📖 업적 카드 보기</a></p>
+  <p>앙부일구는 하늘을 우러러보는 솥이라는 뜻이에요. 해를 움직여 그릇 안쪽의 그림자를 살펴봐요.</p>
+  <div class="stage">
+    <svg id="sun-svg" viewBox="0 0 480 392" role="img" aria-label="솥 모양 해시계 앙부일구 그림. 해가 움직이면 그림자 끝이 시각선을 따라 이동해요."></svg>
+  </div>
+  <div class="clock" role="status">
+    <div class="ani" id="c-ani">🐰</div>
+    <div><b id="c-name">묘시 · 토끼</b><span id="c-time">오전 6시</span></div>
+  </div>
+  <label class="rlabel" for="c-range"><span>오전 6시</span><span>낮 12시</span><span>오후 6시</span></label>
+  <input class="range" id="c-range" type="range" min="6" max="18" step="0.1" value="6" aria-label="시각">
+  <div class="row">
+    <button class="btn" type="button" id="c-play">▶ 하루 재생</button>
+    <div class="pill" role="group" aria-label="시각 표시 바꾸기">
+      <button type="button" id="c-ani-on" aria-pressed="true">동물 그림</button>
+      <button type="button" id="c-txt-on" aria-pressed="false">한자</button>
+    </div>
+  </div>
+  <div class="key">
+    <p><b>글을 몰라도 시간을 알 수 있었어요.</b> 세종 때 앙부일구에는 시각을 글자 대신 12지신 동물 그림으로 나타냈어요.</p>
+    <p>길가에 둔 이 시계는 누구에게나 열려 있었어요.</p>
+  </div>
+  <p class="note">춘분·추분 무렵 해의 길을 계산해 그린 모형이에요. 세로선은 시각선, 가로선은 절기선이에요. 지금 전하는 조선 후기의 앙부일구는 동물 그림 대신 글자로 시각을 표시했어요.</p>
+</section>
+<section class="sec" id="s4">
+  <h2><span class="num">4</span>자격루 작동시키기</h2>
+  <p class="back"><a href="#ach-6">📖 업적 카드 보기</a></p>
+  <p>자격루는 스스로 소리를 내어 시각을 알리는 물시계예요. 물을 부어 장치를 움직여 봐요.</p>
+  <div class="stage">
+    <svg id="j-svg" viewBox="0 0 560 400" role="img" aria-label="자격루 모형. 위 항아리의 물이 아래 항아리로 흐르면 살대가 떠오르고, 구슬이 굴러가 종과 북과 징을 울려요.">
+      <defs><clipPath id="jarClip"><path d="M24 44Q20 26 40 24H112Q132 26 128 44L120 128Q118 138 108 138H44Q34 138 32 128Z"/></clipPath></defs>
+      <text x="76" y="166" text-anchor="middle" font-size="19" fill="#f8f3e6">위 항아리</text>
+      <path d="M24 44Q20 26 40 24H112Q132 26 128 44L120 128Q118 138 108 138H44Q34 138 32 128Z" fill="#3a3550"/>
+      <rect id="j-jar" x="20" y="44" width="112" height="94" fill="#5aa9e6" clip-path="url(#jarClip)"/>
+      <path d="M24 44Q20 26 40 24H112Q132 26 128 44L120 128Q118 138 108 138H44Q34 138 32 128Z" fill="none" stroke="#f2c14e" stroke-width="3"/>
+      <path d="M122 116H192V132" fill="none" stroke="#b9975b" stroke-width="7"/>
+      <line id="j-stream" x1="192" y1="132" x2="192" y2="340" stroke="#5aa9e6" stroke-width="4" opacity="0"/>
+      <rect id="j-water" x="164" y="340" width="56" height="30" fill="#5aa9e6"/>
+      <rect id="j-rod" x="188" y="230" width="8" height="110" fill="#f2c14e"/>
+      <rect x="162" y="120" width="60" height="252" rx="6" fill="none" stroke="#f2c14e" stroke-width="3"/>
+      <text x="192" y="394" text-anchor="middle" font-size="19" fill="#f8f3e6">아래 항아리</text>
+      <g id="j-lever"><line x1="178" y1="96" x2="262" y2="96" stroke="#d9d3c0" stroke-width="6" stroke-linecap="round"/><line x1="262" y1="96" x2="262" y2="72" stroke="#d9d3c0" stroke-width="5"/></g>
+      <circle cx="224" cy="98" r="5" fill="#c0392b"/>
+      <line x1="240" y1="100" x2="548" y2="162" stroke="#b9975b" stroke-width="7" stroke-linecap="round"/>
+      <circle id="j-ball" cx="250" cy="90" r="9" fill="#e7e9ef" stroke="#8a93a8" stroke-width="2"/>
+
+      <g id="j-i0">
+        <path d="M280 200V186M264 262C268 240 268 208 280 200C292 208 292 240 296 262Z" fill="#c9962e" stroke="#f2c14e" stroke-width="2"/>
+        <rect x="262" y="262" width="36" height="6" rx="3" fill="#f2c14e"/>
+      </g>
+      <g id="j-i1">
+        <ellipse cx="382" cy="238" rx="38" ry="30" fill="#c0392b" stroke="#f2c14e" stroke-width="3"/>
+        <ellipse cx="382" cy="238" rx="18" ry="28" fill="#f8f3e6"/>
+        <path d="M360 268L350 306M404 268L414 306" stroke="#b9975b" stroke-width="5"/>
+      </g>
+      <g id="j-i2">
+        <circle cx="492" cy="238" r="34" fill="#b9975b" stroke="#f2c14e" stroke-width="3"/>
+        <circle cx="492" cy="238" r="13" fill="#d9bb7a"/>
+        <line x1="492" y1="204" x2="492" y2="180" stroke="#d9d3c0" stroke-width="2"/>
+      </g>
+      <circle id="j-r0" cx="280" cy="232" r="30" fill="none" stroke="#f2c14e" stroke-width="3" opacity="0"/>
+      <circle id="j-r1" cx="382" cy="238" r="42" fill="none" stroke="#f2c14e" stroke-width="3" opacity="0"/>
+      <circle id="j-r2" cx="492" cy="238" r="38" fill="none" stroke="#f2c14e" stroke-width="3" opacity="0"/>
+      <text x="280" y="340" text-anchor="middle" font-size="21" fill="#f8f3e6">종</text>
+      <text x="382" y="340" text-anchor="middle" font-size="21" fill="#f8f3e6">북</text>
+      <text x="492" y="340" text-anchor="middle" font-size="21" fill="#f8f3e6">징</text>
+    </svg>
+  </div>
+  <ol class="steps" id="j-steps">
+    <li>물이 흘러요</li><li>살대가 떠올라요</li><li>구슬이 굴러요</li><li>종</li><li>북</li><li>징</li>
+  </ol>
+  <div class="row">
+    <button class="btn" type="button" id="j-play">▶ 물 붓기</button>
+    <button class="btn sub" type="button" id="j-reset">처음으로</button>
+    <button class="btn sub" type="button" id="j-sound" aria-pressed="true">🔊 소리 켜짐</button>
+  </div>
+  <p class="msg" id="j-msg" role="status"></p>
+  <div class="key">
+    <p><b>사람이 밤새 지키지 않아도 스스로 시각을 알려줬어요.</b></p>
+    <p>자격루는 1434년에 세종의 명을 받아 장영실, 이천, 김조 등이 만들었어요. 지금 남아 있는 것은 1536년 중종 때 다시 만든 것이고, 그중에서도 물항아리와 물받이 부분만 전해요.</p>
+  </div>
+  <p class="note">이 그림은 원리를 쉽게 줄인 모형이에요. 실제로는 항아리와 살대가 더 많았어요. 또 세 소리가 이어서 울린 것이 아니라, 시를 알릴 때는 종, 밤의 경을 알릴 때는 북, 점을 알릴 때는 징을 쳤어요.</p>
+</section>
+<section class="sec" id="s5">
+  <h2><span class="num">5</span>측우기로 비 재기</h2>
+  <p class="back"><a href="#ach-3">📖 업적 카드 보기</a></p>
+  <p>측우기는 빗물을 받아 비의 양을 재는 그릇이에요. 비를 내리고, 자를 읽어서 기록해 봐요.</p>
+  <div class="two">
+    <div class="stage">
+      <svg id="r-svg" viewBox="0 0 360 400" role="img" aria-label="측우기와 주척 그림. 비가 오면 물이 차오르고 옆의 눈금으로 깊이를 읽어요.">
+        <g id="r-drops"></g>
+        <rect id="r-water" x="112" y="350" width="96" height="0" fill="#5aa9e6"/>
+        <path d="M110 50V350H210V50" fill="rgba(248,243,230,.08)" stroke="#d9d3c0" stroke-width="4"/>
+        <rect x="88" y="352" width="144" height="14" rx="3" fill="#7d8598"/>
+        <rect x="70" y="366" width="180" height="20" rx="3" fill="#5c6478"/>
+        <g id="r-ruler"></g>
+      </svg>
+    </div>
+    <div>
+      <label class="rlabel" for="r-amt"><span>조금</span><span>보통</span><span>많이</span></label>
+      <input class="range" id="r-amt" type="range" min="1" max="5" step="1" value="3" aria-label="비의 양">
+      <div class="row">
+        <button class="btn" type="button" id="r-play">▶ 비 내리기</button>
+        <button class="btn sub" type="button" id="r-empty">물 비우기</button>
+      </div>
+      <h3>관측 기록장</h3>
+      <p class="note" style="margin-top:0">물 높이를 자로 읽어 적어요. 10푼이 1치예요. 짧은 눈금 하나는 5푼이에요.</p>
+      <div class="fields">
+        <input id="r-chi" type="number" min="0" max="15" inputmode="numeric" aria-label="치" disabled>치
+        <input id="r-pun" type="number" min="0" max="9" step="5" inputmode="numeric" aria-label="푼" disabled>푼
+        <button class="btn" type="button" id="r-check" disabled>기록하기</button>
+      </div>
+      <p class="msg" id="r-msg" role="status">비를 내린 다음 눈금을 읽어요.</p>
+      <table class="log" id="r-log" hidden>
+        <thead><tr><th>번호</th><th>내가 쓴 값</th><th>실제 값</th><th>결과</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <div class="key">
+    <p><b>같은 크기의 그릇이라서 비교할 수 있었어요.</b> 1442년에 정한 측우기는 길이 1자 5치, 지름 7치였어요. 서울의 서운관과 전국 관청이 같은 크기로 빗물을 받았어요.</p>
+    <p>비가 그치면 주척이라는 자로 물 깊이를 재서 자, 치, 푼까지 적었어요. 그래서 어느 고을에 비가 얼마나 왔는지 견줄 수 있었어요.</p>
+  </div>
+  <p class="note">『세종실록』에 따르면 세자(훗날 문종)가 1441년에 연구하고, 1442년 5월에 제도를 정했어요. 이 실험의 그림은 쉽게 줄인 모형이에요.</p>
+</section>
+<section class="sec" id="s6">
+  <h2><span class="num">6</span>세종 전과 후</h2>
+  <p class="back"><a href="#ach-cards">📖 업적 카드 보기</a></p>
+  <p>카드를 눌러 뒤집어 봐요. 앞면은 세종 전, 뒷면은 세종 후의 모습이에요.</p>
+  <button class="btn" type="button" id="f-all">모두 뒤집기</button>
+  <div class="flips" id="f-grid"></div>
+  <p class="note">4군 6진에는 다른 시각도 있어요. <a href="#ach-5">5위 업적 카드</a>에서 함께 읽어 봐요.</p>
+</section>
+<section class="sec" id="s7">
+  <h2><span class="num">7</span>내가 세종이라면? 백성에게 물어보기</h2>
+  <p class="back"><a href="#ach-10">📖 업적 카드 보기</a></p>
+  <p>때는 1430년이에요. 그때까지는 관리가 해마다 농사 형편을 살펴 세금을 정했어요. 이 과정에서 부정이 생기기도 했어요.</p>
+  <p>새로 나온 생각은 공법이에요. <b>“땅 1결마다 세금을 10말씩 똑같이 걷자.”</b> 1결은 논밭의 넓이를 재는 단위예요.</p>
+  <h3>여러분은 어느 쪽인가요?</h3>
+  <div class="row">
+    <button class="btn" type="button" id="v-yes">찬성</button>
+    <button class="btn sub" type="button" id="v-no">반대</button>
+    <button class="btn sub" type="button" id="v-replay" hidden>▶ 다시 세어 보기</button>
+  </div>
+  <p class="msg" id="v-msg" role="status"></p>
+  <div class="stage" id="v-chart">
+    <div class="bar y"><div class="lab"><span>찬성</span><b id="v-yn">0명</b></div><div class="track"><div class="fill" id="v-yf"></div></div></div>
+    <div class="bar n"><div class="lab"><span>반대</span><b id="v-nn">0명</b></div><div class="track"><div class="fill" id="v-nf"></div></div></div>
+    <p class="note">『세종실록』 1430년 8월 10일 기록: 찬성 9만 8,657명, 반대 7만 4,149명, 모두 17만 2,806명</p>
+  </div>
+  <div id="v-next" hidden>
+    <h3>찬성이 더 많아요. 왕이라면 어떻게 할까요?</h3>
+    <div class="row">
+      <button class="btn sub" type="button" data-king="go">바로 시행해요</button>
+      <button class="btn sub" type="button" data-king="talk">더 의논해요</button>
+    </div>
+    <p class="exp" id="v-king" role="status" hidden></p>
+  </div>
+  <div class="key">
+    <p><b>왕이 백성의 뜻을 직접 물었어요.</b> 세금은 백성의 삶과 바로 이어지는 일이기 때문이에요.</p>
+  </div>
+</section>
+</section>
+<section class="group" id="g4">
+<div class="group-head"><span>넷째 묶음</span><h2>마무리</h2></div>
+<section class="sec" id="s8">
+  <h2><span class="num">8</span>꼬마 역사학자 퀴즈</h2>
+  <div class="score" role="status"><span id="q-score">0 / 6 맞혔어요</span><span class="trophy" id="q-trophy" hidden>🏆</span></div>
+  <div id="q-list"></div>
+  <p class="msg ok" id="q-end" hidden></p>
+  <div class="row"><button class="btn sub" type="button" id="q-reset">다시 풀기</button></div>
+</section>
+<section class="sec" id="wrap">
+  <h2><span class="num">4-1</span>정리</h2>
+  <div class="key summary-box"><p>세종대왕은 글자, 과학, 농업, 의학, 음악, 국방까지 나라의 여러 일을 돌보았어요. 혼자 이룬 일은 아니었어요. 학자와 기술자, 세자, 농부까지 많은 사람의 지혜와 힘이 모였어요. 그 바탕에는 백성의 삶을 더 낫게 하려는 마음이 있었어요.</p></div>
+</section>
+<section class="sec" id="think">
+  <h2><span class="num">4-2</span>생각해 볼 질문</h2>
+  <ol class="questions">
+<li>훈민정음이 없었다면 우리의 생활은 어떻게 달라졌을까요?</li>
+<li>세종은 왜 1430년에 약 17만 명의 의견을 물었을까요? 우리 학급의 규칙을 정할 때에는 어떻게 의견을 모으면 좋을까요?</li>
+<li>20가지 업적 가운데 내가 1위로 꼽고 싶은 것은 무엇인가요? 그 까닭은 무엇인가요?</li>
+</ol>
+</section>
+<section class="sec" id="refs">
+  <h2><span class="num">4-3</span>참고 자료</h2>
+  <ul class="refs">
+<li><a href="https://sillok.history.go.kr/" target="_blank" rel="noopener">조선왕조실록</a> (국사편찬위원회)</li>
+<li><a href="https://encykorea.aks.ac.kr/" target="_blank" rel="noopener">한국민족문화대백과사전</a> (한국학중앙연구원)</li>
+<li><a href="https://www.gogung.go.kr/" target="_blank" rel="noopener">국립고궁박물관</a></li>
+<li><a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">위키미디어 커먼즈</a> (사진 자료)</li>
+<li><a href="https://sillok.history.go.kr/id/kda_11208010_005" target="_blank" rel="noopener">『세종실록』 세종 12년 8월 10일 (공법 찬반 집계)</a></li>
+    <li><a href="https://sillok.history.go.kr/id/kda_12405008_001" target="_blank" rel="noopener">『세종실록』 세종 24년 5월 8일 (측우기 제도)</a></li>
+    <li><a href="https://encykorea.aks.ac.kr/Article/E0047854" target="_blank" rel="noopener">한국민족문화대백과사전 ‘자격루’</a></li>
+    <li><a href="https://encykorea.aks.ac.kr/Article/E0035191" target="_blank" rel="noopener">한국민족문화대백과사전 ‘앙부일구’</a></li>
+</ul>
+  <p class="note">사진의 저작자와 사용 조건은 각 사진 아래에 적어 두었어요.</p>
+</section>
+</section>
+</main>
+
+<footer class="site-foot">백성을 사랑한 임금, 세종대왕 · 초등 고학년 학습 자료</footer>
+
+<script>
+(function(){
+'use strict';
+var $=function(id){return document.getElementById(id)};
+var NS='http://www.w3.org/2000/svg';
+function el(tag,attrs,parent){
+  var n=document.createElementNS(NS,tag);
+  for(var k in attrs)n.setAttribute(k,attrs[k]);
+  if(parent)parent.appendChild(n);
+  return n;
+}
+function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
+function setMsg(node,text,kind){node.textContent=text;node.className='msg'+(kind?' '+kind:'')}
+
+/* 묶음 메뉴: 스크롤 위치에 맞춰 묶음과 세부 번호를 표시해요 */
+var tabs=[].slice.call(document.querySelectorAll('.tabs a'));
+var subs=[].slice.call(document.querySelectorAll('.subnav'));
+var subLinks=[].slice.call(document.querySelectorAll('.subnav a'));
+var marks=[];
+subs.forEach(function(s){
+  var g=s.dataset.group,list=[].slice.call(s.querySelectorAll('a'));
+  marks.push({a:list[0],el:document.getElementById(g),g:g});   /* 묶음 제목에 닿으면 그 묶음의 첫 번호를 켜요 */
+  list.forEach(function(a){marks.push({a:a,el:document.querySelector(a.getAttribute('href')),g:g})});
+});
+function navUpdate(){
+  var line=(document.querySelector('.nav').offsetHeight||0)+40,cur=marks[0];
+  marks.forEach(function(m){if(m.el.getBoundingClientRect().top<=line)cur=m});
+  var atEnd=window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-2;
+  if(atEnd)cur=marks[marks.length-1];
+  tabs.forEach(function(t){
+    var on=t.dataset.group===cur.g;
+    t.classList.toggle('on',on);
+    if(on)t.setAttribute('aria-current','true');else t.removeAttribute('aria-current');
+  });
+  subs.forEach(function(s){s.hidden=s.dataset.group!==cur.g});
+  subLinks.forEach(function(a){
+    var on=a===cur.a;
+    a.classList.toggle('on',on);
+    if(on){
+      a.setAttribute('aria-current','true');
+      var box=a.closest('.subnav');
+      box.scrollLeft=a.offsetLeft-(box.clientWidth-a.offsetWidth)/2;
+    }else a.removeAttribute('aria-current');
+  });
+}
+var navTick=false;
+function navQueue(){
+  if(navTick)return;
+  navTick=true;
+  requestAnimationFrame(function(){navTick=false;navUpdate()});
+}
+window.addEventListener('scroll',navQueue,{passive:true});
+window.addEventListener('resize',navQueue);
+navUpdate();
+
+/* ① 한글 있는 세상 / 없는 세상 */
+function world(on){
+  $('w-on').setAttribute('aria-pressed',on);
+  $('w-off').setAttribute('aria-pressed',!on);
+  document.querySelectorAll('.sign b').forEach(function(b){b.textContent=on?b.dataset.ko:b.dataset.hj});
+  $('w-msg').hidden=on;
+}
+$('w-on').onclick=function(){world(true)};
+$('w-off').onclick=function(){world(false)};
+
+/* ② 발음 기관 맞히기 */
+var ORGANS=[
+ {l:'ㄱ',name:'혀뿌리',why:'ㄱ은 혀뿌리가 목구멍을 막는 모양이에요.',
+  svg:'<path d="M20 52C40 34 78 34 98 54V96" fill="none" stroke="#cfd3e2" stroke-width="4"/><path d="M34 58H88V92" fill="none" stroke="#ef7666" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>'},
+ {l:'ㄴ',name:'혀끝',why:'ㄴ은 혀끝이 윗잇몸에 닿는 모양이에요.',
+  svg:'<path d="M20 44C40 30 78 32 98 54V96" fill="none" stroke="#cfd3e2" stroke-width="4"/><path d="M34 44V78H90" fill="none" stroke="#ef7666" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>'},
+ {l:'ㅁ',name:'입술',why:'ㅁ은 입 모양을 본떴어요.',
+  svg:'<rect x="30" y="26" width="60" height="48" rx="9" fill="#3a1d2a" stroke="#ef7666" stroke-width="10"/>'},
+ {l:'ㅅ',name:'이',why:'ㅅ은 뾰족한 이 모양을 본떴어요.',
+  svg:'<path d="M18 22H102" stroke="#ef7666" stroke-width="10" stroke-linecap="round"/><path d="M60 26L30 84H90Z" fill="#f8f3e6" stroke="#cfd3e2" stroke-width="3" stroke-linejoin="round"/>'},
+ {l:'ㅇ',name:'목구멍',why:'ㅇ은 둥근 목구멍 모양을 본떴어요.',
+  svg:'<path d="M34 8V92M86 8V92" stroke="#cfd3e2" stroke-width="4"/><circle cx="60" cy="50" r="19" fill="#3a1d2a" stroke="#ef7666" stroke-width="9"/>'}
+];
+var mSel=null,mDone=0;
+function matchInit(){
+  mSel=null;mDone=0;$('m-score').textContent='0 / 5';setMsg($('m-msg'),'');
+  var L=$('m-letters'),O=$('m-organs');L.innerHTML='';O.innerHTML='';
+  ORGANS.forEach(function(o){
+    var b=document.createElement('button');
+    b.type='button';b.className='letter';b.textContent=o.l;b.dataset.l=o.l;
+    b.onclick=function(){
+      if(b.classList.contains('done'))return;
+      L.querySelectorAll('.letter').forEach(function(x){x.classList.remove('sel')});
+      b.classList.add('sel');mSel=o.l;
+      setMsg($('m-msg'),o.l+'을 골랐어요. 이제 그림을 눌러요.');
+    };
+    L.appendChild(b);
+  });
+  shuffle(ORGANS).forEach(function(o){
+    var b=document.createElement('button');
+    b.type='button';b.className='organ';b.dataset.l=o.l;
+    b.innerHTML='<svg viewBox="0 0 120 100" aria-hidden="true">'+o.svg+'</svg><span>'+o.name+'</span>';
+    b.onclick=function(){
+      if(b.classList.contains('done'))return;
+      if(!mSel){setMsg($('m-msg'),'먼저 위의 글자를 골라요.');return}
+      if(mSel===o.l){
+        b.classList.add('done');
+        b.querySelector('span').textContent=o.l+' · '+o.name;
+        var lb=L.querySelector('[data-l="'+o.l+'"]');
+        lb.classList.remove('sel');lb.classList.add('done');
+        mSel=null;mDone++;$('m-score').textContent=mDone+' / 5';
+        setMsg($('m-msg'),mDone===5?'다 맞혔어요! '+o.why:'맞아요! '+o.why,'ok');
+      }else{
+        b.classList.remove('shake');void b.offsetWidth;b.classList.add('shake');
+        setMsg($('m-msg'),'다시 생각해 봐요. 소리 낼 때 어디가 움직이나요?','bad');
+      }
+    };
+    O.appendChild(b);
+  });
+}
+$('m-reset').onclick=matchInit;
+matchInit();
+
+/* ② 글자 만들기: 유니코드 공식 0xAC00 + (초성*21 + 중성)*28 + 종성 */
+var CHO='ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ'.split('');
+var JUNG='ㅏㅐㅑㅒㅓㅔㅕㅖㅗㅘㅙㅚㅛㅜㅝㅞㅟㅠㅡㅢㅣ'.split('');
+var JONG=['','ㄱ','ㄲ','ㄳ','ㄴ','ㄵ','ㄶ','ㄷ','ㄹ','ㄺ','ㄻ','ㄼ','ㄽ','ㄾ','ㄿ','ㅀ','ㅁ','ㅂ','ㅄ','ㅅ','ㅆ','ㅇ','ㅈ','ㅊ','ㅋ','ㅌ','ㅍ','ㅎ'];
+var VC={'ㅗㅏ':'ㅘ','ㅗㅐ':'ㅙ','ㅗㅣ':'ㅚ','ㅜㅓ':'ㅝ','ㅜㅔ':'ㅞ','ㅜㅣ':'ㅟ','ㅡㅣ':'ㅢ'};
+var JC={'ㄱㅅ':'ㄳ','ㄴㅈ':'ㄵ','ㄴㅎ':'ㄶ','ㄹㄱ':'ㄺ','ㄹㅁ':'ㄻ','ㄹㅂ':'ㄼ','ㄹㅅ':'ㄽ','ㄹㅌ':'ㄾ','ㄹㅍ':'ㄿ','ㄹㅎ':'ㅀ','ㅂㅅ':'ㅄ'};
+var JSPLIT={};Object.keys(JC).forEach(function(k){JSPLIT[JC[k]]=k.split('')});
+function syll(c,v,j){return 0xAC00+(CHO.indexOf(c)*21+JUNG.indexOf(v))*28+JONG.indexOf(j||'')}
+function compose(list){
+  var out=[],c='',v='',j='',last=null;
+  function flush(){
+    if(c&&v){var code=syll(c,v,j);out.push(String.fromCharCode(code));last={c:c,v:v,j:j,code:code}}
+    else if(c||v)out.push(c||v);
+    c='';v='';j='';
+  }
+  list.forEach(function(x){
+    if(JUNG.indexOf(x)>=0){
+      if(j){
+        var parts=JSPLIT[j]||['',j];   /* 받침이 다음 글자의 첫소리로 넘어가요 */
+        j=parts[0];flush();c=parts[1];v=x;
+      }else if(v&&VC[v+x]){v=VC[v+x]}
+      else if(c&&!v){v=x}
+      else{flush();v=x}
+    }else{
+      if(c&&v){
+        if(!j&&JONG.indexOf(x)>0){j=x}
+        else if(j&&JC[j+x]){j=JC[j+x]}
+        else{flush();c=x}
+      }else{flush();c=x}
+    }
+  });
+  flush();
+  return {text:out.join(''),last:last};
+}
+var typed=[];
+function typedRender(){
+  var r=compose(typed);
+  $('k-out').textContent=r.text||' ';
+  $('k-seq').textContent=typed.join(' + ');
+  if(r.last){
+    var l=r.last;
+    $('k-code').textContent='‘'+String.fromCharCode(l.code)+'’의 번호: 44032 + ('+CHO.indexOf(l.c)+' × 21 + '+JUNG.indexOf(l.v)+') × 28 + '+JONG.indexOf(l.j)+' = '+l.code;
+  }else $('k-code').textContent='컴퓨터는 글자 번호를 공식으로 계산해요.';
+}
+function makeKeys(box,list,cls){
+  list.forEach(function(x){
+    var b=document.createElement('button');
+    b.type='button';b.className='key-b'+cls;b.textContent=x;
+    b.onclick=function(){if(typed.length<24){typed.push(x);typedRender()}};
+    box.appendChild(b);
+  });
+}
+makeKeys($('k-cons'),'ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎㄲㄸㅃㅆㅉ'.split(''),'');
+makeKeys($('k-vow'),'ㅏㅑㅓㅕㅗㅛㅜㅠㅡㅣㅐㅔㅒㅖ'.split(''),' v');
+$('k-back').onclick=function(){typed.pop();typedRender()};
+$('k-clear').onclick=function(){typed=[];typedRender()};
+$('k-demo').onclick=function(){typed=['ㅅ','ㅔ','ㅈ','ㅗ','ㅇ'];typedRender()};
+
+/* ③ 앙부일구: 위도 37.5도, 춘분·추분의 해 길을 계산해 그림자를 그려요 */
+(function(){
+  var svg=$('sun-svg'),CX=240,CY=205,R=165;
+  var PHI=37.5*Math.PI/180,VA=68*Math.PI/180,sA=Math.sin(VA),cA=Math.cos(VA);
+  var EPS=23.44*Math.PI/180;
+  function sun(h,d){
+    var H=(h-12)*15*Math.PI/180,cd=Math.cos(d),sd=Math.sin(d);
+    return {x:-cd*Math.sin(H),
+            y:Math.cos(PHI)*sd-Math.sin(PHI)*cd*Math.cos(H),
+            z:Math.sin(PHI)*sd+Math.cos(PHI)*cd*Math.cos(H)};
+  }
+  function shadow(h,d){var s=sun(h,d);return {x:-s.x,y:-s.y,z:-s.z}}
+  function proj(p){return [CX+R*p.x,CY-R*(p.y*sA+p.z*cA)]}
+  function pathOf(pts){return pts.map(function(p,i){var q=proj(p);return (i?'L':'M')+q[0].toFixed(1)+' '+q[1].toFixed(1)}).join('')}
+  var defs=el('defs',{},svg);
+  var clip=el('clipPath',{id:'rimClip'},defs);
+  el('ellipse',{cx:CX,cy:CY,rx:R,ry:R*sA},clip);
+  var g=el('radialGradient',{id:'bowlG',cx:'50%',cy:'60%',r:'60%'},defs);
+  el('stop',{offset:'0%','stop-color':'#e3cf9c'},g);
+  el('stop',{offset:'100%','stop-color':'#a98a4f'},g);
+
+  [[-.72,.86],[.72,.86]].forEach(function(p){
+    var x=CX+R*p[0],y=CY+R*p[1];
+    el('path',{d:'M'+(x-13)+' '+(y-30)+'L'+(x-18)+' '+(y+26)+'H'+(x+18)+'L'+(x+13)+' '+(y-30)+'Z',fill:'#4a3b28'},svg);
+  });
+  el('path',{d:'M'+(CX-R)+' '+CY+'A'+R+' '+R+' 0 0 0 '+(CX+R)+' '+CY+'Z',fill:'#5c4830'},svg);
+  el('ellipse',{cx:CX,cy:CY,rx:R+7,ry:R*sA+7,fill:'#f2c14e'},svg);
+  el('ellipse',{cx:CX,cy:CY,rx:R,ry:R*sA,fill:'url(#bowlG)'},svg);
+
+  var grid=el('g',{'clip-path':'url(#rimClip)',fill:'none',stroke:'#5c4830'},svg);
+  for(var i=0;i<13;i++){
+    var lam=(-90+i*15)*Math.PI/180,d=Math.asin(Math.sin(EPS)*Math.sin(lam)),pts=[];
+    for(var h=4;h<=20;h+=.25){var p=shadow(h,d);if(p.z<=0.005)pts.push(p)}
+    el('path',{d:pathOf(pts),'stroke-width':i===6?2:1,opacity:i===6?.95:.55},grid);
+  }
+  var LINES=[6,8,10,12,14,16,18];
+  LINES.forEach(function(h){
+    var pts=[];
+    for(var dd=-EPS;dd<=EPS+.001;dd+=EPS/8){var p=shadow(h,dd);if(p.z<=0.005)pts.push(p)}
+    el('path',{d:pathOf(pts),'stroke-width':1.6},grid);
+  });
+
+  var gnoBase={x:0,y:-Math.cos(PHI),z:-Math.sin(PHI)};
+  var shadowLine=el('path',{fill:'none',stroke:'#1a1420','stroke-width':6,'stroke-linecap':'round',opacity:.72,'clip-path':'url(#rimClip)'},svg);
+  var gq=proj(gnoBase);
+  el('line',{x1:gq[0],y1:gq[1],x2:CX,y2:CY,stroke:'#2a3566','stroke-width':5,'stroke-linecap':'round','clip-path':'url(#rimClip)'},svg);
+  var tip=el('circle',{r:7,fill:'#c0392b',stroke:'#f8f3e6','stroke-width':2},svg);
+
+  var ANIMALS=[['묘','卯','🐰','토끼'],['진','辰','🐲','용'],['사','巳','🐍','뱀'],['오','午','🐴','말'],['미','未','🐑','양'],['신','申','🐵','원숭이'],['유','酉','🐔','닭']];
+  var labels=LINES.map(function(h,i){
+    /* 시각선은 양 끝에서 촘촘하므로 그림은 그릇 아래쪽에 고르게 놓고 가는 선으로 이어요 */
+    var a=(192+i*26)*Math.PI/180,px=CX+R*.8*Math.cos(a),py=CY-R*.8*sA*Math.sin(a);
+    var end=proj(shadow(h,EPS*(h===6||h===18?.5:1)));
+    el('line',{x1:end[0],y1:end[1],x2:px,y2:py,stroke:'#5c4830','stroke-width':1.2,'stroke-dasharray':'3 3'},svg);
+    var gr=el('g',{transform:'translate('+px.toFixed(1)+' '+py.toFixed(1)+')'},svg);
+    el('circle',{r:21,fill:'#1a1f3d',stroke:'#f2c14e','stroke-width':1.5},gr);
+    var t=el('text',{'text-anchor':'middle',y:8,'font-size':23,fill:'#f8f3e6'},gr);
+    t.textContent=ANIMALS[i][2];
+    return {g:gr,t:t,ring:gr.firstChild};
+  });
+
+  var sunG=el('g',{},svg);
+  el('circle',{r:21,fill:'#f2c14e',opacity:.3},sunG);
+  el('circle',{r:14,fill:'#f2c14e'},sunG);
+  var west=el('text',{x:10,y:CY+52,'font-size':22,fill:'#cfd3e2'},svg);west.textContent='서';
+  var east=el('text',{x:470,y:CY+52,'text-anchor':'end','font-size':22,fill:'#cfd3e2'},svg);east.textContent='동';
+
+  function fmt(h){
+    var hh=Math.floor(h+1e-6),m=Math.round((h-hh)*60/6)*6;
+    if(m===60){hh++;m=0}
+    var pre=hh<12?'오전':(hh===12?'낮':'오후'),d=hh>12?hh-12:hh;
+    return pre+' '+d+'시'+(m?' '+m+'분':'');
+  }
+  var useAni=true;
+  function draw(h){
+    var S=shadow(h,0),pts=[];
+    var w=Math.acos(gnoBase.x*S.x+gnoBase.y*S.y+gnoBase.z*S.z),sw=Math.sin(w);
+    for(var i=0;i<=24;i++){
+      var t=i/24,a=Math.sin((1-t)*w)/sw,b=Math.sin(t*w)/sw;
+      pts.push({x:a*gnoBase.x+b*S.x,y:a*gnoBase.y+b*S.y,z:a*gnoBase.z+b*S.z});
+    }
+    shadowLine.setAttribute('d',pathOf(pts));
+    var q=proj(S);tip.setAttribute('cx',q[0]);tip.setAttribute('cy',q[1]);
+    var s=sun(h,0);
+    sunG.setAttribute('transform','translate('+(CX+s.x*212).toFixed(1)+' '+(CY-10-s.z*205).toFixed(1)+')');
+    var idx=Math.max(0,Math.min(6,Math.floor((h-5)/2)));
+    var a=ANIMALS[idx];
+    labels.forEach(function(l,i){
+      l.ring.setAttribute('fill',i===idx?'#c0392b':'#1a1f3d');
+      l.ring.setAttribute('stroke-width',i===idx?3:1.5);
+    });
+    $('c-ani').textContent=useAni?a[2]:a[1];
+    $('c-name').textContent=a[0]+'시 · '+a[3];
+    var from=5+idx*2,to=from+2;
+    function hr(x){return x<12?'오전 '+x+'시':(x===12?'낮 12시':(x===13?'오후 1시':'오후 '+(x-12)+'시'))}
+    $('c-time').textContent='지금 '+fmt(h)+' · '+a[0]+'시는 '+hr(from)+'부터 '+hr(to)+'까지예요';
+  }
+  function labelMode(ani){
+    useAni=ani;
+    $('c-ani-on').setAttribute('aria-pressed',ani);
+    $('c-txt-on').setAttribute('aria-pressed',!ani);
+    labels.forEach(function(l,i){l.t.textContent=ani?ANIMALS[i][2]:ANIMALS[i][1]});
+    draw(+$('c-range').value);
+  }
+  $('c-ani-on').onclick=function(){labelMode(true)};
+  $('c-txt-on').onclick=function(){labelMode(false)};
+
+  var playing=false,prev=0,cur=6;  /* 슬라이더는 0.1 단위로 잘리므로 시각을 따로 보관해요 */
+  function setPlay(on){
+    playing=on;$('c-play').textContent=on?'⏸ 멈춤':'▶ 하루 재생';
+    if(on){prev=0;requestAnimationFrame(step)}
+  }
+  function step(t){
+    if(!playing)return;
+    if(prev){
+      cur=Math.min(18,cur+Math.min(.1,(t-prev)/1000)*.7);
+      $('c-range').value=cur;draw(cur);
+      if(cur>=18){setPlay(false);return}
+    }
+    prev=t;requestAnimationFrame(step);
+  }
+  $('c-play').onclick=function(){
+    if(!playing){
+      cur=+$('c-range').value;
+      if(cur>=18){cur=6;$('c-range').value=6;draw(6)}
+    }
+    setPlay(!playing);
+  };
+  $('c-range').oninput=function(){if(playing)setPlay(false);draw(+this.value)};
+  draw(6);
+})();
+
+/* ④ 소리: Web Audio API */
+var audio=null,soundOn=true;
+function ac(){
+  if(!soundOn)return null;
+  var C=window.AudioContext||window.webkitAudioContext;
+  if(!C)return null;
+  if(!audio)audio=new C();
+  if(audio.state==='suspended')audio.resume();
+  return audio;
+}
+function tone(a,type,f,start,dur,vol,endF){
+  var o=a.createOscillator(),g=a.createGain();
+  o.type=type;o.frequency.setValueAtTime(f,start);
+  if(endF)o.frequency.exponentialRampToValueAtTime(endF,start+dur);
+  g.gain.setValueAtTime(.0001,start);
+  g.gain.exponentialRampToValueAtTime(vol,start+.01);
+  g.gain.exponentialRampToValueAtTime(.0001,start+dur);
+  o.connect(g);g.connect(a.destination);o.start(start);o.stop(start+dur+.05);
+}
+/* 북채로 때리는 소리: 작은 스피커에서도 들리도록 짧은 잡음을 섞어요 */
+function noise(a,start,dur,vol,freq){
+  var n=Math.floor(a.sampleRate*dur),b=a.createBuffer(1,n,a.sampleRate),d=b.getChannelData(0);
+  for(var i=0;i<n;i++)d[i]=Math.random()*2-1;
+  var s=a.createBufferSource(),f=a.createBiquadFilter(),g=a.createGain();
+  s.buffer=b;f.type='lowpass';f.frequency.value=freq;
+  g.gain.setValueAtTime(vol,start);
+  g.gain.exponentialRampToValueAtTime(.0001,start+dur);
+  s.connect(f);f.connect(g);g.connect(a.destination);s.start(start);
+}
+var SOUNDS=[
+  function(a,t){tone(a,'sine',520,t,1.9,.3);tone(a,'sine',1046,t,1.2,.13);tone(a,'sine',1570,t,.7,.06)},
+  function(a,t){tone(a,'sine',230,t,.6,.42,110);tone(a,'triangle',340,t,.22,.32,150);noise(a,t,.14,.42,1800)},
+  function(a,t){tone(a,'triangle',170,t,2.4,.3);tone(a,'sine',176,t,2.4,.2);tone(a,'sine',347,t,1.4,.09)}
+];
+function ring(i){var a=ac();if(a)SOUNDS[i](a,a.currentTime+.01)}
+
+/* ④ 자격루 */
+(function(){
+  var END=11,T_WATER=5.2,T_LEVER=5.8,T_BALL=6.3,T_BALLEND=9.9;
+  var HIT=[300,400,500],X0=250,X1=536;
+  var t=0,playing=false,prev=0,hit=[false,false,false];
+  var steps=[].slice.call($('j-steps').children);
+  function clamp(x){return x<0?0:x>1?1:x}
+  function ballX(tt){return X0+(X1-X0)*clamp((tt-T_BALL)/(T_BALLEND-T_BALL))}
+  function ringAt(i){
+    return T_BALL+(HIT[i]-X0)/(X1-X0)*(T_BALLEND-T_BALL);
+  }
+  function render(){
+    var w=clamp(t/T_WATER);
+    var jarTop=44+w*62;
+    $('j-jar').setAttribute('y',jarTop);$('j-jar').setAttribute('height',138-jarTop);
+    var level=345-w*145;
+    $('j-water').setAttribute('y',level);$('j-water').setAttribute('height',370-level);
+    $('j-rod').setAttribute('y',level-110);
+    $('j-stream').setAttribute('y2',level);
+    $('j-stream').setAttribute('opacity',t>0&&t<T_WATER?.9:0);
+    var lv=clamp((t-T_WATER)/(T_LEVER-T_WATER));
+    $('j-lever').setAttribute('transform','rotate('+(-9*lv)+' 224 98)');
+    var x=ballX(t);
+    $('j-ball').setAttribute('cx',x);
+    $('j-ball').setAttribute('cy',100+(x-240)*.2013-12);
+    for(var i=0;i<3;i++){
+      var since=t-ringAt(i),on=since>=0&&since<1;
+      var r=$('j-r'+i);
+      r.setAttribute('opacity',on?(1-since).toFixed(2):0);
+      var bx=[280,382,492][i],by=238;
+      var sway=on?Math.sin(since*26)*(1-since)*5:0;
+      $('j-i'+i).setAttribute('transform','rotate('+sway.toFixed(2)+' '+bx+' '+by+')');
+    }
+    var active=t<=0?-1:t<T_WATER*.25?0:t<T_BALL?1:t<ringAt(0)?2:t<ringAt(1)?3:t<ringAt(2)?4:5;
+    if(t>=END)active=6;
+    steps.forEach(function(li,i){
+      li.classList.toggle('on',i===active);
+      li.classList.toggle('past',i<active);
+    });
+  }
+  var NAMES=['종이 울려요. 시를 알리는 소리예요.','북이 울려요. 경을 알리는 소리예요.','징이 울려요. 점을 알리는 소리예요.'];
+  function setPlay(on){
+    playing=on;
+    $('j-play').textContent=on?'⏸ 멈춤':(t>0&&t<END?'▶ 계속':(t>=END?'▶ 다시 물 붓기':'▶ 물 붓기'));
+    if(on){prev=0;requestAnimationFrame(step)}
+  }
+  function step(now){
+    if(!playing)return;
+    if(prev){
+      t+=Math.min(.1,(now-prev)/1000);
+      for(var i=0;i<3;i++){
+        if(!hit[i]&&t>=ringAt(i)){hit[i]=true;ring(i);setMsg($('j-msg'),NAMES[i])}
+      }
+      if(t>=END){t=END;render();setMsg($('j-msg'),'사람의 손 없이 물의 힘만으로 소리가 났어요!','ok');setPlay(false);return}
+      render();
+    }
+    prev=now;requestAnimationFrame(step);
+  }
+  function reset(){t=0;hit=[false,false,false];setMsg($('j-msg'),'');render()}
+  $('j-play').onclick=function(){
+    ac();
+    if(t>=END)reset();
+    if(!playing&&t===0)setMsg($('j-msg'),'위 항아리의 물이 아래 항아리로 흘러요.');
+    setPlay(!playing);
+  };
+  $('j-reset').onclick=function(){playing=false;reset();setPlay(false)};
+  $('j-sound').onclick=function(){
+    soundOn=!soundOn;
+    this.setAttribute('aria-pressed',soundOn);
+    this.textContent=soundOn?'🔊 소리 켜짐':'🔇 소리 꺼짐';
+  };
+  render();
+})();
+
+/* ⑤ 측우기 */
+(function(){
+  var PX=20,BOTTOM=350;            /* 1치 = 20칸 */
+  var ruler=$('r-ruler'),drops=[],dg=$('r-drops');
+  el('rect',{x:226,y:38,width:56,height:312,fill:'#e8dcc0',rx:2},ruler);
+  for(var i=0;i<=30;i++){
+    var y=BOTTOM-i*10,major=i%2===0;
+    el('line',{x1:226,y1:y,x2:major?246:236,y2:y,stroke:'#2a2318','stroke-width':major?2:1},ruler);
+    if(major&&i>0){
+      var tx=el('text',{x:276,y:y+6,'text-anchor':'end','font-size':17,fill:'#2a2318'},ruler);
+      tx.textContent=i/2;
+    }
+  }
+  var cap=el('text',{x:254,y:28,'text-anchor':'middle','font-size':16,fill:'#f8f3e6'},ruler);
+  cap.textContent='주척(치)';
+  for(var k=0;k<34;k++){
+    var ln=el('line',{stroke:'#9ccbf0','stroke-width':2,opacity:0},dg);
+    drops.push({n:ln,x:20+Math.random()*320,y:Math.random()*340,v:320+Math.random()*180});
+  }
+  var state='idle',amount=0,level=0,elapsed=0,prev=0,rainTime=3.6,count=0,right=0;
+  function water(){
+    var h=level*PX;
+    $('r-water').setAttribute('y',BOTTOM-h);$('r-water').setAttribute('height',h);
+  }
+  function showDrops(on){drops.forEach(function(d){d.n.setAttribute('opacity',on?.7:0)})}
+  function lock(on){
+    $('r-chi').disabled=!on;$('r-pun').disabled=!on;$('r-check').disabled=!on;
+  }
+  function label(){
+    $('r-play').textContent=state==='rain'?'⏸ 멈춤':(state==='pause'?'▶ 계속':'▶ 비 내리기');
+    $('r-amt').disabled=state==='rain'||state==='pause';
+  }
+  function step(now){
+    if(state!=='rain')return;
+    if(prev){
+      var dt=Math.min(.1,(now-prev)/1000);
+      elapsed+=dt;
+      level=amount*Math.min(1,elapsed/rainTime);
+      water();
+      drops.forEach(function(d){
+        d.y+=d.v*dt;
+        if(d.y>345){d.y=-20;d.x=20+Math.random()*320}
+        d.n.setAttribute('x1',d.x);d.n.setAttribute('x2',d.x-2);
+        d.n.setAttribute('y1',d.y);d.n.setAttribute('y2',d.y+14);
+      });
+      if(elapsed>=rainTime){
+        level=amount;water();showDrops(false);state='done';label();lock(true);
+        setMsg($('r-msg'),'비가 그쳤어요. 물 높이를 읽어 적어요.');
+        $('r-chi').focus({preventScroll:true});
+        return;
+      }
+    }
+    prev=now;requestAnimationFrame(step);
+  }
+  function start(){
+    var lv=+$('r-amt').value;
+    amount=Math.min(14,lv*2+Math.floor(Math.random()*4)*.5);
+    level=0;elapsed=0;water();
+    $('r-chi').value='';$('r-pun').value='';
+    lock(false);setMsg($('r-msg'),'비가 내려요.');
+    run();
+  }
+  function run(){state='rain';prev=0;showDrops(true);label();requestAnimationFrame(step)}
+  $('r-play').onclick=function(){
+    if(state==='rain'){state='pause';label();setMsg($('r-msg'),'비를 잠시 멈췄어요.');return}
+    if(state==='pause'){setMsg($('r-msg'),'비가 내려요.');run();return}
+    start();
+  };
+  $('r-empty').onclick=function(){
+    state='idle';level=0;amount=0;elapsed=0;water();showDrops(false);label();lock(false);
+    $('r-chi').value='';$('r-pun').value='';
+    setMsg($('r-msg'),'측우기를 비웠어요. 다시 비를 내려 봐요.');
+  };
+  function txt(v){
+    var c=Math.floor(v+1e-6),p=Math.round((v-c)*10);
+    return c+'치 '+p+'푼';
+  }
+  $('r-check').onclick=function(){
+    var cs=$('r-chi').value,ps=$('r-pun').value;
+    if(cs===''&&ps===''){setMsg($('r-msg'),'숫자를 적어 주세요.','bad');return}
+    var mine=(+cs||0)+(+ps||0)/10;
+    var okv=Math.abs(mine-amount)<.01;
+    count++;if(okv)right++;
+    var tb=$('r-log');tb.hidden=false;
+    var tr=tb.tBodies[0].insertRow(0);
+    [count,txt(mine),okv?txt(amount):'?',okv?'○ 정답':'✕ 다시'].forEach(function(v){tr.insertCell().textContent=v});
+    if(okv){
+      setMsg($('r-msg'),'정답이에요! '+txt(amount)+'을 기록했어요. 지금까지 '+right+'번 맞혔어요.','ok');
+      lock(false);state='idle';label();
+    }else{
+      setMsg($('r-msg'),mine<amount?'실제 물은 그보다 많아요. 눈금을 다시 봐요.':'실제 물은 그보다 적어요. 눈금을 다시 봐요.','bad');
+    }
+  };
+  label();
+})();
+
+/* ⑥ 뒤집는 카드 */
+(function(){
+  var CARDS=[
+    ['글자','한자만 썼어요','백성 대부분은 글을 읽기 어려웠어요.','한글','배우기 쉬운 우리 글자가 생겨 글을 익힐 길이 열렸어요.'],
+    ['시계','사람이 지켰어요','사람이 물시계를 지켜보며 시각을 알렸어요.','자격루','사람 대신 장치가 때를 맞춰 시각을 알렸어요.'],
+    ['달력','중국 기준이었어요','중국을 기준으로 만든 역법을 썼어요.','칠정산','한양에서 본 하늘에 맞춘 역법을 갖게 되었어요.'],
+    ['농사책','중국 책을 봤어요','우리 땅과 기후에 꼭 맞지 않았어요.','농사직설','우리 땅에서 쌓은 농부의 경험이 책이 되었어요.'],
+    ['약','중국 약재에 기댔어요','구하기 어렵고 값이 비쌌어요.','향약집성방','우리 땅에서 나는 약재를 쓰는 의학책이 생겼어요.'],
+    ['국경','북쪽이 불안했어요','여진족의 침입이 이어졌어요.','4군 6진','압록강과 두만강 쪽으로 나라의 터전을 넓혔어요.']
+  ];
+  var grid=$('f-grid');
+  CARDS.forEach(function(c){
+    var b=document.createElement('button');
+    b.type='button';b.className='flip';b.setAttribute('aria-pressed','false');
+    b.setAttribute('aria-label',c[0]+' 카드 뒤집기');
+    b.innerHTML='<span class="inner"><span class="face f"><em>세종 전 · '+c[0]+'</em><b>'+c[1]+'</b><span>'+c[2]+'</span><i>눌러서 뒤집기</i></span>'+
+      '<span class="face b"><em>세종 후 · '+c[0]+'</em><b>'+c[3]+'</b><span>'+c[4]+'</span><i>다시 누르면 앞면</i></span></span>';
+    b.onclick=function(){
+      b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')!=='true');
+      syncAll();
+    };
+    grid.appendChild(b);
+  });
+  var cards=[].slice.call(grid.children);
+  function allFlipped(){return cards.every(function(c){return c.getAttribute('aria-pressed')==='true'})}
+  function syncAll(){$('f-all').textContent=allFlipped()?'모두 되돌리기':'모두 뒤집기'}
+  $('f-all').onclick=function(){
+    var to=!allFlipped();
+    cards.forEach(function(c){c.setAttribute('aria-pressed',to)});
+    syncAll();
+  };
+})();
+
+/* ⑦ 공법 여론조사 */
+(function(){
+  var YES=98657,NO=74149,MAX=100000,DUR=2200,raf=0;
+  function n(x){return Math.round(x).toLocaleString('ko-KR')+'명'}
+  function count(){
+    cancelAnimationFrame(raf);
+    var start=0;
+    function step(now){
+      if(!start)start=now;
+      var p=Math.min(1,(now-start)/DUR),e=1-Math.pow(1-p,3);
+      $('v-yn').textContent=n(YES*e);$('v-nn').textContent=n(NO*e);
+      $('v-yf').style.width=(YES/MAX*100*e)+'%';
+      $('v-nf').style.width=(NO/MAX*100*e)+'%';
+      if(p<1)raf=requestAnimationFrame(step);
+      else{$('v-next').hidden=false;$('v-replay').hidden=false}
+    }
+    raf=requestAnimationFrame(step);
+  }
+  function vote(yes){
+    setMsg($('v-msg'),(yes?'찬성을':'반대를')+' 골랐어요. 1430년 사람들은 어떻게 답했을까요?');
+    count();
+  }
+  $('v-yes').onclick=function(){vote(true)};
+  $('v-no').onclick=function(){vote(false)};
+  $('v-replay').onclick=count;
+  document.querySelectorAll('[data-king]').forEach(function(b){
+    b.onclick=function(){
+      var box=$('v-king');box.hidden=false;
+      box.textContent=(b.dataset.king==='talk'?'세종과 같은 생각이에요! ':'그럴 수도 있어요. 하지만 세종은 다르게 했어요. ')+
+        '찬성이 더 많았지만 경상도·전라도는 찬성이, 평안도·함길도는 반대가 많았어요. 세종은 의견이 갈린다며 바로 시행하지 않았어요. 오랜 논의 끝에 1444년, 땅의 등급 6단계와 그해 농사 형편 9단계로 세금을 정했어요.';
+    };
+  });
+})();
+
+/* ⑧ 퀴즈 */
+(function(){
+  var Q=[
+    {q:'세종 때 앙부일구는 글을 모르는 백성을 위해 시각을 어떻게 나타냈나요?',o:['동물 그림','숫자','색깔'],a:0,e:'12지신 동물 그림으로 나타내어 글을 몰라도 시각을 알 수 있었어요.'},
+    {q:'『세종실록』에서 빗물의 양을 재는 연구를 한 사람은 누구인가요?',o:['장영실','세자(훗날 문종)','김종서'],a:1,e:'세자가 그릇에 빗물을 받아 양을 재 보았어요. 이 연구가 측우기로 이어졌어요.'},
+    {q:'지금 남아 있는 자격루는 언제 다시 만든 것인가요?',o:['1434년 세종 때','1536년 중종 때','1910년대'],a:1,e:'처음 자격루는 1434년에 만들었고, 지금 남은 것은 1536년 중종 때 다시 만든 것의 일부예요.'},
+    {q:'한글 자음 ㅁ은 무엇을 본떠 만들었나요?',o:['목구멍','이','입'],a:2,e:'ㅁ은 입 모양을 본떴어요.'},
+    {q:'1430년 공법 의견 조사의 결과는 어땠나요?',o:['찬성이 더 많았어요','반대가 더 많았어요','똑같았어요'],a:0,e:'찬성 9만 8,657명, 반대 7만 4,149명이었어요. 그래도 세종은 더 의논했어요.'},
+    {q:'『향약집성방』은 어떤 책인가요?',o:['농사 방법을 모은 책','우리 땅의 약재로 병을 고치는 책','달력을 계산하는 책'],a:1,e:'1433년에 펴낸 의학책이에요. 우리 땅에서 나는 약재를 다루었어요.'}
+  ];
+  var score=0,done=0;
+  function update(){
+    $('q-score').textContent=score+' / 6 맞혔어요';
+    $('q-trophy').hidden=score!==6;
+    var end=$('q-end');
+    if(done===6){
+      end.hidden=false;
+      end.textContent=score===6?'🏆 만점이에요! 훌륭한 꼬마 역사학자예요.':'다 풀었어요! 틀린 문제의 해설을 다시 읽어 봐요.';
+    }else end.hidden=true;
+  }
+  function init(){
+    score=0;done=0;
+    var list=$('q-list');list.innerHTML='';
+    Q.forEach(function(item,i){
+      var box=document.createElement('div');box.className='q';
+      var p=document.createElement('p');p.className='qt';p.textContent=(i+1)+'. '+item.q;box.appendChild(p);
+      var opts=document.createElement('div');opts.className='opts';box.appendChild(opts);
+      var exp=document.createElement('p');exp.className='exp';exp.hidden=true;
+      item.o.forEach(function(t,j){
+        var b=document.createElement('button');b.type='button';b.className='opt';b.textContent=t;
+        b.onclick=function(){
+          var all=opts.querySelectorAll('.opt');
+          all.forEach(function(x){x.disabled=true});
+          all[item.a].classList.add('right');
+          if(j===item.a)score++;else b.classList.add('wrong');
+          done++;
+          exp.hidden=false;
+          exp.textContent=(j===item.a?'정답이에요! ':'아쉬워요. ')+item.e;
+          update();
+        };
+        opts.appendChild(b);
+      });
+      box.appendChild(exp);list.appendChild(box);
+    });
+    update();
+  }
+  $('q-reset').onclick=init;
+  init();
+})();
+})();
+</script>
+</body>
+</html>
