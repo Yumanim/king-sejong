@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>백성을 사랑한 임금, 세종대왕</title>
+<meta name="description" content="초등학교 고학년을 위한 세종대왕 학습 자료">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#14264a;--navy2:#1f3358;--cream:#faf5e6;--paper:#fffdf6;--ink:#23262e;--muted:#5d5f66;--red:#a32a2a;--green:#1f6b52;--gold:#c9a227;--line:#e4dabf;--gray:#e6e6e6}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:"Gowun Dodum","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;font-size:17px;line-height:1.75;word-break:keep-all;overflow-wrap:anywhere}
+h1,h2,h3{font-family:"Gowun Batang","AppleMyungjo","Batang","Noto Serif KR",serif;line-height:1.35;margin:0}
+a{color:#17508a}
+.cover{background:var(--navy);color:var(--cream);text-align:center;padding:88px 20px 76px;border-bottom:8px solid var(--gold);position:relative}
+.cover:after{content:"";position:absolute;left:0;right:0;bottom:-16px;height:8px;background:linear-gradient(90deg,var(--red) 0 33.3%,var(--green) 33.3% 66.6%,var(--red) 66.6%)}
+.cover p.eyebrow{color:#ecd27a;letter-spacing:.14em;margin:0 0 14px;font-size:15px}
+.cover h1{font-size:clamp(32px,7vw,58px);font-weight:700}
+.cover p.lead{margin:20px auto 0;max-width:34em;font-size:19px}
+main{max-width:1120px;margin:0 auto;padding:44px 20px 64px}
+section{margin-top:56px}
+section:first-child{margin-top:16px}
+h2{font-size:clamp(26px,4.4vw,34px);color:var(--navy);padding-bottom:10px;border-bottom:3px solid var(--gold);margin-bottom:22px}
+.intro{max-width:46em}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:26px 0 34px}
+.fact{background:var(--navy2);color:var(--cream);border-radius:10px;padding:16px 16px 14px}
+.fact span{display:block;font-size:14px;color:#ecd27a}
+.fact b{font-family:"Gowun Batang","Batang",serif;font-size:21px;line-height:1.4}
+h3.sub{font-size:22px;color:var(--navy);margin-bottom:14px}
+.timeline{list-style:none;margin:0;padding:0 0 0 18px;border-left:3px solid var(--red);display:grid;grid-template-columns:1fr 1fr;column-gap:32px}
+.timeline li{padding:6px 0}
+.timeline b{color:var(--red);margin-right:8px}
+.criteria{background:var(--paper);border-left:6px solid var(--green);padding:14px 18px;border-radius:0 10px 10px 0;margin-bottom:26px}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:start}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;min-width:0}
+.card.top{border:3px solid var(--gold);box-shadow:0 0 0 3px rgba(201,162,39,.2)}
+.card header{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.rank{flex:none;width:58px;height:58px;border-radius:50%;background:var(--navy);color:var(--cream);display:flex;align-items:baseline;justify-content:center;padding-top:9px;font-family:"Gowun Batang","Batang",serif;font-size:27px;font-weight:700}
+.rank small{font-size:13px;margin-left:1px}
+.card.top .rank{background:var(--gold);color:var(--navy)}
+.meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.tag{color:#fff;font-size:14px;padding:2px 11px;border-radius:999px}
+.t1{background:#1f3358}.t2{background:#1f6b52}.t3{background:#7d5a0c}.t4{background:#a32a2a}.t5{background:#12636f}.t6{background:#b4521e}
+.year{color:var(--muted);font-size:15px}
+.card h3{font-size:23px;color:var(--navy);margin:6px 0 8px}
+.card p{margin:0 0 12px}
+.more{background:#f4ecd4;border-radius:8px;padding:9px 12px;font-size:15px}
+.more a{font-weight:700;margin-right:4px}
+.why{background:#eef5ef;border-left:4px solid var(--green);padding:10px 13px;border-radius:0 8px 8px 0;margin-bottom:14px}
+.why b{color:var(--green);display:block}
+figure{margin:0}
+figure img{display:block;width:100%;max-width:640px;height:auto;max-height:360px;object-fit:contain;background:#efe9d8;border-radius:8px;margin:0 auto}
+figcaption{font-size:15px;line-height:1.6;margin-top:8px}
+figcaption small{display:block;font-size:13px;color:var(--muted);margin-top:3px}
+.kind{display:inline-block;background:var(--navy);color:var(--cream);font-size:13px;padding:0 8px;border-radius:5px}
+.ph{background:var(--gray);color:#333;border-radius:8px;min-height:170px;padding:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;text-align:center;font-size:15px}
+.ph[hidden]{display:none}
+.ph strong{font-size:16px}
+.ph .video{font-weight:700}
+figure.failed img,figure.failed figcaption{display:none}
+figure.failed .ph[hidden]{display:flex}
+.summary{background:var(--navy);color:var(--cream);border-radius:14px;padding:24px 26px}
+.summary p{margin:0}
+.questions{margin:22px 0 0;padding-left:26px}
+.questions li{margin-bottom:8px}
+.refs{padding-left:22px;margin:0}
+.refs li{margin-bottom:6px}
+.note{color:var(--muted);font-size:15px;margin-top:14px}
+footer{background:var(--navy);color:var(--cream);text-align:center;padding:22px 20px;font-size:14px;border-top:6px solid var(--gold)}
+@media(max-width:820px){.cards{grid-template-columns:minmax(0,1fr)}.facts{grid-template-columns:repeat(2,1fr)}.timeline{grid-template-columns:1fr}}
+@media(max-width:480px){body{font-size:16px}main{padding:28px 16px 48px}.cover{padding:60px 16px 54px}.card{padding:16px}.facts{gap:10px}.fact b{font-size:18px}}
+@media print{
+@page{margin:14mm}
+body{background:#fff;font-size:11.5pt;line-height:1.6}
+.cover{background:#fff;color:var(--navy);padding:18mm 0 10mm;border-bottom:3px solid var(--gold)}
+.cover:after{display:none}
+.cover p.eyebrow{color:var(--red)}
+main{max-width:none;padding:0}
+section{margin-top:9mm}
+.cards{display:block}
+.card{break-inside:avoid;page-break-inside:avoid;margin-bottom:6mm;box-shadow:none}
+.card.top{border:3px solid var(--gold)}
+.card.top,.tag,.rank,.kind{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.fact{background:#fff;color:var(--ink);border:1px solid var(--line);break-inside:avoid}
+.fact span{color:var(--red)}
+.summary{background:#fff;color:var(--ink);border:1px solid var(--line);break-inside:avoid}
+.criteria,.why{break-inside:avoid}
+h2,h3{break-after:avoid}
+figure{break-inside:avoid}
+figure img{max-height:62mm;background:none}
+footer{background:#fff;color:var(--ink);border-top:2px solid var(--gold)}
+}
+</style>
+<script>function imgFail(img){var f=img.closest('figure');if(f){f.classList.add('failed');}}</script>
+</head>
+<body>
+<div class="cover">
+<p class="eyebrow">초등 고학년 역사 학습 자료</p>
+<h1>백성을 사랑한 임금, 세종대왕</h1>
+<p class="lead">우리 글자를 만들고, 하늘과 땅을 연구해 백성의 삶을 돌본 임금을 만나 보아요.</p>
+</div>
+<main>
+<section id="who">
+<h2>세종대왕은 누구일까?</h2>
+<p class="intro">세종대왕은 조선의 네 번째 임금이에요. 이름은 이도이고, 태종의 셋째 아들로 1397년에 태어났어요. 1418년 6월에 왕세자가 되었고, 같은 해 8월에 22세(세는 나이)로 즉위(임금 자리에 오름)했어요. 세는 나이는 태어나자마자 한 살로 치는 옛 나이 셈법이에요. 세종대왕은 1450년에 승하(임금이 세상을 떠남)했어요. 무덤인 영릉은 처음에 아버지 태종의 헌릉 서쪽에 있었고, 1469년에 지금의 경기도 여주로 옮겼어요.</p>
+<div class="facts"><div class="fact"><span>이름</span><b>이도(李祹)</b></div><div class="fact"><span>태어나고 세상을 떠난 해</span><b>1397년 ~ 1450년</b></div><div class="fact"><span>임금 자리에 있던 기간</span><b>1418년 ~ 1450년</b></div><div class="fact"><span>능(임금의 무덤)</span><b>영릉 (경기도 여주)</b></div></div>
+<h3 class="sub">연표</h3>
+<ol class="timeline"><li><b>1397년</b>한양에서 태어났어요.</li><li><b>1408년</b>충녕군이 되었어요.</li><li><b>1418년</b>6월에 왕세자가 되고, 8월에 임금이 되었어요.</li><li><b>1420년</b>궁궐 안에 집현전을 두었어요.</li><li><b>1429년</b>『농사직설』을 펴냈어요.</li><li><b>1434년</b>자격루, 앙부일구, 갑인자를 만들었어요.</li><li><b>1441년</b>세자의 연구로 측우기가 나왔고, 수표를 세웠어요.</li><li><b>1443년</b>훈민정음을 만들었어요.</li><li><b>1446년</b>『훈민정음』 해례본이 완성되었어요.</li><li><b>1450년</b>세상을 떠났어요.</li></ol>
+</section>
+<section id="top20">
+<h2>대표 업적 TOP 20</h2>
+<p class="criteria"><b>순위는 어떻게 정했을까요?</b> 백성의 삶에 준 영향과 후대까지 이어진 영향을 생각해서 이 자료에서 정한 순서예요. 공식 순위는 아니에요. 사진 설명의 표시를 보면 세종 때 물건인지, 후대에 만들었거나 복원한 것인지 알 수 있어요.</p>
+<div class="cards">
+<article class="card top">
+<header><span class="rank">1<small>위</small></span><div class="meta"><span class="tag t1">문자·학문</span><span class="year">1443년</span></div></header>
+<h3>훈민정음 창제·반포</h3>
+<p>세종은 1443년 겨울에 우리 글자 훈민정음을 만들었어요. 훈민정음은 &quot;백성을 가르치는 바른 소리&quot;라는 뜻이에요. 집현전에서 자란 젊은 학자들도 힘을 보탰어요. 1446년 9월에는 글자의 원리를 풀이한 책 『훈민정음』(해례본)이 완성되었어요. 이 책은 국보이고, 1997년에는 유네스코 세계기록유산이 되었어요.</p>
+
+<div class="why"><b>왜 중요할까?</b> 어려운 한문을 몰라도 익혀서 쓸 수 있는 우리 글자가 생겼어요. 오늘날 우리가 쓰는 한글이 여기에서 시작되었어요.</div>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Hunminjeongeum_Haerye_03.jpg/960px-Hunminjeongeum_Haerye_03.jpg" width="640" height="427" alt="한자와 옛 한글 자모가 인쇄된 훈민정음 해례본 복제본의 펼친 면" onerror="imgFail(this)"><div class="ph" hidden><strong>사진을 준비하지 못했어요</strong><span>검색 키워드: 훈민정음 해례본 Hunminjeongeum Haerye</span><a href="https://commons.wikimedia.org/w/index.php?search=%ED%9B%88%EB%AF%BC%EC%A0%95%EC%9D%8C%20%ED%95%B4%EB%A1%80%EB%B3%B8%20Hunminjeongeum%20Haerye" target="_blank" rel="noopener">위키미디어 커먼즈에서 찾아보기</a></div><figcaption><span class="kind">현대 복원</span> 『훈민정음』 해례본 복제본의 펼친 면이에요.<small>출처: 조선 정부(원저작) · Public domain · <a href="https://commons.wikimedia.org/wiki/File:Hunminjeongeum_Haerye_03.jpg" target="_blank" rel="noopener">위키미디어 커먼즈 원본</a></small></figcaption></figure>
+</article><article class="card top">
+<header><span class="rank">2<small>위</small></span><div class="meta"><span class="tag t1">문자·학문</span><span class="year">1420년</span></div></header>
+<h3>집현전 확대</h3>
+<p>집현전은 학문을 연구하는 기관이에요. 이름은 고려 때부터 있었고 조선 초에도 설치된 적이 있었지만, 제 역할을 하지 못했어요. 세종은 1420년에 궁궐 안에 집현전을 두고 젊은 학자들을 뽑았어요. 학사(집현전의 학자)는 처음에 10명이었고, 1436년에 20명으로 정해졌어요. 세종은 학자들에게 휴가를 주어 책을 읽게 하는 사가독서도 베풀었어요.</p>
+
+<div class="why"><b>왜 중요할까?</b> 이곳에서 자란 인재들이 여러 책을 펴내고 나라의 제도를 연구했어요. 세종 시대 문화를 이끈 힘이 되었어요.</div>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Sujeongjeon_2018-09-05.jpg/960px-Sujeongjeon_2018-09-05.jpg" width="640" height="427" alt="경복궁 수정전 건물을 앞마당에서 찍은 사진" onerror="imgFail(this)"><div class="ph" hidden><strong>사진을 준비하지 못했어요</strong><span>검색 키워드: 집현전 수정전 Jiphyeonjeon Sujeongjeon</span><a href="https://commons.wikimedia.org/w/index.php?search=%EC%A7%91%ED%98%84%EC%A0%84%20%EC%88%98%EC%A0%95%EC%A0%84%20Jiphyeonjeon%20Sujeongjeon" target="_blank" rel="noopener">위키미디어 커먼즈에서 찾아보기</a></div><figcaption><span class="kind">후대 제작</span> 경복궁 수정전이에요. 세종 때 집현전으로 쓰인 건물이 임진왜란 때 불탄 뒤, 1867년에 다시 지었어요.<small>출처: De-Shao Liu · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Sujeongjeon_2018-09-05.jpg" target="_blank" rel="noopener">위키미디어 커먼즈 원본</a></small></figcaption></figure>
+</article><article class="card top">
+<header><span class="rank">3<small>위</small></span><div class="meta"><span class="tag t2">과학</span><span class="year">1441년</span></div></header>
+<h3>측우기와 수표</h3>
+<p>『세종실록』에 따르면 1441년 세자(훗날 문종)가 그릇에 빗물을 받아 양을 재는 방법을 연구했어요. 이 연구를 바탕으로 1442년 5월에 쇠로 만든 측우기로 전국의 비의 양을 재서 보고하는 제도가 정해졌어요. 1441년에는 청계천과 한강에 물 높이를 재는 수표도 세웠어요. 세종 때의 수표는 나무로 만들었고, 지금은 남아 있지 않아요.</p>
+
+<div class="why"><b>왜 중요할까?</b> 비의 양을 숫자로 재서 나라 전체가 함께 기록했어요. 농사가 중요한 나라에서 큰 도움이 되었어요.</div>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/%EC%B8%A1%EC%9A%B0%EA%B8%B0_%281%29.JPG/960px-%EC%B8%A1%EC%9A%B0%EA%B8%B0_%281%29.JPG" width="640" height="359" alt="돌 받침 위에 놓인 짙은 색 원통형 측우기 복제품" onerror="imgFail(this)"><div class="ph" hidden><strong>사진을 준비하지 못했어요</strong><span>검색 키워드: 측우기 수표 Cheugugi Supyo</span><a href="https://commons.wikimedia.org/w/index.php?search=%EC%B8%A1%EC%9A%B0%EA%B8%B0%20%EC%88%98%ED%91%9C%20Cheugugi%20Supyo" target="_blank" rel="noopener">위키미디어 커먼즈에서 찾아보기</a></div><figcaption><span class="kind">현대 복원</span> 여주 영릉에 있는 측우기 복제품이에요. 지금 남아 있는 금영측우기를 본떠 만들었어요.<small>출처: Jocelyndurrey · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:%EC%B8%A1%EC%9A%B0%EA%B8%B0_(1).JPG" target="_blank" rel="noopener">위키미디어 커먼즈 원본</a></small></figcaption></figure>
+</article><article class="card">
+<header><span class="rank">4<small>위</small></span><div class="meta"><span class="tag t3">농업·경제</span><span class="year">1429년</span></div></header>
+<h3>농사직설</h3>
+<p>『농사직설』은 세종의 명으로 정초와 변효문 등이 1429년에 펴낸 농사책이에요. 중국 농사책이 있었지만 땅과 날씨가 달라서 우리 형편에 맞는 책이 필요했어요. 그래서 각 도의 감사(도를 맡은 관리)가 농사 경험이 많은 농부들에게 방법을 물어 모았어요. 1430년에는 이 책을 각 도와 고을에 널리 나누어 주었어요.</p>
+
+<div class="why"><b>왜 중요할까?</b> 우리 땅에 맞는 농사법을 처음으로 정리한 책이에요. 농부의 경험을 나라의 지식으로 삼았다는 점도 뜻깊어요.</div>
+<figure class="noimg"><div class="ph"><strong>사진을 준비하지 못했어요</strong><span>검색 키워드: 농사직설 Nongsa jikseol</span><a href="https://commons.wikimedia.org/w/index.php?search=%EB%86%8D%EC%82%AC%EC%A7%81%EC%84%A4%20Nongsa%20jikseol" target="_blank" rel="noopener">위키미디어 커먼즈에서 찾아보기</a></div></figure>
+</article><article class="card">
+<header><span class="rank">5<small>위</small></span><div class="meta"><span class="tag t4">국방·외교</span><span class="year">1449년</span></div></header>
+<h3>4군 6진 개척</h3>
+<p>세종 때 북쪽에서는 여진족의 침입이 이어졌어요. 압록강 상류에는 최윤덕, 이천 등의 활약으로 여연·자성·무창·우예의 4군을 두었어요. 두만강 하류에는 김종서가 앞장서 1434년부터 6진을 설치했고, 1449년에 마무리되었어요. 남쪽 백성들을 이곳으로 옮겨 살게 해서 땅을 일구게 했어요. 다만 옮겨 간 백성에게는 힘든 일이었고, 이곳에 살던 여진족의 입장에서는 다르게 볼 수도 있어요.</p>
+
+<div class="why"><b>왜 중요할까?</b> 압록강과 두만강이 북쪽 국경이 되는 바탕이 되었어요. 4군은 지키기 어려워 1455년과 1459년에 폐지되었지만, 땅을 포기한 것은 아니었어요.</div>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/%E5%85%AB%E9%81%93%E7%B7%8F%E5%9B%B3.jpg" width="640" height="454" alt="옛 방식으로 그린 조선 전체 지도" onerror="imgFail(this)"><div class="ph" hidden><strong>사진을 준비하지 못했어요</strong><span>검색 키워드: 4군 6진 Four Commanderies Six Garrisons</span><a href="https://commons.wikimedia.org/w/index.php?search=4%EA%B5%B0%206%EC%A7%84%20Four%20Commanderies%20Six%20Garrisons" target="_blank" rel="noopener">위키미디어 커먼즈에서 찾아보기</a></div><figcaption><span class="kind">후대 제작</span> 1530년에 펴낸 『신증동국여지승람』의 팔도총도예요. 세종 때가 아니라 약 80년 뒤의 지도예요.<small>출처: 이행 외 · Public domain · <a href="https://commons.wikimedia.org/wiki/File:%E5%85%AB%E9%81%93%E7%B7%8F%E5%9B%B3.jpg" target="_blank" rel="noopener">위키미디어 커먼즈 원본</a></small></figcaption></figure>
+</article><article class="card">
+<header><span class="rank">6<small>위</small></span><div class="meta"><span class="tag t2">과학</span><span class="year">1434년</span></div></header>
+<h3>자격루</h3>
+<p>자격루는 스스로 소리를 내어 시각을 알려 주는 물시계예요. 세종의 명으로 장영실 등이 만들어 1434년에 완성했어요. 물의 힘으로 장치가 움직이면, 정해진 때에 인형이 나타나고 종·북·징이 울렸어요. 경복궁 보루각에 두고 나라의 표준 시계로 썼어요. 세종 때의 자격루는 남아 있지 않고, 1536년에 다시 만든 물통 일부만 전해요.</p>
+
+<div class="why"><b>왜 중요할까?</b> 사람이 지켜보지 않아도 시각을 정확하게 알릴 수 있었어요. 조선의 뛰어난 기술을 보여 주는 발명품이에요.</div>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Model_of_the_Borugak_Clepsydra_%28Borugak_Jagyeongnu%29_IMG_2057.jpg/960px-Model_of_the_Borugak_Clepsydra_%28Borugak_Jagyeongnu%29_IMG_2057.jpg" width="640" height="480" alt="박물관에 전시된 나무 구조물과 인형 장치로 이루어진 자격루 복원 모형" onerror="imgFail(this)"><div class="ph" hidden><strong>사진을 준비하지 못했어요</strong><span>검색 키워드: 자격루 Jagyeongnu</span><a href="https://commons.wikimedia.org/w/index.php?search=%EC%9E%90%EA%B2%A9%EB%A3%A8%20Jagyeongnu" target="_blank" rel="noopener">위키미디어 커먼즈에서 찾아보기</a></div><figcaption><span class="kind">현대 복원</span> 국립고궁박물관에 있는 자격루 복원 모형이에요. 실물 크기로 만들었어요.<small>출처: G41rn8 · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Model_of_the_Borugak_Clepsydra_(Borugak_Jagyeongnu)_IMG_2057.jpg" target="_blank" rel="noopener">위키미디어 커먼즈 원본</a></small></figcaption></figure>
+</article><article class="card">
+<header><span class="rank">7<small>위</small></span><div class="meta"><span class="tag t2">과학</span><span class="year">1434년</span></div></header>
+<h3>앙부일구</h3>
+<p>앙부일구는 오목한 그릇 모양의 해시계예요. 1434년에 만들었고, 그림자가 가리키는 눈금으로 시각과 절기를 읽었어요. 세종은 혜정교 옆과 종묘 남쪽 거리에 두어 오가는 백성이 보게 했어요. 세종 때에는 시각을 12지신 동물 그림으로 나타냈어요. 세종 때의 앙부일구는 남아 있지 않고, 지금 전하는 것은 모두 조선 후기에 만들었어요.</p>
+
+<div class="why"><b>왜 중요할까?</b> 우리나라 최초의 공중시계(여러 사람이 함께 보는 시계)예요. 시간을 백성과 나누었다는 점이 중요해요.</div>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gyeongbokgung_Angbuilgu_%2850605001138%29.jpg/960px-Gyeongbokgung_Angbuilgu_%2850605001138%29.jpg" width="640" height="427" alt="오목한 면에 격자 눈금과 그림자가 보이는 금속 해시계" onerror="imgFail(this)"><div class="ph" hidden><strong>사진을 준비하지 못했어요</strong><span>검색 키워드: 앙부일구 Angbuilgu</span><a href="https://commons.wikimedia.org/w/index.php?search=%EC%95%99%EB%B6%80%EC%9D%BC%EA%B5%AC%20Angbuilgu" target="_blank" rel="noopener">위키미디어 커먼즈에서 찾아보기</a></div><figcaption><span class="kind">현대 복원</span> 경복궁에 전시된 앙부일구예요. 야외 전시품이라 현대에 만든 것으로 판단했어요.<small>출처: Nina R · <a href="https://creativecommons.org/licenses/by/2.0" target="_blank" rel="noopener">CC BY 2.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Gyeongbokgung_Angbuilgu_(50605001138).jpg" target="_blank" rel="noopener">위키미디어 커먼즈 원본</a></small></figcaption></figure>
+</article><article class="card">
+<header><span class="rank">8<small>위</small></span><div class="meta"><span class="tag t2">과학</span><span class="year">1442년</span></div></header>
+<h3>칠정산</h3>
+<p>『칠정산』은 해와 달, 다섯 행성의 움직임을 계산하는 역법(달력을 만드는 방법)을 정리한 책이에요. 세종의 명으로 이순지와 김담 등이 연구했어요. 내편은 원나라의 수시력을 풀이했고, 1442년에 완성되었어요. 외편은 이슬람 역법인 회회력을 연구해 1444년에 펴냈어요. 내편에는 한양을 기준으로 한 해 뜨고 지는 시각과 낮밤의 길이 표도 실려 있어요.</p>
+
+<div class="why"><b>왜 중요할까?</b> 다른 나라의 달력에만 기대지 않고 우리가 있는 곳을 기준으로 하늘을 계산했어요. 이 책으로 조선의 역법이 완전히 정비되었어요.</div>
+<figure class="noimg"><div class="ph"><strong>사진을 준비하지 못했어요</strong><span>검색 키워드: 칠정산 Chiljeongsan</span><a href="https://commons.wikimedia.org/w/index.php?search=%EC%B9%A0%EC%A0%95%EC%82%B0%20Chiljeongsan" target="_blank" rel="noopener">위키미디어 커먼즈에서 찾아보기</a><a class="video" href="https://youtu.be/uiCYedCV0bk?si=GW2RMtuxutwCW23y" target="_blank" rel="noopener">칠정산 영상 보기 (KBS 역사추리, 유튜브)</a></div></figure>
+</article><article class="card">
+<header><span class="rank">9<small>위</small></span><div class="meta"><span class="tag t2">과학</span><span class="year">1432년</span></div></header>
+<h3>혼천의·간의 등 천문기구(간의대)</h3>
+<p>1432년 세종은 이천과 장영실에게 나무로 간의(하늘을 관측하는 기구)를 만들게 했어요. 실험에 성공하자 구리로 다시 만들었어요. 혼천의(해와 달, 별의 움직임을 재는 기구)는 기록상 1433년에 우리나라에서 처음 만들어졌어요. 경복궁 경회루 북쪽에는 돌로 쌓은 천문대인 간의대를 세웠어요. 1438년 3월부터 서운관 관원들이 이곳에서 매일 밤 하늘을 관측했어요.</p>
+
+<div class="why"><b>왜 중요할까?</b> 하늘을 직접 관측할 수 있게 되었어요. 정확한 달력과 시계를 만드는 바탕이 되었어요.</div>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/%ED%98%BC%EC%B2%9C%EC%9D%98_%281%29.JPG/960px-%ED%98%BC%EC%B2%9C%EC%9D%98_%281%29.JPG" width="640" height="359" alt="여러 개의 둥근 고리로 이루어진 혼천의가 야외 받침대에 놓인 모습" onerror="imgFail(this)"><div class="ph" hidden><strong>사진을 준비하지 못했어요</strong><span>검색 키워드: 혼천의 간의 Honcheonui Ganui</span><a href="https://commons.wikimedia.org/w/index.php?search=%ED%98%BC%EC%B2%9C%EC%9D%98%20%EA%B0%84%EC%9D%98%20Honcheonui%20Ganui" target="_blank" rel="noopener">위키미디어 커먼즈에서 찾아보기</a></div><figcaption><span class="kind">현대 복원</span> 여주 영릉에 전시된 혼천의예요. 야외 전시품이라 현대에 복원한 것으로 판단했어요.<small>출처: Jocelyndurrey · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:%ED%98%BC%EC%B2%9C%EC%9D%98_(1).JPG" target="_blank" rel="noopener">위키미디어 커먼즈 원본</a></small></figcaption></figure>
+</article><article class="card">
+<header><span class="rank">10<small>위</small></span><div class="meta"><span class="tag t3">농업·경제</span><span class="year">1444년</span></div></header>
+<h3>공법</h3>
+<p>공법은 농사짓는 땅에 세금을 매기는 제도예요. 이전에는 관리가 해마다 농사 형편을 조사했는데, 이 과정에서 부정이 생길 수 있었어요. 1430년 세종은 관리부터 농민까지 약 17만 명의 의견을 물었어요. 찬성은 9만 8,657명, 반대는 7만 4,149명이었어요. 오랜 논의 끝에 1444년에 땅의 등급 6단계와 그해 농사 형편 9단계로 세금을 정하는 제도가 마련되었어요.</p>
+
+<div class="why"><b>왜 중요할까?</b> 나라의 큰일을 정하기 전에 백성의 의견을 넓게 들었어요. 오늘날의 투표와 똑같지는 않고, 조사 결과로 바로 결정한 것도 아니었어요.</div>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Veritable_Records_of_Sejong_Cover.jpg/960px-Veritable_Records_of_Sejong_Cover.jpg" width="640" height="891" alt="세종실록이라고 적힌 푸른 표지의 옛 책" onerror="imgFail(this)"><div class="ph" hidden><strong>사진을 준비하지 못했어요</strong><span>검색 키워드: 세종실록 공법 Gongbeop Sejong</span><a href="https://commons.wikimedia.org/w/index.php?search=%EC%84%B8%EC%A2%85%EC%8B%A4%EB%A1%9D%20%EA%B3%B5%EB%B2%95%20Gongbeop%20Sejong" target="_blank" rel="noopener">위키미디어 커먼즈에서 찾아보기</a></div><figcaption><span class="kind">간접 자료</span> 『세종실록』 표지예요. 1430년 의견 조사 결과가 이 실록에 기록되어 있어요.<small>출처: 춘추관(원저작) · Public domain · <a href="https://commons.wikimedia.org/wiki/File:Veritable_Records_of_Sejong_Cover.jpg" target="_blank" rel="noopener">위키미디어 커먼즈 원본</a></small></figcaption></figure>
+</article><article class="card">
+<header><span class="rank">11<small>위</small></span><div class="meta"><span class="tag t1">문자·학문</span><span class="year">1434년</span></div></header>
+<h3>갑인자</h3>
+<p>갑인자는 1434년에 만든 구리 활자예요. 이천의 감독 아래 크고 작은 활자 20여만 자를 만들었어요. 글자 모양이 아름답고 또렷했어요. 크고 작은 활자를 섞어서 판을 짤 수도 있었어요.</p>
+<p class="more"><a href="https://www.museum.go.kr/MUSEUM/contents/M0502000000.do?schM=view&amp;searchId=search&amp;relicId=4503" target="_blank" rel="noopener">여기를 눌러보세요</a><span> 국립중앙박물관의 임진자 활자를 볼 수 있어요. 세종 때 갑인자가 아니라, 1772년에 갑인자를 본떠 만든 활자예요.</span></p>
+<div class="why"><b>왜 중요할까?</b> 책을 더 아름답고 빠르게 찍어 낼 수 있었어요. 조선의 인쇄 기술을 한 단계 높였어요.</div>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/%EA%B0%91%EC%9D%B8%EC%9E%90_%283%29.JPG/960px-%EA%B0%91%EC%9D%B8%EC%9E%90_%283%29.JPG" width="640" height="359" alt="나무판 위에 금속 활자를 줄 맞춰 짜 놓은 갑인자 복원품" onerror="imgFail(this)"><div class="ph" hidden><strong>사진을 준비하지 못했어요</strong><span>검색 키워드: 갑인자 Gabinja</span><a href="https://commons.wikimedia.org/w/index.php?search=%EA%B0%91%EC%9D%B8%EC%9E%90%20Gabinja" target="_blank" rel="noopener">위키미디어 커먼즈에서 찾아보기</a></div><figcaption><span class="kind">현대 복원</span> 여주 영릉에 전시된 갑인자 복원품이에요. 전시 안내판에 복원품으로 적혀 있어요.<small>출처: Jocelyndurrey · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:%EA%B0%91%EC%9D%B8%EC%9E%90_(3).JPG" target="_blank" rel="noopener">위키미디어 커먼즈 원본</a></small></figcaption></figure>
+</article><article class="card">
+<header><span class="rank">12<small>위</small></span><div class="meta"><span class="tag t5">의학·복지</span><span class="year">1433년</span></div></header>
+<h3>향약집성방</h3>
+<p>향약은 우리 땅에서 나는 약재를 말해요. 세종은 우리 풍토에 맞는 약이 우리 몸에 더 잘 듣는다고 생각했어요. 그래서 1431년 가을에 유효통, 노중례, 박윤덕에게 책을 만들게 해 1433년 6월에 완성했어요. 이 책은 모두 85권이고, 병 959가지와 처방 1만 706가지를 담았어요.</p>
+
+<div class="why"><b>왜 중요할까?</b> 비싼 중국 약재가 없어도 우리 약재로 병을 고칠 길을 넓혔어요. 백성의 건강을 돌보려는 노력이 담겨 있어요.</div>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/%ED%96%A5%EC%95%BD%EC%A7%91%EC%84%B1%EB%B0%A9_%281%29.JPG/960px-%ED%96%A5%EC%95%BD%EC%A7%91%EC%84%B1%EB%B0%A9_%281%29.JPG" width="640" height="359" alt="유리 진열장 안에 펼쳐져 있는 옛 의학책" onerror="imgFail(this)"><div class="ph" hidden><strong>사진을 준비하지 못했어요</strong><span>검색 키워드: 향약집성방 Hyangyak jipseongbang</span><a href="https://commons.wikimedia.org/w/index.php?search=%ED%96%A5%EC%95%BD%EC%A7%91%EC%84%B1%EB%B0%A9%20Hyangyak%20jipseongbang" target="_blank" rel="noopener">위키미디어 커먼즈에서 찾아보기</a></div><figcaption><span class="kind">후대 제작</span> 여주 영릉에 전시된 『향약집성방』이에요. 전시 안내판에 1633년 판으로 적혀 있어요.<small>출처: Jocelyndurrey · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:%ED%96%A5%EC%95%BD%EC%A7%91%EC%84%B1%EB%B0%A9_(1).JPG" target="_blank" rel="noopener">위키미디어 커먼즈 원본</a></small></figcaption></figure>
+</article><article class="card">
+<header><span class="rank">13<small>위</small></span><div class="meta"><span class="tag t5">의학·복지</span><span class="year">1426년</span></div></header>
+<h3>관노비 출산휴가</h3>
+<p>관노비는 나라의 관청에 속해 일하던 노비예요. 1426년 세종은 아이를 낳은 여자 노비에게 100일의 휴가를 주게 했어요. 1430년에는 출산 한 달 전부터 일을 쉬게 하는 방안도 마련하게 했어요. 1434년에는 남편에게도 30일의 휴가를 주게 했어요. 다만 노비 제도 자체는 그대로였다는 점도 함께 생각해 보아야 해요.</p>
+
+<div class="why"><b>왜 중요할까?</b> 가장 낮은 신분의 사람도 돌봐야 할 백성으로 여긴 정책이에요. 어머니와 아기를 함께 보살핀 점이 돋보여요.</div>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/%E4%B8%96%E5%AE%97%E6%80%BB%E5%BA%8F.jpg/960px-%E4%B8%96%E5%AE%97%E6%80%BB%E5%BA%8F.jpg" width="640" height="1002" alt="한자가 빽빽하게 적힌 세종실록의 한 면" onerror="imgFail(this)"><div class="ph" hidden><strong>사진을 준비하지 못했어요</strong><span>검색 키워드: 세종실록 관노비 출산휴가</span><a href="https://commons.wikimedia.org/w/index.php?search=%EC%84%B8%EC%A2%85%EC%8B%A4%EB%A1%9D%20%EA%B4%80%EB%85%B8%EB%B9%84%20%EC%B6%9C%EC%82%B0%ED%9C%B4%EA%B0%80" target="_blank" rel="noopener">위키미디어 커먼즈에서 찾아보기</a></div><figcaption><span class="kind">간접 자료</span> 『세종실록』의 한 면이에요. 출산휴가에 관한 명령이 이 실록에 기록되어 있어요.<small>출처: 저작자 표시 없음 · <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en" target="_blank" rel="noopener">CC0</a> · <a href="https://commons.wikimedia.org/wiki/File:%E4%B8%96%E5%AE%97%E6%80%BB%E5%BA%8F.jpg" target="_blank" rel="noopener">위키미디어 커먼즈 원본</a></small></figcaption></figure>
+</article><article class="card">
+<header><span class="rank">14<small>위</small></span><div class="meta"><span class="tag t6">음악</span><span class="year">1427년</span></div></header>
+<h3>아악 정비와 편경</h3>
+<p>아악은 나라의 의식에서 연주하던 음악이에요. 세종은 박연 등에게 옛 자료를 살펴 악기와 악보를 바로잡게 했어요. 편경은 ㄱ자 모양의 돌을 매달아 치는 악기로, 그전에는 중국에서 들여왔어요. 1425년에 경기도 남양에서 알맞은 돌을 찾아 우리 손으로 만들게 되었고, 1427년에 편경 한 틀이 완성되었어요.</p>
+
+<div class="why"><b>왜 중요할까?</b> 나라의 음악을 스스로 바로 세우고 악기도 직접 만들게 되었어요. 편경은 지금도 종묘제례악 등에 쓰여요.</div>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/a/ac/Musical_instruments_on_display_at_the_MIM_%2814328676636%29.jpg" width="640" height="600" alt="화려한 틀에 ㄱ자 모양 돌 16개가 두 줄로 매달린 편경" onerror="imgFail(this)"><div class="ph" hidden><strong>사진을 준비하지 못했어요</strong><span>검색 키워드: 편경 아악 Pyeongyeong</span><a href="https://commons.wikimedia.org/w/index.php?search=%ED%8E%B8%EA%B2%BD%20%EC%95%84%EC%95%85%20Pyeongyeong" target="_blank" rel="noopener">위키미디어 커먼즈에서 찾아보기</a></div><figcaption><span class="kind">현대 복원</span> 2009년에 파주에서 김현곤이 만든 편경이에요. 미국 악기 박물관에 전시되어 있어요.<small>출처: Frank Kovalchek · <a href="https://creativecommons.org/licenses/by/2.0" target="_blank" rel="noopener">CC BY 2.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Musical_instruments_on_display_at_the_MIM_(14328676636).jpg" target="_blank" rel="noopener">위키미디어 커먼즈 원본</a></small></figcaption></figure>
+</article><article class="card">
+<header><span class="rank">15<small>위</small></span><div class="meta"><span class="tag t6">음악</span><span class="year">1447년</span></div></header>
+<h3>정간보</h3>
+<p>정간보는 우물 정(井) 자 같은 네모 칸으로 음악을 적는 악보예요. 칸의 수로 소리의 길이를 나타내고, 칸 안에 음의 이름과 노랫말 등을 적었어요. 정확히 언제 만들었는지는 알 수 없지만, 늦어도 1447년에는 핵심 생각이 완성된 것으로 보아요. 세종 때의 악보 원본은 전하지 않고, 『세종실록』에 이 방식으로 적은 악곡이 많이 실려 있어요.</p>
+
+<div class="why"><b>왜 중요할까?</b> 소리의 길이까지 적을 수 있는 악보를 만들었어요. 세조 때 고쳐진 뒤 20세기 초까지 널리 쓰였어요.</div>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Museum_of_Traditional_Korean_Music_041.JPG/960px-Museum_of_Traditional_Korean_Music_041.JPG" width="640" height="480" alt="네모 칸이 그려진 옛 악보책 대악후보의 펼친 면" onerror="imgFail(this)"><div class="ph" hidden><strong>사진을 준비하지 못했어요</strong><span>검색 키워드: 정간보 Jeongganbo</span><a href="https://commons.wikimedia.org/w/index.php?search=%EC%A0%95%EA%B0%84%EB%B3%B4%20Jeongganbo" target="_blank" rel="noopener">위키미디어 커먼즈에서 찾아보기</a></div><figcaption><span class="kind">후대 제작</span> 1759년에 펴낸 『대악후보』예요. 세조 때의 음악을 고친 정간보로 적었어요.<small>출처: Piotrus · <a href="https://creativecommons.org/licenses/by-sa/3.0" target="_blank" rel="noopener">CC BY-SA 3.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Museum_of_Traditional_Korean_Music_041.JPG" target="_blank" rel="noopener">위키미디어 커먼즈 원본</a></small></figcaption></figure>
+</article><article class="card">
+<header><span class="rank">16<small>위</small></span><div class="meta"><span class="tag t1">문자·학문</span><span class="year">1445년</span></div></header>
+<h3>용비어천가</h3>
+<p>『용비어천가』는 조선을 세운 왕실 조상 여섯 대의 일을 기린 노래예요. 권제, 정인지, 안지가 1445년에 125장의 노래를 지어 올렸어요. 훈민정음으로 적힌 글 가운데 가장 먼저 만들어진 작품이에요. 설명을 덧붙여 1447년에 완성했고, 550질을 신하들에게 나누어 주었어요.</p>
+
+<div class="why"><b>왜 중요할까?</b> 새로 만든 글자로 긴 작품을 쓸 수 있다는 것을 보여 주었어요. 왕실을 높이는 노래라는 점도 함께 알아 두어야 해요.</div>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Yongbieocheonga_display.jpg" width="640" height="473" alt="옛 한글과 한자가 적힌 용비어천가 복제본이 진열장에 펼쳐져 있는 모습" onerror="imgFail(this)"><div class="ph" hidden><strong>사진을 준비하지 못했어요</strong><span>검색 키워드: 용비어천가 Yongbieocheonga</span><a href="https://commons.wikimedia.org/w/index.php?search=%EC%9A%A9%EB%B9%84%EC%96%B4%EC%B2%9C%EA%B0%80%20Yongbieocheonga" target="_blank" rel="noopener">위키미디어 커먼즈에서 찾아보기</a></div><figcaption><span class="kind">현대 복원</span> 서울 광화문 세종이야기 전시관에 전시된 『용비어천가』 복제본이에요.<small>출처: Nuyos · Public domain · <a href="https://commons.wikimedia.org/wiki/File:Yongbieocheonga_display.jpg" target="_blank" rel="noopener">위키미디어 커먼즈 원본</a></small></figcaption></figure>
+</article><article class="card">
+<header><span class="rank">17<small>위</small></span><div class="meta"><span class="tag t1">문자·학문</span><span class="year">1434년</span></div></header>
+<h3>삼강행실도</h3>
+<p>1428년 진주에서 아들이 아버지를 해친 사건이 일어났어요. 세종은 벌을 주기에 앞서 백성에게 바른 행실을 알려야 한다고 생각했어요. 그래서 설순 등에게 효자, 충신, 열녀의 이야기를 모은 책을 만들게 해 1434년에 펴냈어요. 내용을 한눈에 알 수 있도록 앞에 그림을 넣고 뒤에 글을 실었어요.</p>
+
+<div class="why"><b>왜 중요할까?</b> 그림을 활용해 백성을 가르치려 한 책이에요. 오늘날의 눈으로 보면 여성에게 희생을 강조한 이야기처럼 받아들이기 어려운 내용도 있어요.</div>
+<figure class="noimg"><div class="ph"><strong>사진을 준비하지 못했어요</strong><span>검색 키워드: 삼강행실도 Samgang haengsildo</span><a href="https://commons.wikimedia.org/w/index.php?search=%EC%82%BC%EA%B0%95%ED%96%89%EC%8B%A4%EB%8F%84%20Samgang%20haengsildo" target="_blank" rel="noopener">위키미디어 커먼즈에서 찾아보기</a></div></figure>
+</article><article class="card">
+<header><span class="rank">18<small>위</small></span><div class="meta"><span class="tag t5">의학·복지</span><span class="year">1445년</span></div></header>
+<h3>의방유취</h3>
+<p>『의방유취』는 여러 의학책의 내용을 모아 병에 따라 나누어 정리한 의학 백과사전이에요. 세종의 명으로 학자와 의원들이 3년에 걸쳐 작업했어요. 1445년에 365권으로 완성되었어요. 양이 너무 많아서 성종 때인 1477년에야 266권으로 줄여 30질을 찍어 냈어요.</p>
+
+<div class="why"><b>왜 중요할까?</b> 당시의 의학 지식을 한곳에 모은 큰 사업이었어요. 세종 때 시작한 일이 다음 임금들에게 이어졌어요.</div>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/%EC%9D%98%EB%B0%A9%EC%9C%A0%EC%B7%A8_%28%E9%86%AB%E6%96%B9%E9%A1%9E%E8%81%9A%29.jpg" width="640" height="808" alt="의방유취라고 적힌 낡은 옛 책의 표지" onerror="imgFail(this)"><div class="ph" hidden><strong>사진을 준비하지 못했어요</strong><span>검색 키워드: 의방유취 Uibang yuchwi</span><a href="https://commons.wikimedia.org/w/index.php?search=%EC%9D%98%EB%B0%A9%EC%9C%A0%EC%B7%A8%20Uibang%20yuchwi" target="_blank" rel="noopener">위키미디어 커먼즈에서 찾아보기</a></div><figcaption><span class="kind">후대 제작</span> 1477년에 찍어 낸 『의방유취』 권201의 표지예요.<small>출처: 조선 정부(원저작) · Public domain · <a href="https://commons.wikimedia.org/wiki/File:%EC%9D%98%EB%B0%A9%EC%9C%A0%EC%B7%A8_(%E9%86%AB%E6%96%B9%E9%A1%9E%E8%81%9A).jpg" target="_blank" rel="noopener">위키미디어 커먼즈 원본</a></small></figcaption></figure>
+</article><article class="card">
+<header><span class="rank">19<small>위</small></span><div class="meta"><span class="tag t4">국방·외교</span><span class="year">1419년</span></div></header>
+<h3>대마도 정벌과 계해약조</h3>
+<p>1419년 5월 왜구가 충청도 비인현을 침입했어요. 이때 임금은 세종이었지만, 군사에 관한 일은 상왕(물러난 임금) 태종이 직접 맡아 대마도 정벌을 주도했어요. 이종무가 병선 227척과 군사 1만 7,285명을 이끌고 6월에 출발해 7월 3일에 돌아왔어요. 이후 조선은 대마도와의 교류를 조금씩 열었어요. 1443년에는 계해약조를 맺어 대마도에서 해마다 보내는 무역선을 50척으로 정했어요.</p>
+
+<div class="why"><b>왜 중요할까?</b> 정벌 뒤로 큰 규모의 왜구 침입은 사라졌어요. 힘으로 막는 일과 약속으로 다스리는 일을 함께 썼다는 점이 중요해요.</div>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/%E6%97%A5%E6%9C%AC%E5%9C%8B%E5%B0%8D%E9%A6%AC%E5%B3%B6%E4%B9%8B%E5%9C%96.jpg/960px-%E6%97%A5%E6%9C%AC%E5%9C%8B%E5%B0%8D%E9%A6%AC%E5%B3%B6%E4%B9%8B%E5%9C%96.jpg" width="640" height="491" alt="섬의 해안선과 지명이 그려진 옛 대마도 지도" onerror="imgFail(this)"><div class="ph" hidden><strong>사진을 준비하지 못했어요</strong><span>검색 키워드: 대마도 정벌 계해약조 Tsushima 1419</span><a href="https://commons.wikimedia.org/w/index.php?search=%EB%8C%80%EB%A7%88%EB%8F%84%20%EC%A0%95%EB%B2%8C%20%EA%B3%84%ED%95%B4%EC%95%BD%EC%A1%B0%20Tsushima%201419" target="_blank" rel="noopener">위키미디어 커먼즈에서 찾아보기</a></div><figcaption><span class="kind">후대 제작</span> 신숙주가 1471년에 엮은 『해동제국기』의 대마도 지도예요.<small>출처: 신숙주(원저작) · Public domain · <a href="https://commons.wikimedia.org/wiki/File:%E6%97%A5%E6%9C%AC%E5%9C%8B%E5%B0%8D%E9%A6%AC%E5%B3%B6%E4%B9%8B%E5%9C%96.jpg" target="_blank" rel="noopener">위키미디어 커먼즈 원본</a></small></figcaption></figure>
+</article><article class="card">
+<header><span class="rank">20<small>위</small></span><div class="meta"><span class="tag t4">국방·외교</span><span class="year">1448년</span></div></header>
+<h3>화포 개량과 신기전(총통등록)</h3>
+<p>세종은 1444년에 화포를 만드는 곳을 짓고, 이듬해부터 화포를 새 규격으로 다시 만들기 시작했어요. 1448년 9월에는 화포 만드는 법과 화약 쓰는 법을 그림과 함께 담은 『총통등록』을 펴냈어요. 이 책은 나라의 비밀로 엄격히 다루어서인지 지금은 전하지 않아요. 같은 해에 고려 말의 주화를 고쳐 로켓처럼 날아가는 무기 신기전을 만들었어요.</p>
+
+<div class="why"><b>왜 중요할까?</b> 화포 만드는 기술을 정확한 규격으로 정리해 나라의 방어력을 높였어요. 조선의 화포 제작은 이 책의 전통을 이어 발전했어요.</div>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Korean_rocket_arrows.jpg/960px-Korean_rocket_arrows.jpg" width="640" height="480" alt="벽에 가로로 전시된 긴 대나무 로켓 화살들" onerror="imgFail(this)"><div class="ph" hidden><strong>사진을 준비하지 못했어요</strong><span>검색 키워드: 신기전 총통 Singijeon</span><a href="https://commons.wikimedia.org/w/index.php?search=%EC%8B%A0%EA%B8%B0%EC%A0%84%20%EC%B4%9D%ED%86%B5%20Singijeon" target="_blank" rel="noopener">위키미디어 커먼즈에서 찾아보기</a></div><figcaption><span class="kind">현대 복원</span> 박물관에 전시된 조선의 로켓 화살이에요. 현대에 복원한 전시품으로 판단했어요.<small>출처: Kai Hendry · <a href="https://creativecommons.org/licenses/by/2.0" target="_blank" rel="noopener">CC BY 2.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Korean_rocket_arrows.jpg" target="_blank" rel="noopener">위키미디어 커먼즈 원본</a></small></figcaption></figure>
+</article>
+</div>
+</section>
+<section id="wrap">
+<h2>정리</h2>
+<div class="summary"><p>세종대왕은 글자, 과학, 농업, 의학, 음악, 국방까지 나라의 여러 일을 돌보았어요. 혼자 이룬 일은 아니었어요. 학자와 기술자, 세자, 농부까지 많은 사람의 지혜와 힘이 모였어요. 그 바탕에는 백성의 삶을 더 낫게 하려는 마음이 있었어요.</p></div>
+<h3 class="sub" style="margin-top:28px">생각해 볼 질문</h3>
+<ol class="questions">
+<li>훈민정음이 없었다면 우리의 생활은 어떻게 달라졌을까요?</li>
+<li>세종은 왜 1430년에 약 17만 명의 의견을 물었을까요? 우리 학급의 규칙을 정할 때에는 어떻게 의견을 모으면 좋을까요?</li>
+<li>20가지 업적 가운데 내가 1위로 꼽고 싶은 것은 무엇인가요? 그 까닭은 무엇인가요?</li>
+</ol>
+</section>
+<section id="refs">
+<h2>참고 자료</h2>
+<ul class="refs">
+<li><a href="https://sillok.history.go.kr/" target="_blank" rel="noopener">조선왕조실록</a> (국사편찬위원회)</li>
+<li><a href="https://encykorea.aks.ac.kr/" target="_blank" rel="noopener">한국민족문화대백과사전</a> (한국학중앙연구원)</li>
+<li><a href="https://www.gogung.go.kr/" target="_blank" rel="noopener">국립고궁박물관</a></li>
+<li><a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">위키미디어 커먼즈</a> (사진 자료)</li>
+</ul>
+<p class="note">사진의 저작자와 사용 조건은 각 사진 아래에 적어 두었어요.</p>
+</section>
+</main>
+<footer>백성을 사랑한 임금, 세종대왕 · 초등 고학년 학습 자료</footer>
+</body>
+</html>
