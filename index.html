@@ -128,6 +128,15 @@ main{max-width:1040px;margin:0 auto;padding:22px 16px 40px}
 .clock b{font-family:var(--serif);font-size:21px;display:block;line-height:1.3}
 .clock span{color:var(--muted);font-size:15px}
 
+/* 해시계와 조작판: 노트북에서는 나란히 놓아 한 화면에 보여요 */
+.sun-lab{display:grid;gap:12px;margin:12px 0}
+.sun-lab .stage{margin:0}
+.sun-lab .clock{margin-top:0}
+#sun-svg,#j-svg{margin:0 auto;max-height:max(230px,calc(100vh - 350px))}
+.sun-ctrl .steps{margin-top:0}
+.sound-tip{margin:10px 0 0;color:var(--gold);font-weight:700}
+@media (min-width:760px){.sun-lab{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);align-items:center;gap:16px}.jag-lab{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)}}
+
 /* ④ 자격루 */
 .steps{list-style:none;padding:0;margin:8px 0 0;display:flex;flex-wrap:wrap;gap:6px}
 .steps li{font-size:14.5px;padding:3px 11px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
@@ -229,6 +238,11 @@ main{max-width:1040px;margin:0 auto;padding:22px 16px 40px}
 figure.ach-failed img,figure.ach-failed figcaption{display:none}
 figure.ach-failed .ach-ph[hidden]{display:flex!important}
 
+/* 돌아가기 버튼 */
+.return-btn{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:30;max-width:calc(100vw - 32px);
+  border:2px solid #1a1f3d;box-shadow:0 6px 18px rgba(0,0,0,.45);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+body.has-return{padding-bottom:76px}
+
 /* 마무리 */
 .summary-box{margin:0}
 .questions{margin:0;padding-left:24px}
@@ -244,7 +258,7 @@ figure.ach-failed .ach-ph[hidden]{display:flex!important}
 }
 @media print{
   body{background:#fff;color:#111;font-size:11.5pt}
-  .nav,.cover-roof,.btn,.pill,.range,.rlabel,.back,.ach-play{display:none!important}
+  .nav,.cover-roof,.btn,.return-btn,.pill,.range,.rlabel,.back,.ach-play{display:none!important}
   .sec,.ach-card,.fact,.stage,.key,.ach-why{background:#fff;border-color:#999;color:#111;break-inside:avoid}
   .hero .lead,.note,.ach-year,.ach-card figcaption small,.group-head p{color:#333}
   .ach-card h3,.sec h3,.fact span,.timeline b,.group-head span,.ach-why b{color:#111}
@@ -535,9 +549,11 @@ figure.ach-failed .ach-ph[hidden]{display:flex!important}
   <h2><span class="num">3</span>앙부일구 해시계</h2>
   <p class="back"><a href="#ach-7">📖 업적 카드 보기</a></p>
   <p>앙부일구는 하늘을 우러러보는 솥이라는 뜻이에요. 해를 움직여 그릇 안쪽의 그림자를 살펴봐요.</p>
+  <div class="sun-lab">
   <div class="stage">
     <svg id="sun-svg" viewBox="0 0 480 392" role="img" aria-label="솥 모양 해시계 앙부일구 그림. 해가 움직이면 그림자 끝이 시각선을 따라 이동해요."></svg>
   </div>
+  <div class="sun-ctrl">
   <div class="clock" role="status">
     <div class="ani" id="c-ani">🐰</div>
     <div><b id="c-name">묘시 · 토끼</b><span id="c-time">오전 6시</span></div>
@@ -551,6 +567,8 @@ figure.ach-failed .ach-ph[hidden]{display:flex!important}
       <button type="button" id="c-txt-on" aria-pressed="false">한자</button>
     </div>
   </div>
+  </div>
+  </div>
   <div class="key">
     <p><b>글을 몰라도 시간을 알 수 있었어요.</b> 세종 때 앙부일구에는 시각을 글자 대신 12지신 동물 그림으로 나타냈어요.</p>
     <p>길가에 둔 이 시계는 누구에게나 열려 있었어요.</p>
@@ -561,6 +579,7 @@ figure.ach-failed .ach-ph[hidden]{display:flex!important}
   <h2><span class="num">4</span>자격루 작동시키기</h2>
   <p class="back"><a href="#ach-6">📖 업적 카드 보기</a></p>
   <p>자격루는 스스로 소리를 내어 시각을 알리는 물시계예요. 물을 부어 장치를 움직여 봐요.</p>
+  <div class="sun-lab jag-lab">
   <div class="stage">
     <svg id="j-svg" viewBox="0 0 560 400" role="img" aria-label="자격루 모형. 위 항아리의 물이 아래 항아리로 흐르면 살대가 떠오르고, 구슬이 굴러가 종과 북과 징을 울려요.">
       <defs><clipPath id="jarClip"><path d="M24 44Q20 26 40 24H112Q132 26 128 44L120 128Q118 138 108 138H44Q34 138 32 128Z"/></clipPath></defs>
@@ -601,15 +620,19 @@ figure.ach-failed .ach-ph[hidden]{display:flex!important}
       <text x="492" y="340" text-anchor="middle" font-size="21" fill="#f8f3e6">징</text>
     </svg>
   </div>
+  <div class="sun-ctrl">
   <ol class="steps" id="j-steps">
     <li>물이 흘러요</li><li>살대가 떠올라요</li><li>구슬이 굴러요</li><li>종</li><li>북</li><li>징</li>
   </ol>
+  <p class="sound-tip">🔊 종·북·징 소리가 나요. 소리를 키워 주세요.</p>
   <div class="row">
     <button class="btn" type="button" id="j-play">▶ 물 붓기</button>
     <button class="btn sub" type="button" id="j-reset">처음으로</button>
     <button class="btn sub" type="button" id="j-sound" aria-pressed="true">🔊 소리 켜짐</button>
   </div>
   <p class="msg" id="j-msg" role="status"></p>
+  </div>
+  </div>
   <div class="key">
     <p><b>사람이 밤새 지키지 않아도 스스로 시각을 알려줬어요.</b></p>
     <p>자격루는 1434년에 세종의 명을 받아 장영실, 이천, 김조 등이 만들었어요. 지금 남아 있는 것은 1536년 중종 때 다시 만든 것이고, 그중에서도 물항아리와 물받이 부분만 전해요.</p>
@@ -734,6 +757,8 @@ figure.ach-failed .ach-ph[hidden]{display:flex!important}
 </section>
 </main>
 
+<button class="btn return-btn" type="button" id="return-btn" hidden></button>
+
 <footer class="site-foot">백성을 사랑한 임금, 세종대왕 · 초등 고학년 학습 자료</footer>
 
 <script>
@@ -790,6 +815,75 @@ function navQueue(){
 window.addEventListener('scroll',navQueue,{passive:true});
 window.addEventListener('resize',navQueue);
 navUpdate();
+
+/* 돌아가기: 페이지 안에서 이동할 때 보던 자리를 기억해요.
+   체험 중에 페이지 길이가 바뀌어도 어긋나지 않도록 숫자 대신 그 자리의 요소를 기준으로 삼아요. */
+var trail=[],returnBtn=$('return-btn');
+function placeName(el){
+  if(el.matches('.ach-card'))return el.querySelector('h3').textContent;
+  if(el.matches('.sec'))return el.querySelector('h2').lastChild.textContent;
+  if(el.matches('.group-head'))return el.querySelector('h2').textContent;
+  return '처음';
+}
+function placeNow(link){
+  var el=link.closest('.ach-card,.sec');
+  if(!el){
+    var line=document.querySelector('.nav').getBoundingClientRect().bottom+8;
+    var hit=null,passed=null;
+    document.querySelectorAll('.group-head,.sec,.ach-card').forEach(function(x){
+      var r=x.getBoundingClientRect();
+      if(r.top>line)return;
+      passed=x;
+      if(r.bottom>line)hit=x;
+    });
+    el=hit||passed||document.documentElement;
+  }
+  return {el:el,top:el.getBoundingClientRect().top};
+}
+function trailShow(){
+  var last=trail[trail.length-1];
+  returnBtn.hidden=!last;
+  document.body.classList.toggle('has-return',!!last);
+  if(last)returnBtn.textContent='↩ 돌아가기 · '+placeName(last.el);
+}
+document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('a[href^="#"]');
+  if(!a)return;
+  var target=document.querySelector(a.getAttribute('href'));
+  if(!target)return;
+  var navBottom=document.querySelector('.nav').getBoundingClientRect().bottom;
+  var move=target.getBoundingClientRect().top-navBottom;
+  if(Math.abs(move)<40)return;                       /* 이미 그 자리예요 */
+  settleId++;
+  var last=trail[trail.length-1];
+  if(last&&last.el===target){
+    trail.pop();                                     /* 📖 링크로 왔던 카드에 돌아간 경우예요 */
+  }else{
+    trail.push(placeNow(a));
+    if(trail.length>20)trail.shift();
+  }
+  trailShow();
+});
+returnBtn.onclick=function(){
+  var last=trail.pop();
+  if(!last)return;
+  settle(last);
+  trailShow();
+};
+/* 바로 이동한 뒤, 사진이 불러와져 높이가 바뀌어도 자리가 어긋나지 않게 잠시 맞춰요 */
+var settleId=0;
+function settle(place){
+  var id=++settleId,start=performance.now();
+  (function fix(){
+    if(id!==settleId)return;
+    var d=place.el.getBoundingClientRect().top-place.top;
+    if(Math.abs(d)>1)window.scrollBy({top:d,behavior:'instant'});
+    if(performance.now()-start<1200)requestAnimationFrame(fix);
+  })();
+}
+['wheel','touchstart','keydown'].forEach(function(n){
+  window.addEventListener(n,function(){settleId++},{passive:true});
+});
 
 /* ① 한글 있는 세상 / 없는 세상 */
 function world(on){
